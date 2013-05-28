@@ -1,0 +1,18 @@
+<p class="wb_h1">Hidden Field</p>
+A hidden field for storing hidden values that need to be passed in the form submit or Ajax requesting.
+WebBuilder encapsulate Ext.form.field.Hidden to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br>
+<hr>
+<b>xvalue</b><br>
+A value to initialize this field with. Unlike value property, xvalue store native value reference. WebBuilder use this property to get and set value instead of value property, such as Wb.getValue and Wb.setValue methods use xvalue property. The value property is still available only in the form submit.<br>
+For example:<br>
+hiddenField.setValue(new Date()); hiddenField.getValue() will get a string value.<br>
+hiddenField.xvalue=new Date(); hiddenField.xvalue is a date value.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.field.Hidden</p>

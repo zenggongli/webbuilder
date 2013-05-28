@@ -1,0 +1,12 @@
+<p class="wb_h1">Time</p>
+Provides a time input field with a time dropdown and automatic time validation.
+WebBuilder encapsulate Ext.form.field.Time to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.field.Time</p>

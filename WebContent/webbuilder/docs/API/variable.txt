@@ -1,0 +1,27 @@
+<p class="wb_h1">Var - com.webbuilder.common.Var</p>
+The Var is used to access application's variables. The variables are organized in the tree view by <a href="javascript:openTopic('@systool/varconfig.txt','Variables Config')">Variables Config</a> module. Unlike Resource and Value, all the variables are cached in the memory, thus, they can be accessed quickly. The variables are stored in the WB_VAR table.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static String get(String name)</b><br>
+Get string variable from the variables cache.<br>
+<b>Parameters</b>:<br>
+.name:<br>
+Unique variable's qualified name.<br>
+<b>Returns</b>:<br>
+The specified string variable, if the variable does not exist, null is returned.<br> 
+<b>Example</b>:<br>
+string title = Var.get("webbuilder.title")<br>
+<b>Related functions</b>:<br>
+getBool, getDate, getDouble, getFloat, getInt, getLong<br>
+<hr>
+<b>public static void set(String name, String value)</b><br>
+Set string variable to the cache and the variable table, if the name is empty or specified variable does not exist, the function will throw exception.<br>
+<b>Parameters</b>:<br>
+.name<br>
+Unique variable's qualified name.<br>
+.value:<br>
+The value to be set.<br>
+<b>Example</b>:<br>
+Var.set("webbuilder.title","My Application");<br>
+<b>Related functions</b>:<br>
+set(boolean), set(Date), set(double), set(float), set(int), set(long)<br>

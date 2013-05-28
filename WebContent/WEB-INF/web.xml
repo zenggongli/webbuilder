@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>webbuilder</display-name>
+	<welcome-file-list>
+		<welcome-file>main</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description>WebBuilder Core Service</description>
+		<display-name>main</display-name>
+		<servlet-name>main</servlet-name>
+		<servlet-class>com.webbuilder.common.Main</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>main</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>Task Service Initializer</description>
+		<display-name>taskservice</display-name>
+		<servlet-name>taskservice</servlet-name>
+		<servlet-class>com.webbuilder.common.TaskService</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>WebBuilder Resource Cache</description>
+		<display-name>wbcache</display-name>
+		<servlet-name>wbcache</servlet-name>
+		<servlet-class>com.webbuilder.common.WbCache</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>wbcache</servlet-name>
+		<url-pattern>/webbuilder/*</url-pattern>
+	</servlet-mapping>
+</web-app>

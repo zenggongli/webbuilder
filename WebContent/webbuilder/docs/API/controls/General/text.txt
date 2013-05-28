@@ -1,0 +1,18 @@
+<p class="wb_h1">Text</p>
+A basic text field. Can be used as a direct replacement for traditional text inputs, or as the base class for more sophisticated input controls.
+WebBuilder encapsulate Ext.form.field.Text to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>autoCreate</b><br>
+Indicates whether to create the object instance or config object. The config object is useful, for example, to be used in Column editor property.<br>
+<hr>
+<b>inputType</b><br>
+The type attribute for input fields, password - a password editor, file - equals to Ext.form.field.File.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.field.Text</p>

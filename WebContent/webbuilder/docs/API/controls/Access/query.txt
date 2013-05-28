@@ -1,0 +1,61 @@
+<p class="wb_h1">Query</p>
+Query encapsulates JDBC operations to execute SQL statement, it can get ResultSet or other values from database. Query has ability to access tables, store procedures, database functions etc. In the sql property, you can use request attributes/parameters or other server values directly.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>arrayName</b><br>
+An object name which's value is stored in HttpServletRequest attributes or parameters. The object can be a JSON array string, org.json.JSONArray object or other JSON array object.<br>
+When this property is set, Query will execute batch SQLs.<br>
+For example:<br>
+arrayName=grid, request.getParameter("grid")="[{a:123,b:'abc'},{a:456,b:'def'}]".<br>
+sql=insert into table values({?a?,{?integer.b?}).<br>
+After query executed SQL, two records inserted to the table({a:123,b:'abc'},{a:456,b:'def'}).<br>
+<hr>
+<b>batchBufferSize</b><br>
+When addBatch() count exceeds this value, then call executeBatch(), default Integer.MAX_VALUE.<br>
+<hr>
+<b>disabled</b><br>
+Indicates whether to execute the SQL.<br>
+<hr>
+<b>isolation</b><br>
+The transaction isolation level for the connection object.<br>
+<hr>
+<b>jndi</b><br>
+A jndi name for connecting database, empty for default database.<br>
+For example:<br>
+java:comp/env/jdbc/myDb
+<hr>
+<b>sql</b><br>
+Any sql statement, including call store-procedures or functions.<br>
+<hr>
+<b>sqlSwitcher</b><br>
+SQL Switcher object represents sql.<br>
+<hr>
+<b>transaction</b><br>
+Indicates how to operate transaction.<br>
+start: Call the Connection object method setAutoCommit(false). If getAutoCommit() is true, first call commit(), then call setAutoCommit(false).<br>
+<hr>
+<b>type</b><br>
+The SQL executing type, default execute.<br>
+query: Call executeQuery() method.<br>
+update: Call executeUpdate() method.<br>
+execute: Call execute() method.<br>
+<hr>
+<b>uniqueUpdate</b><br>
+If uniqueUpdate is true and getUpdateCount() does not equal to 1, then throw exception and rollback the transaction.<br><br>
+<p class="wb_h2">2. SQL Parameters</p>
+You can use HttpServletRequest attribute/parameter value in sql property directly, such as:<br>
+select * from {#table#} where stringField={?param1?} and intField={?integer.param2?}<br>
+For more details see <a href="javascript:openTopic('@Tutorials/database.txt','Database Access')">Database Access->3. SQL Parameters</a><br><br>
+<p class="wb_h2">3. Examples</p>
+<b>Create User ResultSet</b><br>
+sql: select * from WB_USER<br>
+Use method request.getAttribute(queryId) to get the ResultSet object.<br>
+<b>Insert a Record with Parameters</b><br>
+sql: insert into table values({?[varchar.]param1?},{?integer.param2?},{?timestamp.param3?},'constant')<br>
+<b>Access Store Procedure</b><br>
+sql: {call proc({?@-10.para1?},{?para2?})}<br>
+Use method request.getAttribute("para1") to get the value of output parameter "para1".<br>
+<b>Batch SQL</b><br>
+arrayName:jsonArrayName<br>
+sql: delete from table where field1={?param1?} and field2={?double.param2?}<br><br>
+<p class="wb_h2">See source com.webbuilder.controls.Query</p>

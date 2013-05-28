@@ -1,0 +1,26 @@
+<p class="wb_h1">Client Script</p>
+A HTML/JavaScript generating control. The script is used to output any user defined HTML or JavaScript, the Client Script control can be appended to any controls, and any controls can be appended to the Client Script control.<br>
+The following figure demonstrates how to output properties of the Client Script control.<br>
+<img src="webbuilder/docs/images/script.gif"><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>finalize</b><br>
+Finalize JavaScript to be appended to the module.<br>
+<hr>
+<b>footer</b><br>
+Footer HTML to be appended to the context.<br>
+<hr>
+<b>footerScript</b><br>
+Footer JavaScript to be appended to the context.<br>
+<hr>
+<b>header</b><br>
+Header HTML to be appended to the context.<br>
+<hr>
+<b>headerScript</b><br>
+Header JavaScript to be appended to the context.<br>
+<hr>
+<b>initialize</b><br>
+Initialize JavaScript to be appended to the module.<br>
+<hr>
+<b>x, y, width, height</b><br>
+No effect, to be used to save the position in the Form Designer.<br>

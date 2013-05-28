@@ -1,0 +1,19 @@
+<p class="wb_h1">Method</p>
+Method control is used to run a server side Java method.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>methodName</b><br>
+A qualfied method name, such as package.class.method. Two parameters request(HttpServletRequest) and response(HttpServletResponse) passed to the method.<br>
+The method prototype is:<br>
+public static void methodName(HttpServletRequest request, HttpServletResponse response) throws Exception {<br>
+}<br>
+For example:<br>
+com.webbuilder.interact.DbExplorer.saveData<br><br>
+<p class="wb_h2">2. Examples</p>
+public static void myMethod(HttpServletRequest request, HttpServletResponse response) throws Exception {<br>
+String para = request.getParameter("para1");<br>
+request.setAttribute("name", object);//Set a object to the attributes, so other controls can access the object from HttpServletRequest.<br>
+//response.getWriter().print("result");<br>
+//response.flushBuffer();<br>
+WebUtil.response(response, "result");//Instead of this method<br>
+}<br>

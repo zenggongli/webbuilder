@@ -1,0 +1,48 @@
+<p class="wb_h1">Setup and Redistribution</p>
+<p class="wb_h2">1. WebBuilder Setup</p>
+WebBuilder provides install wizard to install WebBuilder on your server. Please follow these steps to install:<br>
+<p class="wb_h3">1.1 Step 1</p>
+Install JAVA web application server and prepare a database of any types, create a JNDI entry for the database connection, ensure the JNDI is available, WebBuilder will use the database.
+<p class="wb_h3">1.2 Step 2</p>
+Extract application folder wb from the webbuilder.zip file and copy to the web application server.<br>
+For example, if you use Tomcat, you should copy wb folder to webapps/wb.<br>
+<p class="wb_h3">1.3 Step 3</p>
+Open web browser and browse [http://ip:port/wb] to open the install wizard to complete the installation.<br>
+For example, browse http://localhost:8080/wb<br>
+<p class="wb_h3">1.4 Step 4</p>
+Login to the system with default administrator account.<br>
+The administrator's default username is admin, password is admin.<br>
+The portal's url is:<br>
+http://ip:port/wb<br>
+http://ip:port/wb/main<br>
+http://ip:port/wb/main?xwl=portal<br>
+they are equivalent.<br>
+<img src="webbuilder/docs/images/setup.gif"><br><br>
+<p class="wb_h2">2. Create Java Development Environment</p>
+<p class="wb_h3">2.1 Installing Java IDE</p>
+Download and install Java Development tools, such as Eclipse, IntelliJ IDEA.<br>
+<p class="wb_h3">2.2 Creating Application Project</p>
+Create web application project, and import WebBuilder to the project. When using Eclipse, you can import project files(in webbuilder.zip) to Eclipse workspace directly. When the project is running or debugging, you can browse [http://ip:port/wb/main] to access the system.<br>
+<p class="wb_h3">2.3 Team Development</p>
+WebBuilder support team development, each developer can maintain an independent local development environment.
+You can develop and debug in the local, and run in the remote. You can upload the latest Jar or other files to the remote web application servers by the remote WebBuilder [Management Tools]->[File Manager] module, the XWL modules are auto saved into the remote database, you can refresh the remote system by click [Tools]->[Refresh System] in the remote WebBuilder IDE module.<br>
+In team development mode, you must config WebBuilder <a href="javascript:openTopic('@Tutorials/var.txt','System Variables')">variable</a> serverId to unique in each web application server.<br>
+For example, you can config the WebBuilder variables in each server like the following:<br>
+remote serverA: serverId=2<br>
+remote serverB: serverId=3<br>
+developerA's local server: serverId=A<br>
+developerB's local server: serverId=B<br>
+developerC's local server: serverId=C<br>
+<img src="webbuilder/docs/images/rel.gif"><br><br>
+<p class="wb_h2">3. Application Redistribution</p>
+You can redistribute your application through the following method:<br>
+.Copy the web application folder to the destination server and copy default database data to the destination database.<br>
+.On the destination server, check the web application server's jndi configuration, ensure jndi of the default database is available.<br>
+.On the destination server, check the WebBuilder's default jndi setting in the file webbuilder/data/config.txt and search the key &quot;jndi&quot;, ensure the value of the key is the same as the web application server's destination jndi name.<br><br>
+<p class="wb_h2">4. Install FAQs</p>
+.System show exception &quot;jndi not found&quot; when click Install.<br>
+<img src="webbuilder/docs/images/jndie.gif"><br>
+This exception indicates that the jndi of the default database has not found.<br>
+<b>Solutions:</b><br>
+.Create a new jndi or config existing jndi of the default database, ensure the jndi is available.<br>
+.If necessary, restart the web application server.<br>

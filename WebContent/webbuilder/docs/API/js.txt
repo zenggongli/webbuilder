@@ -1,0 +1,790 @@
+<p class="wb_h1">WebBuilder JavaScript API</p>
+The WebBuilder JavaScript APIs are utilities for client side JavaScript programming. The APIs are defined in webbuilder/script/wb.js, you can modify this file to extend methods.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>Wb.check(Ext.tree.Panel treePanel, [Boolean checked], [Boolean expanded], [Boolean isAll], [function callback])</b><br>
+Check/uncheck the selected node and it's children of the tree.<br>
+<b>Parameters</b>:<br>
+.treePanel:<br>
+The tree to check.<br>
+.checked:<br>
+Indicates whether to check or uncheck the nodes.<br>
+.expanded:<br>
+Indicates whether to expand the checked nodes.<br>
+.isAll:<br>
+Indicates whether to check all node of the tree.<br>
+.callback:<br>
+Callback function after checking.<br>
+<hr>
+<b>Wb.choose(String message, function handler, [String/Ext.Element animateTarget])</b><br>
+Display a message box with Yes No Cancel buttons.<br>
+<b>Parameters</b>:<br>
+.message:<br>
+The text displayed in the box.<br>
+.handler:<br>
+The function to be executed when click the buttons.<br>
+.animateTarget:<br>
+Id or element from which the window should animate while opening.<br>
+<b>Examples</b>:<br>
+Wb.choose('Click a button.', function(btn){<br>
+&nbsp;switch(btn){<br>
+&nbsp;&nbsp;case 'yes': alert('yes');break;<br>
+&nbsp;&nbsp;case 'no': alert('no');break;<br>
+&nbsp;&nbsp;case 'cancel': alert('cancel');break;<br>
+&nbsp;}<br>
+});<br>
+<hr>
+<b>Wb.clearGrid(String/Ext.grid.Panel grid)</b><br>
+Clear grid rows and columns, to be a empty grid.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid id or Ext.grid.Panel object.<br>
+<hr>
+<b>Wb.closePrompt()</b><br>
+Close the window displayed by Wb.prompt method.<br>
+<hr>
+<b>Wb.commit(Ext.data.Store store)</b><br>
+Commit all dirty records of the store.<br>
+<b>Parameters</b>:<br>
+.store:<br>
+The Store object.<br>
+<hr>
+<b>Wb.confirm(String message, [function handler], [String/Ext.Element animateTarget])</b><br>
+Display a message box with OK Cancel buttons.<br>
+<b>Parameters</b>:<br>
+.message:<br>
+The text displayed in the box.<br>
+.handler:<br>
+The function to be executed when click OK button.<br>
+.animateTarget:<br>
+Id or element from which the window should animate while opening.<br>
+<b>Examples</b>:<br>
+Wb.confirm('Display a box?.', function(){<br>
+&nbsp;alert('You click OK.');<br>
+});<br>
+<hr>
+<b>Wb.confirm(Ext.grid.Panel grid, function handler, String key, [String action])</b><br>
+Display a message box with OK Cancel buttons for grid operating. The message is displayed in the pattern "Are you sure you want to {action} "{key}"?". If the grid records are not selected, it will show a warning box.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object.<br>
+.handler:<br>
+The function to be executed when click OK button.<br>
+.key:<br>
+The field name.<br>
+.action:<br>
+The operating action name, default "Delete".<br>
+<hr>
+<b>Wb.dateToStr(String/Date date, [Boolean hasTimePart])</b><br>
+Convert a Date object or standard date string to a localize date string.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+Date object or string. The string must use format "Y-m-d H:i:s[.u]"(eg: "2011-11-05 08:12:32.123").<br>
+.hasTimePart:<br>
+Indicates whether to show time part.<br>
+true: show time part only.<br>
+false: show date part only.<br>
+null: show date and time part.<br>
+});<br>
+<hr>
+<b>Wb.decode(String json, [Boolean safe]): Object</b><br>
+Alias of Ext.decode.<br>
+Decodes (parses) a JSON string to an object.<br>
+<hr>
+<b>Wb.delSelNode(Ext.tree.Panel tree): Object</b><br>
+Remove the selected node of the tree.<br>
+<b>Parameters</b>:<br>
+.tree:<br>
+Ext.tree.Panel object.<br>
+<hr>
+<b>Wb.dom(String id): Object</b><br>
+Alias of document.getElementById.<br>
+Retrieves the DOM object.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+DOM id.<br>
+<hr>
+<b>Wb.download(String url, [Object params], [Boolean isUpload])</b><br>
+Submit parameters to the server for downloading usage. For normal usage, please use Ajax.<br>
+<b>Parameters</b>:<br>
+.url:<br>
+The URL address.<br>
+.params:<br>
+An object containing properties which are used as parameters to submit to the server.<br>
+.isUpload:<br>
+Indicates whether to use the "multipart/form-data" encoding, default false.<br>
+When isUpload is true, you should use request.getAttribute(name) to get parameter value instead of request.getParameter.<br>
+<b>Examples</b>:<br>
+Wb.download('main?xwl=download',{a:123, b:'abc'});<br>
+<hr>
+<b>Wb.edit(Ext.grid.Panel grid, Ext.window.Window win, [String key], [Boolean isText])</b><br>
+Edit the selected record of grid to the window. The record values will map to the window's control base on field name.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The Grid object to be edited.<br>
+.win:<br>
+The Window object to be used to edit the selected record of grid. Control's id in the window should match the field name respectively.<br>
+.key:<br>
+A field name or any text displayed on the window title.<br>
+.isText:<br>
+Indicates whether the key parameter is text or a field name.<br>
+<b>Examples</b>:<br>
+Wb.edit(grid1, editWin);// To create a new record.<br>
+Wb.edit(grid1, editWin, 'USER_NAME');// To modify the selected record, USER_NAME field value will be displayed on the window title.<br>
+<hr>
+<b>Wb.ellipsis(String text, [Boolean isHtml])</b><br>
+Get a ellipsis string from text.<br>
+<b>Parameters</b>:<br>
+.text:<br>
+The string.<br>
+.isHtml:<br>
+Indicates whether to convert to HTML format. Default false.<br>
+<hr>
+<b>Wb.encode(Object object): String</b><br>
+Alias of Ext.encode.<br>
+Encodes an Object, Array or other value.<br>
+<hr>
+<b>Wb.error(String message, [function handler], [String/Ext.Element animateTarget])</b><br>
+Display a error message box.<br>
+<b>Parameters</b>:<br>
+.message:<br>
+The text displayed in the box.<br>
+.handler:<br>
+The function to be executed when click OK button.<br>
+.animateTarget:<br>
+Id or element from which the window should animate while opening.<br>
+<b>Examples</b>:<br>
+Wb.error('error message');<br>
+<hr>
+<b>Wb.except(String responseText, [function handler], [String/Ext.Element animateTarget])</b><br>
+Display a exception message box. Unlike Wb.error method, this method will extract exeception message from responseText.<br>
+<b>Parameters</b>:<br>
+.responseText:<br>
+The server response text.<br>
+.handler:<br>
+The function to be executed when click OK button.<br>
+.animateTarget:<br>
+Id or element from which the window should animate while opening.<br>
+<hr>
+<b>Wb.find(String/Object component)</b><br>
+Retrieves the component. If component is an object, the object is returned directly, If is a string, Ext.getCmp(component) is returned.<br>
+<b>Parameters</b>:<br>
+.component:<br>
+Object or id.<br>
+<b>Returns</b>:<br>
+The retrieved object.
+<hr>
+<b>Wb.focus(Ext.form.field.HtmlEditor editor, [function callback])</b><br>
+Focus a HTML editor.<br>
+<b>Parameters</b>:<br>
+.editor:<br>
+The HTML editor object.<br>
+.callback:<br>
+The function to be executed after focus operation.<br>
+<hr>
+<b>Wb.format(String string, String value1, String value2...): String</b><br>
+Alias of Ext.String.format.<br>
+<hr>
+<b>Wb.formatDate(String/Date value, [String format]): String</b><br>
+Alias of Ext.util.Format.date.<br>
+<hr>
+<b>Wb.formatNum(Number v, String format): String</b><br>
+Alias of Ext.util.Format.number.<br>
+<hr>
+<b>Wb.get(String id)</b><br>
+Alias of Ext.getCmp.<br>
+<hr>
+<b>Wb.getChart(Ext.chart.Chart chart)</b><br>
+Export SVG format file from the chart object.<br>
+<b>Parameters</b>:<br>
+.chart:<br>
+The chart object to be exported.<br>
+<b>Returns</b>:<br>
+The retrieved object.
+<hr>
+<b>Wb.getCookie(String name)</b><br>
+Retrieves cookies that are accessible by the current page. If a cookie does not exist, it returns null.<br>
+<b>Parameters</b>:<br>
+.name:<br>
+The name of the cookie.<br>
+<b>Returns</b>:<br>
+The cookie value.
+<hr>
+<b>Wb.getExcel(Ext.grid.Panel/String grid, [Boolean isAll], [Boolean preview])</b><br>
+Export excel file from the specified grid.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+Ext.grid.Panel object or id string.<br>
+.isAll:<br>
+Indicates whether to export all page or current page of the grid.<br>
+.preview:<br>
+Indicates whether to create preview HTML page for preview print usage.<br>
+<b>Returns</b>:<br>
+The download stream.
+<hr>
+<b>Wb.getForm(Object params, [Boolean isUpload]): DOM</b><br>
+Create a global Form DOM object with specified parameters.<br>
+<b>Parameters</b>:<br>
+.params:<br>
+Parameters object.<br>
+.isUpload:<br>
+Indicates whether to create form with encoding multipart/form-data.<br>
+<b>Returns</b>:<br>
+The Form DOM object.<br>
+<b>Examples</b>:<br>
+var form=Wb.getForm({a:'foo', b:123});<br>
+<hr>
+<b>Wb.getIcon(String url, [String title]): String</b><br>
+Create an icon HTML string from image URL. It can be used to Column renderer.<br>
+<b>Parameters</b>:<br>
+.url:<br>
+The image's src.<br>
+.title:<br>
+The image's title.<br>
+<b>Returns</b>:<br>
+The icon HTML string.<br>
+<b>Examples</b>:<br>
+var s=Wb.getIcon('webbuilder/images/new.gif','New Item');<br>
+<hr>
+<b>Wb.getIconCls(String cls, [String title]): String</b><br>
+Create an icon HTML string from CSS class. It can be used to Column renderer.<br>
+<b>Parameters</b>:<br>
+.cls:<br>
+The CSS class name.<br>
+.title:<br>
+The image's title.<br>
+<b>Returns</b>:<br>
+The icon HTML string.<br>
+<b>Examples</b>:<br>
+var s=Wb.getIconCls('new_icon','New Item');<br>
+<hr>
+<b>Wb.getId(): String</b><br>
+Get a unique string base on the client browser time. The string is unique only in the client, not global.<br>
+<b>Returns</b>:<br>
+The unique string.<br>
+<hr>
+<b>Wb.getIndex(Object object): Number</b><br>
+Get the first select index of the object. The object may be an Ext.grid.Panel or Ext.form.CheckboxGroup.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+Ext.grid.Panel or Ext.form.CheckboxGroup object.<br>
+<b>Returns</b>:<br>
+The index number (or -1 if it is not found).<br>
+<hr>
+<b>Wb.getNamePart(String string): String</b><br>
+Get the name part string before "=".<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The string to be parsed.<br>
+<b>Returns</b>:<br>
+The name string.<br>
+<b>Examples</b>:<br>
+var s=Wb.getNamePart("foo=bar");//s equals to "foo"<br>
+<hr>
+<b>Wb.getNode(HTMLElement node): Ext.data.NodeInterface</b><br>
+Retrieve an Ext.data.NodeInterface object from specified HTMLElement object<br>
+<b>Parameters</b>:<br>
+.node:<br>
+The HTMLElement object.<br>
+<b>Returns</b>:<br>
+The Ext.data.NodeInterface object, null if not found.<br>
+<hr>
+<b>Wb.getRows(Ext.grid.Panel grid, [Boolean isAll]): Array</b><br>
+Get records data array from specified grid.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object.<br>
+.isAll:<br>
+Indicates whether to get all records or selected records.<br>
+<b>Returns</b>:<br>
+Array data.<br>
+<hr>
+<b>Wb.getSelNode(Ext.tree.Panel tree, [Boolean returnRootNode]): Ext.data.NodeInterface</b><br>
+Get the first selected node from tree.<br>
+<b>Parameters</b>:<br>
+.tree:<br>
+The tree object.<br>
+.returnRootNode:<br>
+Indicates whether to return root node when any node is not selected.<br>
+<b>Returns</b>:<br>
+The first selected node.<br>
+<hr>
+<b>Wb.getSelRec(Ext.grid.Panel grid): Ext.data.Model[]</b><br>
+Returns an array of the currently selected records of the grid.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object.<br>
+<b>Returns</b>:<br>
+The selected records.<br>
+<hr>
+<b>Wb.getTree(HTMLElement node): Ext.tree.Panel</b><br>
+Retrieve an Ext.tree.Panel object from specified HTMLElement object's owner container.<br>
+<b>Parameters</b>:<br>
+.node:<br>
+The HTMLElement object.<br>
+<b>Returns</b>:<br>
+The Ext.tree.Panel object, null if not found.<br>
+<hr>
+<b>Wb.getVal(Object/String object): Object</b><br>
+Get value of the specified object.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+The object or id string.<br>
+<b>Returns</b>:<br>
+The value object.<br>
+<b>Examples</b>:<br>
+var value1=Wb.getValue(text1);<br>
+var value2=Wb.getValue('number1');<br>
+The value1 like 'abc', the value2 like 123.<br>
+<hr>
+<b>Wb.getValue(Object/Array/String objects, [Boolean notContainsChildren]): Object</b><br>
+Get values of the specified objects.<br>
+<b>Parameters</b>:<br>
+.objects:<br>
+Object, Objects Array or comma separated id string of Objects.<br>
+.notContainsChildren:<br>
+Indicates whether not to retrieve the children's value of the objects, default false.<br>
+<b>Returns</b>:<br>
+The values JSON object.<br>
+<b>Examples</b>:<br>
+var values=Wb.getValue([text1,number1,grid1]);<br>
+var values=Wb.getValue(text1);<br>
+var values=Wb.getValue('text1,number1,grid1');<br>
+The result like {text1:'abc',number1:123,grid1:'encodedRecordsData'}.<br>
+<hr>
+<b>Wb.getValuePart(String string): String</b><br>
+Get the value part string after "=".<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The string to be parsed.<br>
+<b>Returns</b>:<br>
+The value string.<br>
+<b>Examples</b>:<br>
+var s=Wb.getValuePart("foo=bar");//s equals to "bar"<br>
+<hr>
+<b>Wb.indexOf(Array/String list, Object item): Number</b><br>
+Get the index of the provided item in the given array.<br>
+<b>Parameters</b>:<br>
+.list:<br>
+The Array object or comma separated string list.<br>
+.item:<br>
+The item to look for.<br>
+<b>Returns</b>:<br>
+The index of item in the array (or -1 if it is not found).<br>
+<hr>
+<b>Wb.insert(Ext.grid.Panel grid, Object/Array/String objects, [Boolean/Number mode])</b><br>
+Insert a record to the grid, the record data are specified by objects.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object to accept new record.<br>
+.objects:<br>
+Object, Objects Array or comma separated id string of Objects, which's value(including children's values) will be inserted to the grid as a record. The record's fields names equal to the objects id respectively.<br>
+.mode:<br>
+true: insert the record before the selected record or at the begin if not selected.<br>
+false: insert the record at the end.<br>
+index number: insert the record at this index.<br>
+null: insert the record at the begin, default value.<br>
+<b>Examples</b>:<br>
+Wb.insert(grid1, window1);//Insert window1's sub-controls values to the grid1 as a record, the controls ids equal to the record's fields names.<br>
+<hr>
+<b>Wb.insertValue(Ext.grid.Panel grid, Object values, [Boolean/Number mode])</b><br>
+Insert a record to the grid, the record data are specified by value object.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object to accept new record.<br>
+.values:<br>
+JSON object value.<br>
+.mode:<br>
+true: insert the record before the selected record or at the begin if not selected.<br>
+false: insert the record at the end.<br>
+index number: insert the record at this index.<br>
+null: insert the record at the begin, default value.<br>
+<b>Examples</b>:<br>
+Wb.insert(grid1, {field1:'foo', field2:123, field3: new Date()});<br>
+<hr>
+<b>Wb.isEmpty(Object value, [Boolean allowEmptyString]): Boolean</b><br>
+Alias of Ext.isEmpty.<br>
+Returns true if the passed value is empty, false otherwise.<br>
+<hr>
+<b>Wb.isEmptyObj(Object object): Boolean</b><br>
+Returns true if the passed object has no member.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+The object to check.<br>
+<hr>
+<b>Wb.load(Ext.data.Store store, [Object params])</b><br>
+Load the first page of store.<br>
+<b>Parameters</b>:<br>
+.store:<br>
+The store to load.<br>
+.params:<br>
+Extra parameters object.<br>
+<b>Examples</b>:<br>
+Wb.load(store1, {field1:'foo', field2:123});<br>
+<hr>
+<b>Wb.loadPage(Ext.data.Store store, Number pageIndex, [Object params])</b><br>
+Loads the specified index page of store.<br>
+<b>Parameters</b>:<br>
+.store:<br>
+The store to load.<br>
+.pageIndex:<br>
+The index number.<br>
+.params:<br>
+Extra parameters object.<br>
+<hr>
+<b>Wb.lower(String value): String</b><br>
+Converts a string to all lower case letters.<br>
+<b>Parameters</b>:<br>
+.value:<br>
+The text to convert.<br>
+<b>Returns</b>:<br>
+The converted text.<br>
+<hr>
+<b>Wb.mask([String/Object object], [String message])</b><br>
+Puts a mask over this element to disable user interaction.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+The object or it's id to be covered with mask, null for cover all window.<br>
+.message:<br>
+A message to display in the mask.<br>
+<hr>
+<b>Wb.maxInt: Number</b><br>
+A maximize integer constant, compatible with Java, the value is 2147483647.<br>
+<hr>
+<b>Wb.message(String message, [function handler], [String/Ext.Element animateTarget])</b><br>
+Display a message box.<br>
+<b>Parameters</b>:<br>
+.message:<br>
+The text displayed in the box.<br>
+.handler:<br>
+The function to be executed when click OK button.<br>
+.animateTarget:<br>
+Id or element from which the window should animate while opening.<br>
+<b>Examples</b>:<br>
+Wb.message('message');<br>
+<hr>
+<b>Wb.open(String url, [String title], [String iconCls], [Object params], [String method])</b><br>
+Access the specified URL address, and open it to the portal or new window.<br>
+<b>Parameters</b>:<br>
+.url:<br>
+The URL address.<br>
+.title:<br>
+The tab text opened in the portal.<br>
+.iconCls:<br>
+The tab iconCls opened in the portal.<br>
+.params:<br>
+Parameters object to send to the server.<br>
+.method:<br>
+Submit method, such as GET, POST, DELETE, PUT, default POST.<br>
+<b>Examples</b>:<br>
+Wb.open('main?xwl=ide', 'IDE', 'module_icon');<br>
+Wb.open('http://www.putdb.com', 'Putdb.com', 'web_icon', {a: 'foo', b: 123}, 'GET');<br>
+<hr>
+<b>Wb.optString(String string): String</b><br>
+If string is empty/null/undefined, "" is returned, otherwise string self is returned. This method ensure the return value is a String object(not null, undefined).<br>
+<b>Parameters</b>:<br>
+.string:<br>
+String value.<br>
+<b>Returns</b>:<br>
+String value.<br>
+<hr>
+<b>Wb.pageSize: Number</b><br>
+Alias of Ext.data.Store.prototype.defaultPageSize.<br>
+The default page size.<br>
+<hr>
+<b>Wb.print(Object object)</b><br>
+Print object's text to the WebBuilder console. The print method has no effect out of IDE.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+The object, which's text will be printed to the WebBuilder console.<br>
+<b>Example</b>:<br>
+Wb.print(123); Wb.print('abc'); Wb.print(anyObject);<br>
+<b>Related functions</b>:<br>
+Wb.println(Object object)<br>
+<hr>
+<b>Wb.prompt(String title, Array config, function callback, [Boolean autoClose], [Number labelWidth])</b><br>
+Create a dialog window with specified configuration.<br>
+<b>Parameters</b>:<br>
+.title:<br>
+The dialog window title.<br>
+.config:<br>
+The dialog sub-controls config object array.<br>
+The config syntax is [{text:labelText, value:defaultValue, list:pickListArray, readOnly:readOnly, allowBlank:allowBlank, validator:function},{},...]<br>
+.callback:<br>
+A callback function when click "OK" button. A parameter with value list pass to this function.<br>
+.autoClose:<br>
+Indicates whether to close the window after click "OK", default true.<br>
+.labelWidth:<br>
+Label text width, default 105.<br>
+<b>Example</b>:<br>
+Wb.prompt('My Window',[{text:'Name',allowBlank:false},{text:'Sex',value:'MALE',list:['MALE','FEMALE']}],<br>
+function(list){alert('name:'+list[0]+',sex:'+list[1]);}<br>
+);<br>
+<b>See</b>:<br>
+Wb.closePrompt<br>
+<hr>
+<b>Wb.promptEditors</b><br>
+The editors array of the prompt window.<br>
+<hr>
+<b>Wb.promptValues</b><br>
+The values array of the prompt window.<br>
+<hr>
+<b>Wb.promptWindow</b><br>
+The prompt window object.<br>
+<hr>
+<b>Wb.refresh(Ext.tree.Panel tree, [String field], [function callback])</b><br>
+Refresh the tree.<br>
+<b>Parameters</b>:<br>
+.tree:<br>
+The tree object.<br>
+.field:<br>
+The field to construct the path which is used to save and restore the current path, default "text".<br>
+.callback:<br>
+A function to execute when the refresh finishes. The callback will be called with (bSuccess, oLastNode) where bSuccess is if the select was successful and oLastNode is the last node that was expanded.<br>
+<hr>
+<b>Wb.reload(Ext.data.Store store, [Object params])</b><br>
+Reloads the current page of the store.<br>
+<b>Parameters</b>:<br>
+.store:<br>
+The store to load.<br>
+.params:<br>
+Extra parameters object.<br>
+<hr>
+<b>Wb.reload(Ext.data.Store store, [Object params])</b><br>
+Reloads the current page of the store.<br>
+<b>Parameters</b>:<br>
+.store:<br>
+The store to load.<br>
+.params:<br>
+Extra parameters object.<br>
+<hr>
+<b>Wb.remove(Ext.grid.Panel grid, [Boolean isAll])</b><br>
+Remove the selected records from a grid.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object to remove records.<br>
+.isAll:<br>
+Indicates whether to remove all records or selected records, defalse false.<br>
+<hr>
+<b>Wb.request(Object options, [Object extraParams])</b><br>
+Sends an HTTP request to a remote server with auto exception processing. This method encapsulates Ext.Ajax.request.<br>
+<b>Parameters</b>:<br>
+.options:<br>
+see <a href="javascript:openTopic('@API/controls/Access/ajax.txt','Ajax')">Ajax Control</a> properties.<br>
+.extraParams:<br>
+Extra parameters.<br>
+<b>Examples</b>:<br>
+Wb.request({url:'main',params:{a:'foo', b:new Date()}, success:function(r){alert(r.responseText)}});<br>
+<hr>
+<b>Wb.reset(Object/Array/String objects)</b><br>
+Resets the specified objects values to the originally loaded values and clears any validation messages.<br>
+<b>Parameters</b>:<br>
+.objects:<br>
+Object, Objects Array or comma separated id string of Objects.<br>
+<b>Examples</b>:<br>
+Wb.reset(window);<br>
+<hr>
+<b>Wb.save(Ext.form.field.ComboBox combo, [Object value])</b><br>
+Save the value to the picklist of ComboBox object.<br>
+<b>Parameters</b>:<br>
+.combo:<br>
+Combobox object.<br>
+.value:<br>
+Object value to add to the picklist, default combo's value.<br>
+<hr>
+<b>Wb.selFirst(Ext.tree.Panel tree)</b><br>
+Select the first node of tree.<br>
+<b>Parameters</b>:<br>
+.tree:<br>
+The tree object to select.<br>
+<hr>
+<b>Wb.setCookie(String name, Object value)</b><br>
+Creates a cookie with the specified name and value for one month validity period.<br>
+<b>Parameters</b>:<br>
+.name:<br>
+The name of the cookie to set.<br>
+.value:<br>
+The value to set for the cookie.<br>
+<hr>
+<b>Wb.setIndex(Ext.form.RadioGroup/Ext.form.CheckboxGroup groupBox, Number index)</b><br>
+Check the item at specified index.<br>
+<b>Parameters</b>:<br>
+.groupBox:<br>
+Ext.form.RadioGroup/Ext.form.CheckboxGroup object.<br>
+.index:<br>
+The item index to check.<br>
+<hr>
+<b>Wb.setMenu(Ext.Element element, Ext.menu.Menu menu)</b><br>
+Bind a menu to an element for popup usage.<br>
+<b>Parameters</b>:<br>
+.element:<br>
+The element to bind the menu.<br>
+.menu:<br>
+The popup menu.<br>
+<hr>
+<b>Wb.setTitle(Ext.window.Window win, [String subTitle])</b><br>
+Set subTitle string as a sub-title to the window.<br>
+<b>Parameters</b>:<br>
+.win:<br>
+The Ext.window.Window object.<br>
+.title:<br>
+Sub-title string, null for no sub-title.<br>
+<hr>
+<b>Wb.setVal(Object/String object, Object value)</b><br>
+Set value to the specified object.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+The object or id string to set.<br>
+.value:<br>
+The setting value.<br>
+<b>Examples</b>:<br>
+Wb.setValue(text1, 'abc');<br>
+Wb.setValue(number1, 123);<br>
+<hr>
+<b>Wb.setValue(Object valuesObject)</b><br>
+Set controls' values specified by valuesObject. In each item of valuesObject, the name is control's name and the value is control's value.<br>
+<b>Parameters</b>:<br>
+.valuesObject:<br>
+The object to be set.<br>
+<b>Examples</b>:<br>
+Wb.setValue({text1:'abc', date1:'2001-11-22 13:14:15'});//Date string must in "Y-m-d H:i:s[.u]" format<br>
+Wb.setValue({text1:'abc', date1:new Date()});//Date object is still available.<br>
+<hr>
+<b>Wb.sort(Array array): Array</b><br>
+Sort the array in localization, and return it.<br>
+<b>Parameters</b>:<br>
+.array:<br>
+The Array object to sort.<br>
+<b>Returns</b>:<br>
+The sorted array.<br>
+<hr>
+<b>Wb.space: String</b><br>
+Two HTML space character, equals to "&nbsp;&nbsp;"<br>
+<hr>
+<b>Wb.strToDate(String string): Date</b><br>
+Convert a string to Date object, the string must in "Y-m-d H:i:s[.u]" format.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The String value to convert.<br>
+<b>Returns</b>:<br>
+The converted Date object.<br>
+<b>Examples</b>:<br>
+alert(Wb.strToDate('2010-01-02 03:11:12.123'));<br>
+<hr>
+<b>Wb.submit(String url, [Object params], [String target], [String method], [Boolean isUpload])</b><br>
+Submit a form with specified URL to the target.<br>
+<b>Parameters</b>:<br>
+.url:<br>
+The URL address.<br>
+.params:<br>
+Parameters object to send to the server.<br>
+.target:<br>
+The submit target, default '_blank'.<br>
+.method:<br>
+Submit method, such as GET, POST, DELETE, PUT, default POST.<br>
+.isUpload:<br>
+Indicates whether to use the "multipart/form-data" encoding, default false.<br>
+<b>Examples</b>:<br>
+Wb.submit('main?xwl=ide', {a:'foo', b:123});<br>
+<hr>
+<b>Wb.toHtml(String string, Boolean nbspAsEmpty): String</b><br>
+Convert a string to HTML format.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The String value to convert.<br>
+.nbspAsEmpty:<br>
+Indicates whether return "&nbsp;" when string is empty/null/undefined, otherwise return "", default false.<br>
+<b>Returns</b>:<br>
+The converted HTML string.<br>
+<hr>
+<b>Wb.toLocal(Date value): Date</b><br>
+Convert a server side Date value to local Date value.<br>
+<b>Parameters</b>:<br>
+.value:<br>
+The Date value to convert.<br>
+<b>Returns</b>:<br>
+The local Date value.<br>
+<hr>
+<b>Wb.toString(Date value): String</b><br>
+Get a string representing a Date value. Unlike Wb.dateToStr method, Wb.dateToStr method is used to display the date in local format, and Wb.toString method is used to get a string representing a date(Use Wb.strToDate method to convert string to date).<br>
+<b>Parameters</b>:<br>
+.value:<br>
+The Date to convert.<br>
+<b>Returns</b>:<br>
+A string representing a Date value.<br>
+<hr>
+<b>Wb.unmask(String/Object object)</b><br>
+Removes a previously applied mask from object.<br>
+<b>Parameters</b>:<br>
+.object:<br>
+The object or it's id.<br>
+<hr>
+<b>Wb.update(Ext.grid.Panel grid, Object/Array/String objects)</b><br>
+Update the selected record data of the grid with specified objects' values.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object to update record.<br>
+.objects:<br>
+Object, Objects Array or comma separated id string of Objects, which's value(including children's values) will be updated to the selected record. The record's fields names equal to the objects id respectively.<br>
+<b>Examples</b>:<br>
+Wb.update(grid1, window1);//Update window1's sub-controls values to the selected record of grid1, the controls ids equal to the record's fields names.<br>
+<hr>
+<b>Wb.updateRecord(Ext.data.Model record, Object values)</b><br>
+Update the specified record data with values object.<br>
+<b>Parameters</b>:<br>
+.record:<br>
+The record object to update.<br>
+.values:<br>
+JSON object values.<br>
+<b>Examples</b>:<br>
+Wb.update(store1.getAt(0), {field1:'foo', field2:123, field3: new Date()});<br>
+<hr>
+<b>Wb.updateValue(Ext.grid.Panel grid, Object values)</b><br>
+Update the selected record data of the grid with values object.<br>
+<b>Parameters</b>:<br>
+.grid:<br>
+The grid object to update record.<br>
+.values:<br>
+JSON object values.<br>
+<b>Examples</b>:<br>
+Wb.update(grid1, {field1:'foo', field2:123, field3: new Date()});<br>
+<hr>
+<b>Wb.upload(Ext.form.Panel/String form, [Object params])</b><br>
+Submit a form to the server for uploading file usage. For normal usage, please use Ajax. When use this method, you can use httpServletRequest.getAttribute method to get the submitted value in server side.<br>
+<b>Parameters</b>:<br>
+.form:<br>
+The Ext.form.Panel object or it's id.<br>
+.params:<br>
+An object containing properties which are used as parameters to submit to the server.<br>
+<b>Examples</b>:<br>
+Wb.upload(formPanel,{a:123, b:'abc'});<br>
+<hr>
+<b>Wb.upper(String value): String</b><br>
+Converts a string to all upper case letters.<br>
+<b>Parameters</b>:<br>
+.value:<br>
+The text to convert.<br>
+<b>Returns</b>:<br>
+The converted text.<br>
+<hr>
+<b>Wb.verify(Object/Array/String objects): Boolean</b><br>
+Verify the objects and their children's values, and focus the first control which has invalid value.<br>
+<b>Parameters</b>:<br>
+.objects:<br>
+Object, Objects Array or comma separated id string of Objects.<br>
+<b>Returns</b>:<br>
+If verify successfully, return true, otherwise return false.<br>
+<b>Examples</b>:<br>
+Wb.verify(window1).<br>
+<hr>
+<b>Wb.warning(String message, [function handler], [String/Ext.Element animateTarget])</b><br>
+Display a warning message box.<br>
+<b>Parameters</b>:<br>
+.message:<br>
+The text displayed in the box.<br>
+.handler:<br>
+The function to be executed when click OK button.<br>
+.animateTarget:<br>
+Id or element from which the window should animate while opening.<br>
+<b>Examples</b>:<br>
+Wb.warning('warning message');<br>

@@ -1,0 +1,41 @@
+<p class="wb_h1">Database Explorer</p>
+The Database Explorer module is used to access database. You can get and set table data or execute any SQL in the module.<br><br>
+<p class="wb_h2">1. Database List Config</p>
+In the database tree list, you can create or remove JNDI database connection. Please click [Edit]->[Append] menu to create a new JNDI connection, click [Edit]->[Remove] to remove an existing JNDI connection.<br><br>
+<p class="wb_h2">2. Maintaining Table</p>
+In the table tab, you can maintain tables, such as creating, updating, removing, exporting and importing.<br>
+The following table describes some operating buttons:<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="100"><b>Append</b></td><td width="500">Insert a new record to the table.</td></tr>
+<tr><td><b>Delete</b></td><td>Delete the selected records.</td></tr>
+<tr><td><b>Save</b></td><td>Save the modifications.</td></tr>
+<tr><td><b>Export</b></td><td>Export table to a JSON formated text file, the blob field will be encoded. The explorer support large data exporting.</td></tr>
+<tr><td><b>Import</b></td><td>Import JSON formated text file or Excel file to the table. Importing Large data is limited by the variable webbuilder.service.upload.maxSize.</td></tr>
+<tr><td><b>Properties</b></td><td>Display the table's properties.</td></tr>
+<tr><td><b>Expression</b></td><td>The filter expression, equals to the SQL clause after the keyword where.</td></tr>
+<tr><td><b>Filter</b></td><td>Filter the record by the expression immediately.</td></tr>
+<tr><td><b>Reset</b></td><td>Reset filter and display all records.</td></tr>
+</table><br>
+<p class="wb_h2">3. Executing SQL</p>
+In the SQL tab, you can execute all types' SQL, such as clause select, insert, create etc. If you want to execute SQL, please enter SQL to the editor and then click the Run SQL button or press Ctrl+Enter keys.<br><br>
+<p class="wb_h2">4. Access Store Procedures/Functions</p>
+The following example demonstrated how to access an Oracle store procedure, the procedure accept one parameter and output ResultSet parameter.<br>
+<p class="wb_h3">4.1 Create Cursor Type</p>
+CREATE OR REPLACE PACKAGE TYPES AS<br>
+TYPE X_CURSOR IS REF CURSOR;<br>
+END;<br>
+<p class="wb_h3">4.2 Create Procedure</p>
+CREATE OR REPLACE PROCEDURE USER_PROC<br>
+(<br>
+ P_USER OUT TYPES.X_CURSOR,<br>
+ P_NAME IN VARCHAR<br>
+)<br>
+AS<br>
+BEGIN<br>
+OPEN P_USER FOR SELECT * FROM WB_USER WHERE USER_NAME = P_NAME;<br>
+END USER_PROC;<br>
+<p class="wb_h3">4.3 Access Procedure</p>
+{call USER_PROC({?@-10.result?},'admin')}<br>
+The SQL syntax "{call proc}" means call a store procedure, "{?@name?}" means a output parameter, "-10" means parameter type oracle.jdbc.OracleTypes.CURSOR, "result" represents the output ResultSet name.<br><br>
+For more details see <a href="javascript:openTopic('@Tutorials/database.txt','Database Access')">Database Access->3. SQL Parameters</a><br>

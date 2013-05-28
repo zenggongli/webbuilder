@@ -1,0 +1,68 @@
+<p class="wb_h1">Client Side Programming</p>
+WebBuilder uses JAVASCRIPT to implement client side programming.<br><br>
+<p class="wb_h2">1. Using JAVASCRIPT</p>
+You can write JAVASCRIPT in any client control's properties/events. By convention, global functions/variables definitions are usually written in the module initialize event, while control's scripts are written in their properties or events.<br><br>
+<p class="wb_h3">1.1 Global Functions/Variables Definition</p>
+You can define global functions/variables in module initialize event or other any client control's script. System will auto create a global variable referenced to each control, thus you can access the control directly.<br>
+<b>Auto Created Control Variable:</b><br>
+For example: There is a panel in the document, you can access panel directly.<br>
+Such as alert(panel.id) instead of alert(Ext.getCmp('panelId').id);<br>
+If the control variable is not auto created, you should use method Ext.getCmp to retrieve the object.<br>
+<b>Define a global function:</b><br>
+window.functionName=function(para1, para2){...};<br>
+or Wd.functionName=function(para1, para2){...};<br>
+Wd is a short for window, they are equivalent.<br>
+<b>Define a global variable:</b><br>
+window.myVar = 'abc';<br>
+Wd.myVar = 123;<br>
+For example:<br>
+if(Wd.myVar) panel.setTitle(myVar);<br>
+else Wd.myVar = 'caption';<br>
+We do not recommend using the var to define global functions/variables, because the scope is uncertainty.<br><br>
+<p class="wb_h3">1.2 Client Script Control</p>
+You can write JAVASCRIPT, HTML and others scripts in Client Script controls. Client Script controls can be appended to any parents, such as panel, menu, window for advanced usage.<br>For more details see <a href="javascript:openTopic('@API/controls/General/clientscript.txt','Client Script')">Client Script</a>.<br><br>
+<p class="wb_h3">1.3 JAVASCRIPT Debugging</p>
+There are some ways to debug JAVASCRIPT:<br>
+1, Use the browser's debugger, such as Chrome Developer Tools, Firefox Firebug.<br>
+2, Use method Wb.print/Wb.println to print message to the WebBuilder IDE console.<br><br>
+<p class="wb_h2">2. Access Server</p><br>
+<p class="wb_h3">2.1. AJAX Requesting</p>
+WebBuilder encapsulates Ext JS AJAX operations, there are 4 ways to use AJAX:<br>
+<p class="wb_bold">2.1.1 <a href="javascript:openTopic('@API/controls/Access/ajax.txt','Ajax')">Ajax</a> Control</p>
+The Ajax control encapsulates WebBuilder Wb.request function to perform ajax requesting.<br>
+<p class="wb_bold">2.1.2 <a href="javascript:openTopic('@API/controls/Access/store.txt','Store')">Store</a> Control</p>
+The Store control encapsulates Ext JS Ext.data.Store and Ext.data.treeStore to perform data requesting.<br>
+<p class="wb_bold">2.1.3 WebBuilder JS API</p>
+Using Wb.request function to perform AJAX operation, Wb.request function encapsulates Ext.Ajax.request function.<br>
+function prototype:<br>
+Wb.request=function(config, extraParams);<br>
+For example:<br>
+Wb.request({url:'main?xwl=query',params:{param1:123,param2:'abc'}});<br>
+<p class="wb_bold">2.1.4 Ext JS API</p>
+You can use Ext.Ajax, Ext.data.Store, Ext.data.treeStore etc to perform requesting operation.<br><br>
+<p class="wb_h3">2.2 Get and Post Methods</p>
+General get and post methods are still available to access server. First create a form DOM, and then submit the form with get or post methods.<br><br>
+<p class="wb_h3">2.3 Upload to Server</p>
+Normal AJAX operation cannot perform file upload operation, WebBuilder provide API to perform this operation, following are steps:<br>
+.Append a <a href="javascript:openTopic('@API/controls/General/form.txt','Form')">Form</a> control to the module, and set url property to destination url.<br>
+.Append a <a href="javascript:openTopic('@API/controls/General/text.txt','Text')">Text</a> control to the Form, and set inputType property to file.<br>
+.Set form events, such as success or failure.<br>
+.Call Wb.upload(form) to perform uploading.<br>
+function prototype of Wb.upload:<br>
+Wb.upload = function(form, extraParams).<br>
+Form is a form control, not the form DOM, extraParams is parameters object.<br>
+For example:<br>
+Wb.upload(myForm,{para1:123,para2:'abc'}).<br>
+If server response text, the response text must in style {success:true,value:responseValue}, success indicates whether the operation is successful, value is the response text send to the browser, you can monitor the form success event to get the value.<br>If server response a downloading stream, you should set form's showMask property to false explicitly, because success and failure events cannot be invoked in this mode.<br><br>
+<p class="wb_h3">2.4 Get Uploaded Values</p>
+When use "multipart/form-data" mode to post values, including file or text value, the system will auto parse the uploaded values, and store them to HttpServletRequest attribute. The file data will be converted to InputStream and others will be converted to String. You can use request.getAttribute method to get values instead of request.getParameter method.<br>
+For example:<br>
+InputStream stream = (InputStream) request.getAttribute("fileFieldName");<br>
+String text = (String) request.getAttribute("textFieldName");<br><br>
+<p class="wb_h3">2.5 Download from Server</p>
+Normal AJAX operations cannot perform download operation, you can use function Wb.download to perform this operation.
+function prototype of Wb.download:<br>
+Wb.download = function(url, params, isUpload).<br>
+Url is the destination url, params is a parameters object, isUpload indicates whether the operation use multipart/form-data enctype. If the data to be submitted is large, isUpload should be set to true.<br>
+For example:<br>
+Wb.download('main?xwl=upload',{para1:123,para2:'abc'}).<br>

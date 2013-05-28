@@ -1,0 +1,53 @@
+<p class="wb_h1">Getting Started</p>
+<p class="wb_h2">1. What is WebBuilder</p>
+<p>WebBuilder is a powerful rapid application development tool for creating amazing web applications.</p>
+.Browser based integrated development environment.<br>
+.Develop application easily and quickly.<br>
+.High performance and high stability.<br>
+.Cross Browser, database and operating system.<br>
+.Server side script support.<br>
+.Smart database access.<br>
+<img src="webbuilder/images/site/ide.gif">
+<br>
+<p class="wb_h2">2. Requirements</p>
+<p class="wb_h3">2.1 Operating System</p>
+<p>WebBuilder supports any Server Operating System:</p>
+.Linux<br>
+.Unix<br>
+.Windows<br>
+.Mac<br>
+<p class="wb_h3">2.2 Web Server</p>
+<p>WebBuilder supports all standard JAVA based Web Servers:</p>
+.Apache Tomcat<br>
+.Resin<br>
+.WebLogic<br>
+.WebSphere<br>
+.Other standard JAVA based Web Servers<br>
+<p class="wb_h3">2.3 Database</p>
+<p>WebBuilder supports any jdbc drived databases:</p>
+.cloudscape<br>
+.db2<br>
+.derby<br>
+.firebird<br>
+.h2<br>
+.hsqldb<br>
+.informix<br>
+.mysql<br>
+.oracle<br>
+.pointbase<br>
+.postgresql<br>
+.sapdb<br>
+.solid<br>
+.sqlserver<br>
+.sybase<br>
+.teradata<br>
+.Other jdbc drived databases<br>
+<p class="wb_h3">2.4 Web Browser</p>
+<p>WebBuilder supports all major web browsers, from Internet Explorer 6 to the latest version of Google Chrome. During development, however, we recommend that you choose one of the following browsers for the best debugging experience:</p>
+.<a href="http://www.google.com/chrome/" target="_blank">Google Chrome</a> 10+<br>
+.<a href="http://www.apple.com/safari/download/" target="_blank">Apple Safari</a> 5+<br>
+.<a href="http://www.mozilla.com/en-US/firefox/fx/" target="_blank">Mozilla Firefox</a> 4+ with the <a href="http://getfirebug.com/" target="_blank">Firebug</a> Web Development Plugin<br>
+<p>This tutorial assumes you are using the latest version of Google Chrome. If you don't already have Chrome take a moment to install it, and familiarize yourself with the <a href="http://code.google.com/chrome/devtools/docs/overview.html" target="_blank">Chrome Developer Tools</a>.</p>
+<br>
+<p class="wb_h2">3. Concerned Knowledge</p>
+You should learn more about the knowledge of <a href="http://docs.oracle.com/javaee" target="_blank">JAVA</a>, <a href="https://developer.mozilla.org/en/JavaScript" target="_blank">JavaScript</a>/<a href="http://docs.sencha.com/extjs/4.1.0" target="_blank">ExtJS</a>, <a href="http://www.w3schools.com/html" target="_blank">HTML</a> and other relative technology.<br>

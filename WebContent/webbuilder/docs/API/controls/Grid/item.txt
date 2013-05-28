@@ -1,0 +1,7 @@
+<p class="wb_h1">Action Item</p>
+An item of Action Column.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.grid.column.Action</p>

@@ -1,0 +1,24 @@
+<p class="wb_h1">SysUtil - com.webbuilder.utils.SysUtil</p>
+The SysUtil provide some system functions.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static void error(String msg) </b><br>
+Throw exception with message msg. This method is used to throw exception in server script without line-number message.<br>
+<b>Parameters</b>:<br>
+.msg:<br>
+The message of exception.<br>
+<hr>
+<b>public static String getId()</b><br>
+Get a 12 characters length unique string in the server. In clustered mode, different server may generate the same id, in this case, you must set different <a href="javascript:openTopic('@Tutorials/var.txt','System Variables')">Var</a>.server.id in every server.<br>
+<b>Returns</b>:<br>
+The unique id in the server.<br>
+<b>See</b>:<br>
+To get a global unique string, please use method UUID.randomUUID().<br>
+<hr>
+<b>public static int isToOs(InputStream is, OutputStream os)</b><br>
+Read InputStream data and write to OuputStream object directly with 8KB buffer.<br>
+<b>Parameters</b>:<br>
+.is:<br>
+InputStream object to be read.<br>
+.os:<br>
+OuputStream object to be written.<br>

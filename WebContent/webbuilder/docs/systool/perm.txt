@@ -1,0 +1,10 @@
+<p class="wb_h1">Permissions Config</p>
+The Permissions Config module is used to bind roles to modules, only users with specified roles have permission to access these modules. Configured modules are displayed in bold font, hidden modules are displayed in blue font, they can be mixed.<br><br>
+<p class="wb_h2">1. Role Setting</p>
+You can bind roles to modules or folders. If folders' roles are binded, all the descendants of the folder inherit the same setting. If any descendant is binded to the new role setting, ancestor's settings are ignored. The descendants always inherit the nearest ancestor's setting.<br>
+For example:<br>
+If [Management Tools] folder binds with admin role, all descendants can be accessed by administrator user accounts which has &quot;admin&quot; role.<br>
+If [User Account] folder binds with guest role, [Management Tools] setting is ignored, all descendants of [User Account] can be accessed by guest user accounts which has &quot;guest&quot; role.<br><br>
+<p class="wb_h2">2. Reserved Roles</p>
+The role &quot;admin&quot; represents administrators, if a module binds with admin role, the module can be accessed only by administrator(who have the admin role).<br>
+The role &quot;default&quot; represents empty setting, if a module binds with default role, the module can be accessed by everyone.<br><br>

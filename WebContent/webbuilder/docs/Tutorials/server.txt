@@ -1,0 +1,53 @@
+<p class="wb_h1">Server Side Programming</p>
+There are two ways to implement server side programming, JAVA and Server Script(Rhino, JavaScript for Java).<br><br>
+<p class="wb_h2">1. JAVA Programming</p>
+You can write JAVA code in traditional ways, WebBuilder provides method control to access java code.<br>
+<p class="wb_h3">1.1 Invoke JAVA Method</p>
+To invoke java method, please append [Server]->[method] control to the module, and set method qualified name.<br>
+WebBuilder passes two parameters request(HttpServletRequest) and response(HttpServletResponse) to the method control.<br>
+For example:<br>
+You can set method control methodName property to com.webbuilder.interact.DbExplorer.importData.<br>
+JAVA code of the importData method is:<br><br>
+<div style='background-color:#EEE'>
+public static void importData(HttpServletRequest request,<br>
+&nbsp;&nbsp;HttpServletResponse response) throws Exception {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String filename = (String) request.getAttribute("uploadFile__name");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if (FileUtil.extractFileExt(filename).equalsIgnoreCase("xls"))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;importExcel(request, response);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;importTxt(request, response);<br>
+&nbsp;&nbsp;}<br>
+</div>
+<p class="wb_h3">1.2 JAVA Debugging</p>
+You can use Java Development tools like Eclipse, IntelliJ IDEA to develop and debug JAVA code.<br><br>
+<p class="wb_h2">2. Server Script Programming</p>
+<p class="wb_h3">2.1 Using Server Script</p>
+Server Script represents Rhino - an open-source implementation of JavaScript written entirely in Java. To use Server Script, please append [Server]->[Server Script] control to the module, and write script in script property.<br>
+WebBuilder passes two parameter request(HttpServletRequest) and response(HttpServletResponse) and one global variable Wb to the script control, Wb provides some useful functions, Wb is defined in webbuilder/script/server.js.<br>
+For example:<br>
+var file = new File('c:/file.txt');<br>
+<p class="wb_h3">2.2 Import Packages and Classes</p>
+In JAVA programming, there is a keyword import for importing JAVA classes. In Server Script programming there are two keywords that serve the same purpose, one is importPackage, the other is importClass. Use importPackage to import all the classes of the package, and use importClass to import a class.<br>
+For example:<br>
+importPackage(java.lang);<br>
+Above code will import all classes of java.lang package to the script.<br>
+importClass(com.webbuilder.tool.Encrypter);<br>
+Above code will import the Encrypter class to the script.<br>
+<p class="wb_h3">2.3 Invoke JAVA Function</p>
+You can invoke JAVA functions in script directly.<br>
+For example:<br>
+.Invoke a general method: request.setAttribute('foo','bar');<br>
+.Invoke a array parameter method: java.lang.String.format('%1$,09d',[new Integer(-1234)]);<br>
+.Invoke a keyword name method: myClass['new'](), new is a keyword, cannot be called in myClass.new() style;<br>
+If the JAVA class name equals to Server Script class name, you must qualify java class name.<br>
+For example:<br>
+var jsDate = new Date(), javaDate = new java.util.Date();<br>
+jsDate is a JAVASCRIPT date object, javaDate is a JAVA date object.<br>
+<p class="wb_h3">2.4 Server Script Debugging</p>
+There are some ways to debug Server Script:<br>
+1, Use method Wb.print/Wb.println to print message to the WebBuilder IDE console.<br>
+2, Use method print/println to print message to the system console.<br>
+3, Third party plugins, such as Rhino Shell.<br><br>
+<p class="wb_h2">3. Request and Response</p>
+Many functions pass parameters HttpServletRequest and HttpServletResponse to perform web application interactive operation. We use method response.getWriter().print to output text and use response.getOutputStream().write to output stream.
+In WebBuilder, you can use API WebUtil.response to perform these operation, the APIs do Gzip compression and output immediately. We recommend you to use the API WebUtil.response to perform outputting.<br>

@@ -1,0 +1,13 @@
+<p class="wb_h1">Response</p>
+Response control represents a function that output text to HttpServletResponse object immediately.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>object</b><br>
+An object name, which's text value will be outputted to HttpServletResponse object.<br>
+<hr>
+<b>text</b><br>
+if object property is empty, this text will be outputted to HttpServletResponse object.<br>
+<hr>
+<b>uploadResponse</b><br>
+Indicates whether to output text for uploading(not Ajax), the uploadResponse text uses style in "{success:true,value:text}".
+When response for uploading, you should set this property to true. Default auto.<br>

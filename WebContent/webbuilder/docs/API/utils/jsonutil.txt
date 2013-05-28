@@ -1,0 +1,70 @@
+<p class="wb_h1">JsonUtil - com.webbuilder.utils.JsonUtil</p>
+The JsonUtil is used to process JSON object/array.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static Object opt(JSONArray ja, int index)</b><br>
+Get a object from JSONArray, if object does not exist, null is returned. Unlike the get method, get will throw an exception when the object does not exist.<br>
+<b>Parameters</b>:<br>
+.ja:<br>
+JSONArray object to be get.<br>
+.jndex:<br>
+The array index number to get at.<br>
+<b>Returns</b>:<br>
+The Object object.
+<hr>
+<b>public static Object opt(JSONObject jo, String key)</b><br>
+Get a object from JSONObject, if object does not exist, null is returned. Unlike the get method, get will throw an exception when the object does not exist.<br>
+<b>Parameters</b>:<br>
+.jo:<br>
+JSONObject object to be get.<br>
+.key:<br>
+The key name of the JSONObject.<br>
+<b>Returns</b>:<br>
+The Object object.
+<hr>
+<b>public static String optString(JSONArray ja, int index)</b><br>
+Get a string from JSONArray, if the value does not exist, empty string &quot;&quot; is returned. Unlike the getString method, getString will throw an exception when the object does not exist.<br>
+<b>Parameters</b>:<br>
+.ja:<br>
+JSONArray object to be get.<br>
+.jndex:<br>
+The array index number to get at.<br>
+<b>Returns</b>:<br>
+If the value is null or does not exist, return &quot;&quot;, otherwise return the String value.<br>
+<hr>
+<b>public static String optString(JSONObject jo, String key)</b><br>
+Get a string from JSONObject, if the value does not exist, empty string &quot;&quot; is returned. Unlike the get method, get will throw an exception when the object does not exist.<br>
+<b>Parameters</b>:<br>
+.jo:<br>
+JSONObject object to be get.<br>
+.key:<br>
+The key name of the JSONObject.<br>
+<b>Returns</b>:<br>
+If the value is null or does not exist, return &quot;&quot;, otherwise return the String value.<br>
+<b>Example</b>:<br>
+Processing JSON object {a:123,b:null}.<br>
+JsonUtil.optString(jo, &quot;b&quot;);, the result equals to &quot;&quot;.<br>
+The above code equals to:<br>
+if (jo.isNull(key)) return &quot;&quot;;<br>
+else return jo.optString(key);<br>
+Comparing of the following codes:<br>
+jo.optString(&quot;b&quot;), the result is null.<br>
+JsonUtil.optString(jo, &quot;b&quot;), the result is &quot;&quot;.<br>
+jo.getString(&quot;c&quot;), the function will occur exception because &quot;c&quot; does not exist.<br>
+JsonUtil.optString(jo, &quot;c&quot;), the result is &quot;&quot;.<br>
+<hr>
+<b>public static JSONArray readArray(File file)</b><br>
+Get a JSONArray object from a text file.<br>
+<b>Parameters</b>:<br>
+.file:<br>
+The file to be read.<br>
+<b>Returns</b>:<br>
+The JSONArray object.
+<hr>
+<b>public static JSONObject readObject(File file)</b><br>
+Get a JSONObject object from a text file.<br>
+<b>Parameters</b>:<br>
+.file:<br>
+The file to be read.<br>
+<b>Returns</b>:<br>
+The JSONObject object.

@@ -1,0 +1,14 @@
+<p class="wb_h1">Menu Item</p>
+Menu Item encapsulates many controls into one, such as Ext.menu.Item, Ext.button.Split, Ext.menu.DatePicker etc. Menu Item can be appended to Toolbar or Menu control, many controls can be added to Menu Item control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>module</b><br>
+When the current user has no permission to access the specified module, the Menu Item will be hidden.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs</p>

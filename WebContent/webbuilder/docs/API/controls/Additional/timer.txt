@@ -1,0 +1,16 @@
+<p class="wb_h1">Timer</p>
+Timer encapsulate setTimeout and setInterval function to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>interval</b><br>
+The interval in milliseconds to be used for firing onInterval event.<br>
+<hr>
+<b>timeout</b><br>
+The timeout in milliseconds to be used for firing onTimeout event.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>onInterval</b><br>
+Fire in each interval.<br>
+<hr>
+<b>onInterval</b><br>
+Fire after timeout.<br><br>

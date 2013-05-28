@@ -1,0 +1,6 @@
+[
+{text:'Java EE',icon:'help_icon',link:'http://docs.oracle.com/javaee'},
+{text:'Rhino Documentation (Server Script)',icon:'help_icon',link:'http://www.mozilla.org/rhino/doc.html'},
+{text:'JavaScript',icon:'help_icon',link:'https://developer.mozilla.org/en/JavaScript'},
+{text:'Ext JS 4.1',icon:'help_icon',link:'http://docs.sencha.com/extjs/4.1.0'}
+]

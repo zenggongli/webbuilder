@@ -1,0 +1,5 @@
+<p class="wb_h1">Variables Config</p>
+The Variables Config module is used to config variables, you can create new variables or modify existing variables' values.<br><br>
+<p class="wb_h2">Variable Editing</p>
+You can click the Append Object button to create a new variable, click the Append Folder button to create a new variable path, and click the Edit button to modify the selected variable's value.<br>
+If you want to create server independent variables, please create variables in server folder, the variables are stored in the server file. Any other variables outside server folder are stored in the database, these variables can be shared in clustered server mode.<br>

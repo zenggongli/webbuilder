@@ -1,0 +1,18 @@
+<p class="wb_h1">Script Editor</p>
+The script editor contains many different editors such as JavaScript editor, ServerScript editor, SQL editor or HTML/CSS editor etc. To open the script editor, double-click the property value or click the ellipsis mark in the value column of the Properties/Events editor.<br><br>
+<img src="webbuilder/docs/images/se.gif"><br><br>
+In the tab button of the script editor, there is an icon indicating the type of the editor, such as JS(JavaScript),SS(ServerScript),SQL etc. If the script editor is a JavaScript or ServerScript editor, the function's parameters will be displayed at the bottom of the script editor. In these types of editors, there is a verify button to verify script at the bottom-left corner of the script editor.<br><br>
+<p class="wb_h2">Shortcuts for the Editor</p>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="100"><b>Ctrl+F</b></td><td width="300">Clear the previous searching and start a new searching</td></tr>
+<tr><td><b>Ctrl+G</b></td><td>Find next</td></tr>
+<tr><td><b>Ctrl+Shift+G</b></td><td>Find previous</td></tr>
+<tr><td><b>Ctrl+Shift+F</b></td><td>Replace</td></tr>
+<tr><td><b>Ctrl+Shift+R</b></td><td>Replace all</td></tr>
+<tr><td><b>Ctrl+D</b></td><td>Clear the current row</td></tr>
+</table>
+After searching the text, the editor will highlight the searched key words. To clear the previous searching, please press Ctrl+F again, and click any place of the editor.<br>
+If you want to search text with regular expression, please use /exp/ syntax.<br>
+For example, search whole word &quot;print&quot;:<br>
+Press Ctrl+F keys, input &quot;/\bprint\b/&quot; into the Search edit box, and then press Enter key.

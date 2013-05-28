@@ -1,0 +1,96 @@
+<p class="wb_h1">Module</p>
+Module is used to describe the general informations and define behaviors of the application, each module has a root node module. If module create client-side script for the browser, some properties and events of the browser are encapsulated in the module, you can define the client-script in the module.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>class</b><br>
+Client-side browser's Body class attribute.<br>
+<hr>
+<b>createBody</b><br>
+Indicates whether to create HTML/JAVASCRIPT framework for the browser, default true, set to false to create a blank document.<br>
+<hr>
+<b>cssFiles</b><br>
+String/Array object, to add CSS links to the header.<br>
+<hr>
+<b>description</b><br>
+Any note message.<br>
+<hr>
+<b>finalMethod</b><br>
+A JAVA qualified method name to be executed finally in server-side.<br>
+<div style="background-color:#EEE">
+The method prototype:<br>
+public static void method(HttpServletRequest request, HttpServletResponse response) throws Exception {<br>
+}</div>
+For example: com.class.method.<br>
+<hr>
+<b>finalModules</b><br>
+String/Array object, to be used to import another modules finally in the same context.<br>
+<hr>
+<b>finalScript</b><br>
+Sever Script to be executed finally in server-side. finalScript is executed before finalMethod.<br>
+<hr>
+<b>head</b><br>
+Client-side browser's head definition.<br>
+<hr>
+<b>id</b><br>
+The module's id.<br>
+<hr>
+<b>initMethod</b><br>
+A JAVA qualified method name to be executed initially in server-side.<br>
+<hr>
+<b>initModules</b><br>
+String/Array object, to be used to import another modules initially in the same context.<br>
+<hr>
+<b>initScript</b><br>
+Sever Script to be executed initially in server-side. initScript is executed after initMethod.<br>
+<hr>
+<b>jsFiles</b><br>
+String/Array object, to add JS links to the header.<br>
+<hr>
+<b>loadLib</b><br>
+Indicates whether to add WebBuilder JS and CSS files link to the created HTML/JAVASCRIPT framework.<br>
+<hr>
+<b>loginRequired</b><br>
+Indicates whether the module can not be accessed by anonymous user, if loginRequired is false then everyone can access the module, default true.<br>
+<hr>
+<b>logMessage</b><br>
+The message to be logged when user access the module.<br>
+<hr>
+<b>logType</b><br>
+The log behavior.<br>
+access: Log module's name when user access the module.<br>
+exception: Log exception message when the module throw exception.<br>
+all: Both access and exception type.<br>
+default none.<br>
+<hr>
+<b>method</b><br>
+Service type, if requesting method does not equal to this value, the requesting will be ignored.<br>
+For example: If browser send a get requesting, and the method is set to post, then the requesting will be ignored.<br>
+<hr>
+<b>style</b><br>
+Client-side browser's Body style attribute.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the Body tag properties directly.<br>
+<hr>
+<b>title</b><br>
+Client-side browser's window title.<br>
+<hr>
+<b>tokens</b><br>
+The comma separated available tokens string. User can access this module with token directly. The token parameter name is "_token".<br>
+For example:<br>
+tokens: "123abc, xh2118", means the module can accept two tokens "123abc" and "xh2118".<br>
+When user access this module with token in URL 'http://www.site.com/main?xwl=moduleId&_token=123abc, then user has permission to access this module without login.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>beforeunload</b><br>
+Client-side browser's beforeunload event.<br>
+<hr>
+<b>finalize</b><br>
+The client-side JavaScript which will be executed lastly.<br>
+<hr>
+<b>initialize</b><br>
+The client-side JavaScript which will be executed firstly. All global varaibles/functions can be defined here.<br>
+For example: Wd.myVar='abc'; Wd.myFunction=function(){};<br>
+<hr>
+<b>resize</b><br>
+Client-side browser's resize event.<br>

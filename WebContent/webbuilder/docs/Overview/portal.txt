@@ -1,0 +1,20 @@
+<p class="wb_h1">Application Portal</p>
+<p>WebBuilder has a default application portal which list all available modules that the current user has permissions to access. The modules are opened in tabs, double-clicking the tab will open the module in a new window. On the Home Page tab, you can drag and drop modules to the tab. The portal module is defined in [System Module]->[Portal]->[Index], and it can be customized for advanced usage.</p><br>
+<img src="webbuilder/docs/images/portal.gif"><br><br>
+<p class="wb_h2">Portal Toolbar</p>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="180"><b>The Title</b></td><td width="500">The title of application.</td></tr>
+<tr><td><b>User Name</b></td><td>Current user's display name, click to edit the account.</td></tr>
+<tr><td><b>Back</b></td><td>Back to the previous opened tab.</td></tr>
+<tr><td><b>Forward</b></td><td>Forward to the next opened tab.</td></tr>
+<tr><td><b>Close All</b></td><td>Close all tabs except Home Page tab.</td></tr>
+<tr><td><b>Close Others</b></td><td>Close all tabs except current tab and Home Page tab.</td></tr>
+<tr><td><b>Toggle Application List</b></td><td>Toggle display the module list tree view.</td></tr>
+<tr><td><b>Home Page</b></td><td>Turn to the Home Page tab.</td></tr>
+<tr><td><b>Save Desktop</b></td><td>Save the work space of the portal.</td></tr>
+<tr><td><b>Refresh Current Page</b></td><td>Refresh the current module in the tab.</td></tr>
+<tr><td><b>Refresh Application List</b></td><td>Refresh tree view of the module list.</td></tr>
+<tr><td><b>Logout</b></td><td>Quit login and return to the main page.</td></tr>
+</table>
+

@@ -1,0 +1,11 @@
+<p class="wb_h1">Key Map</p>
+Handles mapping key events to handling functions for an element or a Component. 
+WebBuilder encapsulate Ext.util.KeyMap to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br>
+<hr>
+<b>target</b><br>
+The object on which to listen for the event, default window.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.util.KeyMap</p>

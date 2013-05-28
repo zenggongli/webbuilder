@@ -1,0 +1,9 @@
+<p class="wb_h1">Object TreeView</p>
+Object TreeView displays a tree diagram of the visual and nonvisual controls of the module. Object TreeView displays the components's logical relationships, such as sibling, parent-child (such as a form to a check box).<br><br>
+<p class="wb_h2">1. Dragging and Dropping</p>
+You can create relationships by dragging and dropping one control to another, if they have the possibility of a relationship. Or you can drag and drop to change the parental relationships between components.<br><br>
+<p class="wb_h2">2. Append Controls</p>
+You can drag the control to the Object TreeView from Control List, or double click the control in the Control List for quick appending.<br><br>
+<p class="wb_h2">3. Sequence Parsing</p>
+WebBuilder will parse controls in sequence by controls relations.<br>
+For example, you can drag query control and drop it before a Combobox control, so that the query will be processed before the Combobox control.<br>

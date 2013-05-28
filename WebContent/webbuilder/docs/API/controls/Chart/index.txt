@@ -1,0 +1,5 @@
+[
+{text:'Chart',file:'chart.txt',icon:'chart_icon'},
+{text:'Axis',file:'axis.txt',icon:'axis_icon'},
+{text:'Series',file:'series.txt',icon:'series_icon'}
+]

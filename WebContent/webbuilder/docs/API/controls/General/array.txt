@@ -1,0 +1,2 @@
+<p class="wb_h1">Array</p>
+An simple array object, it is used to populate a set of objects. Many controls can be appended to the array to create an object list, such as Column list, Button list etc.<br>

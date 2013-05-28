@@ -1,0 +1,87 @@
+<p class="wb_h1">Resource - com.webbuilder.common.Resource</p>
+The Resource is used to access the application's big data. The data are stored in the WB_RESOURCE table.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static String get(String id)</b><br>
+Get string from resource.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique resource id.<br>
+<b>Returns</b>:<br>
+The specified string.<br> 
+<b>Example</b>:<br>
+String tree = Resource.get("wb.dbe.tree")<br>
+<hr>
+<b>public static String get(HttpServletRequest request, String id)</b><br>
+Get current user's string from resource.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related user. The function get user information from the request session.<br>
+.id:<br>
+Unique resource id.<br>
+<b>Returns</b>:<br>
+The specified string.<br> 
+<b>Example</b>:<br>
+String data = Resource.get(request, "myApp.userPortalData");<br>
+<hr>
+<b>public static byte[] get(String id)</b><br>
+Get bytes from resource.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique resource id.<br>
+<b>Returns</b>:<br>
+The specified bytes.<br> 
+<hr>
+<b>public static byte[] get(HttpServletRequest request, String id)</b><br>
+Get current user's bytes from resource.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related user. The function get user information from the request session.<br>
+.id:<br>
+Unique resource id.<br>
+<b>Returns</b>:<br>
+The specified bytes.<br> 
+<hr>
+<b>public static void remove(String id)</b><br>
+Remove the resource specified by id.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique value id.<br>
+<hr>
+<b>public static void set(String id, String data)</b><br>
+Set string data to the resource table, if the value is exists, it will be overwritten.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique resource id.<br>
+.data:<br>
+The value to be set.<br>
+<b>Example</b>:<br>
+Resource.set("wb.dbe.tree", treeData)<br>
+<hr>
+<b>public static void set(HttpServletRequest request, String id, String data)</b><br>
+Set current user's string data to the resource table, if the value is exists, it will be overwritten.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related user. The function get user information from the request session.<br>
+.id:<br>
+Unique resource id.<br>
+.data:<br>
+The value to be set.<br>
+<hr>
+<b>public static void set(String id, byte[] data)</b><br>
+Set bytes data to the resource table, if the value is exists, it will be overwritten.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique resource id.<br>
+.data:<br>
+The value to be set.<br>
+<hr>
+<b>public static void set(HttpServletRequest request, String id, byte[] data)</b><br>
+Set current user's bytes data to the resource table, if the value is exists, it will be overwritten.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related user. The function get user information from the request session.<br>
+.id:<br>
+Unique resource id.<br>
+.data:<br>
+The value to be set.<br>

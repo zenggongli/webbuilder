@@ -1,0 +1,14 @@
+<p class="wb_h1">Key Value Editor</p>
+In many applications, we need to convert the key to their display name, such as &quot;1&quot; to &quot;man&quot;, &quot;2&quot; to &quot;woman&quot;. WebBuilder provides a key value mapping mechanism to perform this converting.
+Key Value Editor is used to create key value mapping.<br>
+<img src="webbuilder/docs/images/kveditor.gif"><br><br>
+<p class="wb_h2">1. Creating Key Value Mapping</a></p>
+Click new button to create a mapping record. In the dialog window, enter the type, name and key value, and then click OK.<br>
+For example:<br>
+.Click new button, set type to gender, set name to 1, set value to Man.<br>
+.Click new button, set type to gender, set name to 2, set value to Woman.<br>
+.Click new button, set type to gender, set name to 3, set value to Unknown.<br>
+Now you created a group of gender mapping.<br><br>
+<p class="wb_h2">2. Using Key Value Mapping</a></p>
+You can use Key Value Mapping function in the ComboBox control and DataProvider control. Setting ComboBox's keyName property can quickly create the pick list, Setting DataProvider's keyMap property can perform value converting. For more detail, 
+see <a href="javascript:openTopic('@API/controls/General/combo.txt','Combo Box')">Combo Box</a> and <a href="javascript:openTopic('@API/controls/Access/dataprovider.txt','Data Provider')">Data Provider</a>.

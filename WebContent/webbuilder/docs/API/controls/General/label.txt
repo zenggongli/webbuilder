@@ -1,0 +1,15 @@
+<p class="wb_h1">Label</p>
+Produces a standalone label element which can be inserted into a form and be associated with a field in that form using the forId property.
+WebBuilder encapsulate Ext.form.Label to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>align</b><br>
+The label text alignment.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.Label</p>

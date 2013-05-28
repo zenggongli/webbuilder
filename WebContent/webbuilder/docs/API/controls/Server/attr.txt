@@ -1,0 +1,12 @@
+<p class="wb_h1">Attribute</p>
+Attribute control represents a HttpServletRequest attribute.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>name</b><br>
+Attribute name, default to id property<br>
+<hr>
+<b>overwrite</b><br>
+Indicates whether to overwrite the value if same name value exists in HttpServletRequest attributes(request.getAttribute(name)!=null) or parameters(request.getParameter(name)!=null). Default true.<br>
+<hr>
+<b>value</b><br>
+Attribute value. Equals to request.setAttribute(name, value);<br>

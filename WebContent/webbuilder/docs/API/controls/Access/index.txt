@@ -1,0 +1,8 @@
+[
+{text:'Ajax',file:'ajax.txt',icon:'ajax_icon'},
+{text:'Store',file:'store.txt',icon:'db_icon'},
+{text:'Tree Store',file:'treestore.txt',icon:'treeStore_icon'},
+{text:'Data Provider',file:'dataprovider.txt',icon:'dp_icon'},
+{text:'Query',file:'query.txt',icon:'sql_icon'},
+{text:'SQL Switcher',file:'switcher.txt',icon:'sqlSwitcher_icon'}
+]

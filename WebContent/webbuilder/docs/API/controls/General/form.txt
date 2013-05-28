@@ -1,0 +1,55 @@
+<p class="wb_h1">Form</p>
+Form provides a standard container for forms. It is essentially a standard Ext.panel.Panel which automatically creates a BasicForm for managing any Ext.form.field.Field objects that are added as descendants of the panel. It also includes conveniences for configuring and working with the BasicForm and the collection of Fields.
+The Form is usually used to submit files. WebBuilder encapsulate Ext.form.Panel to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">3. Extra Properties</p>
+These properties are used for particular purpose, only available when use Wb.upload method to submit the form. They can be accessed in runtime.<br>
+<hr>
+<b>maskControl</b><br>
+A control to be masked when the form is submitting, default whole window will be masked.<br>
+<hr>
+<b>message</b><br>
+The maskControl's mask message.<br>
+<hr>
+<b>output</b><br>
+Comma separated controls list which's values are used as parameters to the form submitting.<br>
+<hr>
+<b>params</b><br>
+An object containing properties which are used as parameters to the form submitting.<br>
+For example:<br>
+form1.params={p1:'abc', p2:123};<br>
+Wb.upload(form1);<br>
+<hr>
+<b>result</b><br>
+A message to be shown after the form is submitted successfully.<br>
+<hr>
+<b>showMask</b><br>
+Indicates whether to show mask, default true.<br>
+<hr>
+<b>showProgress</b><br>
+Indicates whether to show the progress bar when the form is submitting, default false.<br>
+<hr>
+<b>showResult</b><br>
+Indicates whether to show result message or exception message, default true. Set to false, exception message will not be displayed.<br>
+<hr>
+<b>url</b><br>
+The URL to which to submit the form.<br><br>
+<p class="wb_h2">4. Extra Events</p>
+These events are used for particular purpose, only available when use Wb.upload method to submit the form.<br>
+<hr>
+<b>beforerequest</b><br>
+Fire before the form is submitted.<br>
+<hr>
+<b>failure</b><br>
+Fires when the server returns an exception.<br>
+<hr>
+<b>success</b><br>
+Fire after the form is submitted successfully.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.Panel</p>

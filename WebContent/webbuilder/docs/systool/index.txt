@@ -1,0 +1,12 @@
+[
+{text:'User Account',file:'user.txt',icon:'user_icon'},
+{text:'Permissions Config',file:'perm.txt',icon:'accept_icon'},
+{text:'Roles Config',file:'role.txt',icon:'userGroup_icon'},
+{text:'Variables Config',file:'varconfig.txt',icon:'object_icon'},
+{text:'Key Value Editor',file:'kvEditor.txt',icon:'dp_icon'},
+{text:'Task Scheduler',file:'task.txt',icon:'time_icon'},
+{text:'Database Explorer',file:'dbe.txt',icon:'seek_icon'},
+{text:'File Manager',file:'explorer.txt',icon:'explorer_icon'},
+{text:'System Log',file:'log.txt',icon:'table_icon'},
+{text:'Product Register',file:'reg.txt',icon:'key_icon'}
+]

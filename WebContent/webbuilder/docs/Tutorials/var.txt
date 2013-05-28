@@ -1,0 +1,73 @@
+<p class="wb_h1">System Variables</p>
+<p>WebBuilder provides variables storage and access solutions, and encapsulates the operations to the API. Variables Config module is used to config variables.</p><br>
+<p class="wb_h2">1. Storage Location</p>
+The variables are stored in the database table and the server config file. In clustered mode, server variables can be independent in each server, while database variables can be shared in each server. Server variables' name starts with &quot;server.&quot;, others are database variables. All variables are cached in the Hashmap for rapid access.<br><br>
+<p class="wb_h2">2. Predefined Variables</p>
+<p class="wb_h3">2.1 Server Side Variables</p>
+Server side variables are stored in the file webbuilder/data/config.txt.<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="150"><b>jndi</b></td><td width="500">The default database JNDI.</td></tr>
+<tr><td><b>dbType</b></td><td>Type of the default database.</td></tr>
+<tr><td><b>log</b></td><td>Indicates whether server logging is enabled.</td></tr>
+<tr><td><b>printError</b></td><td>Indicates whether to print the system exception message to System.err.</td></tr>
+<tr><td><b>startTask</b></td><td>Indicates whether to start the scheduled task during system initialization.</td></tr>
+<tr><td><b>initMethod</b></td><td>The method qualified name to be executed during system initialization, this method has no parameter. eg:com.pack.class.method.</td></tr>
+<tr><td><b>finalMethod</b></td><td>The method qualified name to be executed during system finalization, the method has no parameters.</td></tr>
+<tr><td><b>cacheEnabled</b></td><td>Indicates whether to cache webbuilder/* files to memory.</td></tr>
+<tr><td><b>cacheCheckModified</b></td><td>Indicates whether to check file modification when cacheEnabled is true. For maximum performance, you can set this property to false.</td></tr>
+<tr><td><b>cacheGzipMinSize</b></td><td>The minimum file size to use Gzip compress when cacheEnabled is true.</td></tr>
+<tr><td><b>respGzipMinSize</b></td><td>The minimum bytes size to use Gzip compress for API WebUtil.response. WebBuilder uses these functions to perform outputting.</td></tr>
+<tr><td><b>charset</b></td><td>Default charset for text encoding of user's application, many API functions use this variable, default by system.</td></tr>
+<tr><td><b>fileNameCharset</b></td><td>Default charset for file name encoding such as exported zip inner file name, default by system.</td></tr>
+<tr><td><b>serialNumber</b></td><td>The serial number of the WebBuilder software.</td></tr>
+<tr><td><b>serverId</b></td><td>One unique character for identifying the server in clustered mode. 0 - 9, A - Z or other character is valid(don't use 1, it is reserved by system). If multiple web application servers share one database, serverId must be unique. </td></tr>
+</table><br>
+<p class="wb_h3">2.2 Database Side Variables</p>
+Database side variables are stored in the database table.<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="270"><b>webbuilder.app.dbe.bigFieldAsKey</b></td><td width="500">Indicates whether to use big field as key, such as text or clob field.</td></tr>
+<tr><td><b>webbuilder.app.dbe.floatFieldAsKey</b></td><td>Indicates whether to use float field as key, the result of comparing two float fields is uncertain.</td></tr>
+<tr><td><b>webbuilder.app.file.rootBaseType</b></td><td>File manager's base dir: 1 root dir, 2 server dir, 3 application root dir, 4 application dir.</td></tr>
+<tr><td><b>webbuilder.app.ide.consoleSize</b></td><td>The maximum characters length of WebBuilder console buffer.</td></tr>
+<tr><td><b>webbuilder.app.ide.saveLastPath</b></td><td>Indicates whether to save last access path of IDE Module Explorer.</td></tr>
+<tr><td><b>webbuilder.app.index.saveLastPath</b></td><td>Indicates whether to save last access path of index page.</td></tr>
+<tr><td><b>webbuilder.app.user.disableSetLanguage</b></td><td>Indicates whether to allow the users to change language settings.</td></tr>
+<tr><td><b>webbuilder.control.limitRecords</b></td><td>The maximum records returned by DataProvider control. This variable can be used to avoid returning large amounts of records.</td></tr>
+<tr><td><b>webbuilder.service.upload.bufferSize</b></td><td>File upload buffer size. When the file size exceeds this value, WebBuilder will store data to disk.</td></tr>
+<tr><td><b>webbuilder.service.upload.maxSize</b></td><td>The maximum file size allowed to upload.</td></tr>
+<tr><td><b>webbuilder.session.ajaxTimeout</b></td><td>The timeout in milliseconds to be used for requests. Defaults to 30000. -1 indicates the ajax should never timeout.</td></tr>
+<tr><td><b>webbuilder.session.loginLog</b></td><td>Indicates whether to log user's login and logout information.</td></tr>
+<tr><td><b>webbuilder.session.loginVerify</b></td><td>Indicates whether to display verify image to prevent illegal login.</td></tr>
+<tr><td><b>webbuilder.session.sessionTimeout</b></td><td>The timeout in seconds to be used for http session. Defaults to the web server defined. -1 indicates the session should never timeout.</td></tr>
+<tr><td><b>webbuilder.session.submitTimeout</b></td><td>The timeout in milliseconds to be used for API function WebUtil.submit.</td></tr>
+<tr><td><b>webbuilder.task.logDays</b></td><td>The log retention days.</td></tr>
+<tr><td><b>webbuilder.task.stopSleep</b></td><td>The timeout in milliseconds to be used for waiting shutdown tasks.</td></tr>
+<tr><td><b>webbuilder.allowRegister</b></td><td>Indicates whether to allow anonymous user to create a account with blank role.</td></tr>
+<tr><td><b>webbuilder.defaultLanguage</b></td><td>If browser specified language does not exist, default language will be used.</td></tr>
+<tr><td><b>webbuilder.language</b></td><td>Language for the system. When set to auto, the system will auto select a language for the browser. Fore more details see <a href="javascript:openTopic('@Tutorials/str.txt','Application Internationalization')">Application Internationalization</a></td></tr>
+<tr><td><b>webbuilder.portal</b></td><td>The default xwl module id to open in url main.</td></tr>
+<tr><td><b>webbuilder.title</b></td><td>Title of the application.</td></tr>
+<tr><td><b>webbuilder.version</b></td><td>Version of the application.</td></tr>
+</table><br>
+<p class="wb_h3">2.3 Runtime System Variables</p>
+These system variables are generated in runtime, and stored in HttpServletRequest attributes. You can use method request.getAttribute to get the variable's value.<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="120"><b>sys.date</b></td><td width="500">The Date object represented current time of requesting.</td></tr>
+<tr><td><b>sys.now</b></td><td>The String object represented current time of requesting.</td></tr>
+<tr><td><b>sys.id</b></td><td>The 12 characters length unique string for the current requesting. System auto create a unique id in each requesting.</td></tr>
+<tr><td><b>sys.lang</b></td><td>The current user's language.</td></tr>
+<tr><td><b>sys.user</b></td><td>The current user's id.</td></tr>
+<tr><td><b>sys.userName</b></td><td>The current user's name.</td></tr>
+<tr><td><b>sys.dispName</b></td><td>The current user's display name.</td></tr>
+<tr><td><b>sys.userRoles</b></td><td>The current user's role String array.</td></tr>
+</table>
+For example:<br>
+String[] currentUserRoles = (String[]) request.getAttribute("sys.userRoles")<br><br>
+<p class="wb_h2">3. Variable API</p>
+You can use Var.get and Var.set functions to get and set variable values. Before using a variable, you must define it in <a href="javascript:openTopic('@systool/varconfig.txt','Variables Config')">Variables Config</a> module.<br>
+For more details see <a href="javascript:openTopic('@API/variable.txt','Variable')">Variable</a><br><br>
+<p class="wb_h2">4. <a href="javascript:openTopic('@API/value.txt','Value')">Value</a> and <a href="javascript:openTopic('@API/resource.txt','Resource')">Resource</a></p>
+Value and Resource functions are used to store mass data, they are stored in database not cached in memory. Value is used to store strings, numbers and dates, Resouce is used to store large binary data, WebBuilder provides API to access Value and Resource.<br>

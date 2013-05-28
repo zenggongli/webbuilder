@@ -1,0 +1,29 @@
+<p class="wb_h1">Application Internationalization</p>
+WebBuilder provides application internationalization mechanism, such as language, date format, number format internationalization.<br><br>
+<p class="wb_h2">1. Define Locale Information</p>
+You can define locale information such as language, date format, number format in folder webbuilder/script/locale and webbuilder/controls/ext/locale.<br>The webbuilder/script/locale folder store files for different nations' language, these files can be accessed by client side and server side.<br>
+The webbuilder/controls/ext/locale folder store files for different nations' language, date format, number format to be used in Ext JS.<br>
+You can create new files or modify existing files for defining locale information. Different nation has different file, the file's name is binded ISO 639 language codes and ISO 3166 country codes.<br>
+For example:<br>
+You can copy file wb-lang-en.js to wb-lang-fr.js, and translate English to French, so, you will get a new language file.<br>
+File wb-lang-fr.js means default French, wb-lang-fr_CA.js means Canadian French.<br><br>
+<p class="wb_h2">2. Access Strings Defined in webbuilder/script/locale</p>
+<p class="wb_h3">2.1 Client Side</p>
+In JAVASCRIPT, you can use Str.key to get the locale string. WebBuilder will auto select a proper file for the specified language.<br>
+For example:<br>
+var s=Str.ok;<br>
+In English, s equals to &quot;OK&quot;.<br>
+<p class="wb_h3">2.2 Server Side</p>
+In JAVA, you can use <a href="javascript:openTopic('@API/str.txt','Str')">Str</a>.format to get the locale string.<br>
+For example:<br>
+String s=Str.format(httpServletRequest, &quot;ok&quot;);<br>
+In english, s equals to &quot;OK&quot;.<br>
+If you don't specify httpServletRequest parameter, the function will return ok string of default language.<br>
+In Server Script, you can use Str.format or <a href="javascript:openTopic('@API/ss.txt','Wb')">Wb</a>.format function to get the locale string.<br>
+For example:<br>
+var s=Wb.format(httpServletRequest, 'ok');<br><br>
+<p class="wb_h2">3. Date and Number Formating</p>
+In client side JAVASCRIPT, you can use Ext JS date and number formatting function. By default, date/number format is auto selected by the system, but you can specify format explicitly.<br>
+For example, in Grid Column control, set the DateColumn's format property to &quot;Y-m-d&quot; to display date like '2000-12-08', empty for auto select date format for specified region,
+set NumberColumn's format property to &quot;0,000.00&quot;, in US, displaying like 1,234.56, in Germany, displaying like 1.234,56.<br>
+In server side JAVA and Server Script, you can use JAVA function to format date and number.<br>

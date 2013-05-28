@@ -1,0 +1,9 @@
+[
+{text:'IDE Overview',file:'overview.txt'},
+{text:'Module Explorer',file:'module.txt'},
+{text:'Form Designer',file:'designer.txt'},
+{text:'Object TreeView',file:'objtreeview.txt'},
+{text:'Properties/Events Editor',file:'peeditor.txt'},
+{text:'Script Editor',file:'script.txt'},
+{text:'The Console',file:'console.txt'}
+]

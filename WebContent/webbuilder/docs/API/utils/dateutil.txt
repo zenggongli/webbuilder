@@ -1,0 +1,136 @@
+<p class="wb_h1">DateUtil - com.webbuilder.utils.DateUtil</p>
+The DateUtil is used to process date.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static int dayOfMonth(Date date)</b><br>
+Get the day of the month represented by the date parameter.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+Date to represent the month.<br>
+<b>Returns</b>:<br>
+The day of the month represented by the date parameter.<br>
+<hr>
+<b>public static int dayOfWeek(Date date)</b><br>
+Get the day of the week represented by the date parameter.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+Date to represent the week.<br>
+<b>Returns</b>:<br>
+The day of the week represented by the date parameter.<br>
+<hr>
+<b>public static int dayOfYear(Date date)</b><br>
+Get the day of the year represented by the date parameter.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+Date to represent the year.<br>
+<b>Returns</b>:<br>
+The day of the year represented by the date parameter.<br>
+<hr>
+<b>public static String fixTime(String str)</b><br>
+Fix a date string to the format &quot;hh:mm:ss&quot;.<br>
+<b>Parameters</b>:<br>
+.str:<br>
+A string represented date.<br>
+<b>Returns</b>:<br>
+The qualified time string.<br>
+<b>Example</b>:<br>
+String result = DateUtil.fixTime(&quot;2000-08-12 10:11:12.123&quot;);<br>
+The result is &quot;10:11:12&quot;.
+<hr>
+<b>public static String fixTimestamp(String str)</b><br>
+Fix a date string to the format &quot;yyyy-mm-dd hh:mm:ss[.f...]&quot;.<br>
+<b>Parameters</b>:<br>
+.str:<br>
+A string represented date.<br>
+<b>Returns</b>:<br>
+The qualified timestamp string.<br>
+<b>Example</b>:<br>
+String result = DateUtil.fixTimestamp(&quot;2000-8-3&quot;);<br>
+The result is &quot;2000-08-03 00:00:00&quot;.
+<hr>
+<b>public static String formatDate(Date date, String format)</b><br>
+Formats a date into a date/time string with specified format.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+The time value to be formatted into a time string.<br>
+.format:<br>
+The string represents the format.<br>
+<b>Returns</b>:<br>
+The formatted time string.<br>
+<b>Example</b>:<br>
+String result = DateUtil.formatDate(new Date(), &quot;yyyy-MM-dd&quot;);<br>
+The result is &quot;2012-07-18&quot;.
+<hr>
+<b>public static String getHours(long milliSecs)</b><br>
+Formats milliseconds into &quot;hh:mm:ss.f...&quot; format.<br>
+<b>Parameters</b>:<br>
+.millSecs:<br>
+The milliseconds to be formated.<br>
+<b>Returns</b>:<br>
+The formatted time string.<br>
+<b>Example</b>:<br>
+String result = DateUtil.getHours(12*60*1000+25*1000+123);<br>
+The result is &quot;00:12:25.123&quot;.
+<hr>
+<b>public static int hourOfDay(Date date)</b><br>
+Get the hour of the day represented by the date parameter.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+Date to represent the day.<br>
+<b>Returns</b>:<br>
+The hour of the day represented by the date parameter.<br>
+<hr>
+<b>public static Date incDay(Date date, long days)</b><br>
+Adds or subtracts the specified amount of days to the given date. A negative days value means subtracting.<br> 
+<b>Parameters</b>:<br>
+.date:<br>
+The time value to be calculated.<br>
+.days:<br>
+The amount of days to be added or subtracted.<br>
+<b>Returns</b>:<br>
+<hr>
+<b>public static Date incMonth(Date date, long months)</b><br>
+Adds or subtracts the specified amount of months to the given date. A negative months value means subtracting.<br> 
+<b>Parameters</b>:<br>
+.date:<br>
+The time value to be calculated.<br>
+.months:<br>
+The amount of months to be added or subtracted.<br>
+<b>Returns</b>:<br>
+The new date after calculating.<br>
+<hr>
+<b>public static Date incSecond(Date date, long seconds)</b><br>
+Adds or subtracts the specified amount of seconds to the given date. A negative seconds value means subtracting.<br> 
+<b>Parameters</b>:<br>
+.date:<br>
+The time value to be calculated.<br>
+.seconds:<br>
+The amount of seconds to be added or subtracted.<br>
+<b>Returns</b>:<br>
+The new date after calculating.<br>
+<hr>
+<b>public static Date incYear(Date date, int years)</b><br>
+Adds or subtracts the specified amount of years to the given date. A negative years value means subtracting.<br> 
+<b>Parameters</b>:<br>
+.date:<br>
+The time value to be calculated.<br>
+.years:<br>
+The amount of years to be added or subtracted.<br>
+<b>Returns</b>:<br>
+The new date after calculating.<br>
+<hr>
+<b>public static String toString(Date date)</b><br>
+Formats a date in JDBC timestamp escape format. yyyy-mm-dd hh:mm:ss.fffffffff, where ffffffffff indicates nanoseconds.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+The time value to be formatted into a time string.<br>
+<b>Returns</b>:<br>
+The formatted time string.<br>
+<hr>
+<b>public static int yearOf(Date date)</b><br>
+Get the year of the date.<br>
+<b>Parameters</b>:<br>
+.date:<br>
+Date to represent the year.<br>
+<b>Returns</b>:<br>
+The year of the date.<br>

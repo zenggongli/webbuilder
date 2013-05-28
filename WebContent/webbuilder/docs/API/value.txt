@@ -1,0 +1,59 @@
+<p class="wb_h1">Value - com.webbuilder.common.Value</p>
+The Value is used to access the application's value, such as string, number and date etc. The value are stored in the WB_VALUE table.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static String get(String id)</b><br>
+Get string value from the value table.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique value id.<br>
+<b>Returns</b>:<br>
+The specified string value, if the value does not exist, null is returned.<br> 
+<b>Example</b>:<br>
+string s = Value.get("myApp.title")<br>
+<b>Related functions</b>:<br>
+getBool, getDate, getDouble, getFloat, getInt, getLong<br>
+<hr>
+<b>public static String get(HttpServletRequest request, String id)</b><br>
+Get current user's string value from the value table.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related user. The function get user information from the request session.<br>
+.id:<br>
+Unique value id.<br>
+<b>Returns</b>:<br>
+The specified string value, if the value does not exist, null is returned.<br> 
+<b>Example</b>:<br>
+String s = Resource.get(request, "myApp.userData");<br>
+<b>Related functions</b>:<br>
+getBool, getDate, getDouble, getFloat, getInt, getLong<br>
+<hr>
+<b>public static void remove(String id)</b><br>
+Remove the value specified by id.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique value id.<br>
+<hr>
+<b>public static void set(String id, String value)</b><br>
+Set string value to the value table, if the value is exists, it will be overwritten.<br>
+<b>Parameters</b>:<br>
+.id:<br>
+Unique value id.<br>
+.value:<br>
+The value to be set.<br>
+<b>Example</b>:<br>
+Value.set("myApp.title","My Application");<br>
+<b>Related functions</b>:<br>
+set(boolean), set(Date), set(double), set(float), set(int), set(long)<br>
+<hr>
+<b>public static void set(HttpServletRequest request, String id, String value)</b><br>
+Set current user's string value to the value table, if the value is exists, it will be overwritten.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related user. The function get user information from the request session.<br>
+.id:<br>
+Unique value id.<br>
+.value:<br>
+The value to be set.<br>
+<b>Related functions</b>:<br>
+set(boolean), set(Date), set(double), set(float), set(int), set(long)<br>

@@ -1,0 +1,73 @@
+<p class="wb_h1">FileUtil - com.webbuilder.utils.FileUtil</p>
+The FileUtil is used to process file.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static void copyFile(File source, File dest, boolean autoRename, boolean isCut)</b><br>
+Copy source file to the destination file.<br>
+<b>Parameters</b>:<br>
+.source:<br>
+The source file to be copy.<br>
+.dest:<br>
+The destination file to copy to.<br>
+.autoRename:<br>
+Indicates whether to auto rename the destination file when same file's name exists.<br>
+.isCut:<br>
+Indicates whether to delete the source file after source file is copied.<br>
+<hr>
+<b>public static void copyFolder(File source, File dest, boolean autoRename, boolean isCut)</b><br>
+Copy source folder to the destination folder.<br>
+<b>Parameters</b>:<br>
+.source:<br>
+The source folder to be copied.<br>
+.dest:<br>
+The destination folder to copy to.<br>
+.autoRename:<br>
+Indicates whether to auto rename the destination file when same file's name exists.<br>
+.isCut:<br>
+Indicates whether to delete the source folder after source folder is copied.<br>
+<hr>
+<b>public static boolean deleteFolder(File folder)</b><br>
+Delete specified folder.<br>
+<b>Parameters</b>:<br>
+.folder:<br>
+The folder to be deleted.<br>
+<hr>
+<b>public static String extractDir(String fileName)</b><br>
+Extract the dir string from specified file name.<br>
+<b>Parameters</b>:<br>
+.fileName:<br>
+FileName to be extracted.<br>
+<hr>
+<b>public static String getPath(File file)</b><br>
+Get the absolute pathname string of this file.<br>
+<b>Parameters</b>:<br>
+.file:<br>
+File object.<br>
+<hr>
+<b>public static String readText(File file)</b><br>
+Get the content string of a text file.<br>
+<b>Parameters</b>:<br>
+.file:<br>
+File object to be read.<br>
+<b>Returns</b>:<br>
+The file's content string.<br>
+<b>Example</b>:<br>
+String content = FileUtil.readText(new File("c:/doc.txt"));<br>
+<hr>
+<b>public static void saveStream(InputStream is, File file)</b><br>
+Save input stream object to a file.<br>
+<b>Parameters</b>:<br>
+.is:<br>
+InputStream to be saved.<br>
+.file:<br>
+The destination file to save the stream.<br>
+<hr>
+<b>public static void writeText(File file, String content)</b><br>
+Write text string to a file.<br>
+<b>Parameters</b>:<br>
+.file:<br>
+File object to write the text.<br>
+.content:<br>
+String object to be written.<br>
+<b>Example</b>:<br>
+FileUtil.writeText(new File("c:/doc.txt"), "content");<br>

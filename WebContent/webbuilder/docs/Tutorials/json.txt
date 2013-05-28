@@ -1,0 +1,23 @@
+<p class="wb_h1">Processing JSON</p>
+<p>JSON, or JavaScript Object Notation, is a text-based open standard designed for human-readable data interchange. It is derived from the JavaScript scripting language for representing simple data structures and associative arrays, called objects. Despite its relationship to JavaScript, it is language-independent, with parsers available for many languages.</p><br>
+<p class="wb_h2">1. Processing with JavaScript</p>
+You can use the API function Wb.encode to convert a JSON object/array to string object, and use the API function Wb.decode to convert string to a JSON object/array.<br>
+For example:<br>
+var string = Wb.encode({a:123,b:'abc'});<br>
+The result is "{"a":123,"b":"abc"}";<br>
+var object = Wb.decode('{"a":123,"b":"abc"}');<br>
+The result is object {a:123,b:'abc'}.<br><br>
+<p class="wb_h2">2. Processing with Java</p>
+You can use org.json package to process JSON in JAVA programming. The org.json package is integrated in WebBuilder, so you can use the API directly.<br>
+For example:<br>
+JSONObject jo = new JSONObject("{a:123,b:'abc'}");<br>
+String text = jo.toString();<br>
+JSONArray ja = new JSONArray("[123,'abc',{x:'text'}]");<br>
+String text = ja.toString();<br><br>
+<p class="wb_h2">3. Processing with Server Script</p>
+Like processing with JavaScript, you can use the API function Wb.encode to convert a JSON object/array to string object, and use the API function Wb.decode to convert string to a JSON object/array.<br>
+For example:<br>
+var string = Wb.encode({a:123,b:'abc'});<br>
+The result is "{"a":123,"b":"abc"}";<br>
+var object = Wb.decode('{"a":123,"b":"abc"}');<br>
+The result is object {a:123,b:'abc'}.<br><br>

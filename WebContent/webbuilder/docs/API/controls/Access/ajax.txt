@@ -1,0 +1,48 @@
+<p class="wb_h1">Ajax</p>
+Ajax is used to communicate with your server side code.
+WebBuilder encapsulate Ext.Ajax.request method to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>input</b><br>
+Indicates whether to set controls value respectively, the controls value specified by the response.responseText.<br>
+For example:<br>
+The Ajax response "{text1:'text', number1:123}", then text1 control's value to be set to "text", number1 control's value to be set to 123.<br>
+<hr>
+<b>mask</b><br>
+A control to be masked when the Ajax is requesting, default whole window will be masked.<br>
+<hr>
+<b>message</b><br>
+The mask message.<br> 
+<hr>
+<b>output</b><br>
+Comma separated controls list which's values are used as parameters to the Ajax requesting.<br>
+<hr>
+<b>result</b><br>
+A message to be shown after the Ajax is requested successfully.<br>
+<hr>
+<b>showMask</b><br>
+Indicates whether to show mask, default true.<br>
+<hr>
+<b>showResult</b><br>
+Indicates whether to show result message or exception message, default true. Set to false, exception message will not be displayed.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>beforerequest</b><br>
+Fires before call ajax.request method.<br>
+<hr>
+<b>failureConfirm</b><br>
+Fires when click the OK button of the exception message box.<br>
+<hr>
+<b>successConfirm</b><br>
+Fires when click the OK button of the result message box.<br><br>
+<p class="wb_h2">3. Methods</p>
+<hr>
+<b>request(Object extraParams)</b><br>
+Sends an HTTP request to a remote server.<br>
+<b>Parameters</b>:<br>
+extraParams : Object<br>
+An object containing properties which are used as parameters to the request.<br>
+<b>Example</b>:<br>
+ajax1.request();<br>
+ajax2.request({p1:'foo',p2:'bar'});<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.Ajax.request</p>

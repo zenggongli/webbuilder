@@ -1,0 +1,57 @@
+<p class="wb_h1">SQL Switcher</p>
+SQL switcher is used to switch SQL for default database in different database type. Some complex SQLs differ from many different database type, you may use SQL Switcher to develop cross database applications. SQL Switcher will auto switch the proper sql based on the default database type(Var.server.dbType).<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>cloudscape</b><br>
+SQL for cloudscape database<br>
+<hr>
+<b>db2</b><br>
+SQL for db2 database<br>
+<hr>
+<b>default</b><br>
+SQL for other unspecified databases<br>
+<hr>
+<b>derby</b><br>
+SQL for derby database<br>
+<hr>
+<b>firebird</b><br>
+SQL for firebird database<br>
+<hr>
+<b>h2</b><br>
+SQL for h2 database<br>
+<hr>
+<b>hsqldb</b><br>
+SQL for hsqldb database<br>
+<hr>
+<b>informix</b><br>
+SQL for informix database<br>
+<hr>
+<b>mysql</b><br>
+SQL for mysql database<br>
+<hr>
+<b>oracle</b><br>
+SQL for oracle database<br>
+<hr>
+<b>pointbase</b><br>
+SQL for pointbase database<br>
+<hr>
+<b>postgresql</b><br>
+SQL for postgresql database<br>
+<hr>
+<b>sapdb</b><br>
+SQL for sapdb database<br>
+<hr>
+<b>solid</b><br>
+SQL for solid database<br>
+<hr>
+<b>sqlserver</b><br>
+SQL for sqlserver database<br>
+<hr>
+<b>sybase</b><br>
+SQL for sqlserver database<br>
+<hr>
+<b>teradata</b><br>
+SQL for teradata database<br>
+<hr>
+<b>userDefine1, userDefine2, userDefine3</b><br>
+SQL for user defined database<br>

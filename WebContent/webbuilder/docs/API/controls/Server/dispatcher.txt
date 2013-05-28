@@ -1,0 +1,9 @@
+<p class="wb_h1">Dispatcher</p>
+Dispatcher control encapsulate a RequestDispatcher object that acts as a wrapper for the resource located at the given path. A RequestDispatcher object can be used to forward a request to the resource or to include the resource in a response. The resource can be dynamic or static.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>type</b><br>
+Specify the dispatched type, default forward.
+<hr>
+<b>url</b><br>
+A String specifying the pathname to the resource. If it is relative, it must be relative against the current servlet.<br>

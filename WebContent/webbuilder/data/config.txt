@@ -1,0 +1,17 @@
+{
+cacheCheckModified: true,
+cacheEnabled: true,
+cacheGzipMinSize: 6144,
+charset: "",
+dbType: "",
+fileNameCharset: "",
+finalMethod: "",
+initMethod: "",
+jndi: "",
+log: true,
+printError: true,
+respGzipMinSize: 10240,
+serialNumber: "",
+serverId: "2",
+startTask: true
+}

@@ -1,0 +1,30 @@
+<p class="wb_h1">Store</p>
+The Store class encapsulates a client side cache of Model objects.
+WebBuilder encapsulate Ext.data.Store to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>mask</b><br>
+A control to be masked when the store is loading, default whole window will be masked.<br>
+<hr>
+<b>message</b><br>
+The mask message.<br> 
+<hr>
+<b>output</b><br>
+Comma separated controls list which's values are used as parameters to the store loading.<br>
+<hr>
+<b>params</b><br>
+An object containing properties which are used as parameters, to be applied to store.proxy.extraParams.<br>
+<hr>
+<b>proxyType</b><br>
+The default store proxy type.<br>
+<hr>
+<b>showMask</b><br>
+Indicates whether to show mask, default true.<br>
+<hr>
+<b>showResult</b><br>
+Indicates whether to show exception message, default true. Set to false, exception message will not be displayed.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.data.Store</p>

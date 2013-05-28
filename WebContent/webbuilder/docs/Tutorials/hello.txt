@@ -1,0 +1,17 @@
+<p class="wb_h1">Hello World Application</p>
+<p>This is the first application. The application shows a window with &quot;Hello World&quot; title.</p><br>
+<img src="webbuilder/docs/images/hello.gif"><br><br>
+<p class="wb_h2">1. Open WebBuilder IDE</p>
+Open the browser, login to the system and open [Development Suite]->[Development Environment], or browse <a href="main?xwl=ide" target="_blank">[url]/main?xwl=ide.</a> directly.<br><br>
+<p class="wb_h2">2. Create Folders and Modules</p>
+.Click Append Folder or Insert Folder button in appropriate node position in the Module Explorer.<br>
+.Enter title name and select an icon for the folder in the dialog box, and then click OK.<br>
+.Click Append Module on the created folder node in the Module Explorer.<br>
+.Enter title name and select an icon for the module in the dialog box, and then click OK.<br><br>
+<p class="wb_h2">3. Develop the Application</p>
+.Double click [General]->[Window] control in Control List view.<br>
+.Select window1 in the Object TreeView, and set autoShow property to true, set title property to Hello World in the property editor.<br><br>
+<p class="wb_h2">4. Run the Application in IDE</p>
+Click [Save and Run] button or press Ctrl+Q to save and run the module.<br><br>
+<p class="wb_h2">5. Modify the Application</p>
+Double click the module in the Module Explorer.<br>

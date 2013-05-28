@@ -1,0 +1,13 @@
+<p class="wb_h1">Field Set</p>
+A container for grouping sets of fields, rendered as a HTML fieldset element. The title config will be rendered as the fieldset's legend.
+The Field Set is usually used to beautify the interface.
+WebBuilder encapsulate Ext.form.FieldSet to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.FieldSet</p>

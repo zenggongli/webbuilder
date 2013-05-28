@@ -1,0 +1,15 @@
+<p class="wb_h1">Image</p>
+Simple helper class for easily creating image components..
+WebBuilder encapsulate Ext.Img to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>stretch</b><br>
+Indicates whether to stretch the image, default true. If stretch is false, width and height properties are ignored.
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.Img</p>

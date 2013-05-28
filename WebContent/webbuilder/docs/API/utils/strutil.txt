@@ -1,0 +1,197 @@
+<p class="wb_h1">StringUtil - com.webbuilder.utils.StringUtil</p>
+The StringUtil is used to process string.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static boolean across(String[] list1, String[] list2)</b><br>
+Compares two string arrays, and determine whether intersect.<br>
+<b>Parameters</b>:<br>
+.list1:<br>
+The source string array.<br>
+.list2:<br>
+The destination string array.<br>
+<b>Returns</b>:<br>
+If the two arrays intersect, then return true, otherwise return false.<br>
+<b>Example</b>:<br>
+String[] a = {"abc", "def"}, b = {"abc", "123"};<br>
+boolean result = StringUtil.across(a, b);<br>
+The result is true.<br>
+<hr>
+<b>public static String concat(String s, String... more)</b><br>
+Concatenate two or more strings to one string.<br>
+<b>Parameters</b>:<br>
+.s:<br>
+The first string.<br>
+.more:<br>
+The second and more string.<br>
+<b>Returns</b>:<br>
+The concatenated string.<br>
+<b>Example</b>:<br>
+String result = StringUtil.concat("Welcome", " to use ", "WebBuilder");<br>
+The result is &quot;Welcome to use WebBuilder&quot;.<br>
+<hr>
+<b>public static byte[] decodeBase64(String data)</b><br>
+Decode Base64 encoding string to binary data.<br>
+<b>Parameters</b>:<br>
+.data:<br>
+The string to be decoded.<br>
+<b>Returns</b>:<br>
+The decoded bytes.<br>
+<hr>
+<b>public static String encode(Object obj)</b><br>
+Encode an object to a string.<br>
+<b>Parameters</b>:<br>
+.obj:<br>
+Object to encode.<br>
+<b>Returns</b>:<br>
+The encoded string.<br>
+<b>Example</b>:<br>
+StringUtil.encode(123);, the result is &quot;123&quot;<br>
+StringUtil.encode(true);, the result is &quot;true&quot;<br>
+StringUtil.encode("ab\"c");, the result is &quot;ab\\&quot;&quot;<br>
+<hr>
+<b>public static String encodeBase64(InputStream is)</b><br>
+Encode InputStream data to Base64 string.<br>
+<b>Parameters</b>:<br>
+.is:<br>
+InputStream object to be encoded.<br>
+<b>Returns</b>:<br>
+The encoded string.<br>
+<hr>
+<b>public static boolean getBool(String value)</b><br>
+Returns a boolean with a value represented by the specified string.<br>
+<b>Parameters</b>:<br>
+.value:<br>
+String value represented boolean.<br>
+<b>Returns</b>:<br>
+If the string value equals to true or 1, then return true, otherwise return false.<br>
+<hr>
+<b>public static String getNamePart(String string)</b><br>
+Get part string before the equal sign of the string.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The string to be parsed.<br>
+<b>Returns</b>:<br>
+The name part string.<br>
+<b>Example</b>:<br>
+StringUtil.getNamePart("foo=bar"), the result is &quot;foo&quot;.
+<hr>
+<b>public static String getString(InputStream stream)</b><br>
+Get content string from InputStream object.<br>
+<b>Parameters</b>:<br>
+.stream:<br>
+InputStream to be get.<br>
+<b>Returns</b>:<br>
+The content string of the stream.<br>
+<hr>
+<b>public static String getValuePart(String string)</b><br>
+Get part string after the equal sign of the string.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The string to be parsed.<br>
+<b>Returns</b>:<br>
+The value part string.<br>
+<b>Example</b>:<br>
+StringUtil.getValuePart("foo=bar"), the result is &quot;bar&quot;.<br>
+<hr>
+<b>public static boolean isEmpty(String string)</b><br>
+Returns true if the string is null or length is 0, otherwise false.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+String value.<br>
+<b>Returns</b>:<br>
+The boolean result.<br>
+<hr>
+<b>public static boolean isEqual(String string1, String string2)</b><br>
+Returns true if string1 equals to string2 or string1 is empty(null or &quot;&quot;) and string2 is empty(null or &quot;&quot;), otherwise false.<br>
+<b>Parameters</b>:<br>
+.string1:<br>
+The source string.<br>
+.string2:<br>
+The destination string.<br>
+<b>Returns</b>:<br>
+The boolean result.<br>
+<hr>
+<b>public static boolean isEqual(String string1, String string2)</b><br>
+Returns true if string1 equalsIgnoreCase to string2 or string1 is empty(null or &quot;&quot;) and string2 is empty(null or &quot;&quot;), otherwise false.<br>
+<b>Parameters</b>:<br>
+.string1:<br>
+The source string.<br>
+.string2:<br>
+The destination string.<br>
+<b>Returns</b>:<br>
+The boolean result.<br>
+<hr>
+<b>public static String optString(String string)</b><br>
+Returns &quot;&quot; if the string is null, otherwise return string.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The String value.<br>
+<b>Returns</b>:<br>
+The String value.<br>
+<hr>
+<b>public static String quote(String string)</b><br>
+Quote a string to a string expression.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The String value to be quoted.<br>
+<b>Returns</b>:<br>
+The quoted string.<br>
+<b>Example</b>:<br>
+String result = StringUtil.quote(&quot;a\&quot;b\nc&quot;), the result is &quot;a\\&quot;b\\nc&quot;.<br>
+<hr>
+<b>public static String replace(String string, String oldString, String newString)</b><br>
+Replace all oldString of the string to newString.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The source string to be processed.<br>
+.oldString:<br>
+The old string to be replaced.<br>
+.newString:<br>
+The new string to replace to.<br>
+<b>Returns</b>:<br>
+The replaced string.<br>
+<b>Example</b>:<br>
+String result = StringUtil.replace("this is test", "is", "xy"), the result is "thxy xy test".<br>
+<hr>
+<b>public static String replaceFirst(String string, String oldString, String newString)</b><br>
+Replace first oldString of the string to newString.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+The source string to be processed.<br>
+.oldString:<br>
+The old string to be replaced.<br>
+.newString:<br>
+The new string to replace to.<br>
+<b>Returns</b>:<br>
+The replaced string.<br>
+<hr>
+<b>public static String replaceParameters(HttpServletRequest request, String string)</b><br>
+Replace all parameters's name of the string to the value. The parameters are HttpServletRequest attribute/parameter, <a href="javascript:openTopic('@API/variable.txt','Var - com.webbuilder.common.Var')">Var</a> or <a href="javascript:openTopic('@API/str.txt','Str - com.webbuilder.common.Str')">Str</a>.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get attribute values or parameter values.<br>
+.string:<br>
+The expression string.<br>
+<b>Returns</b>:<br>
+The replaced string.<br>
+<b>Example</b>:<br>
+String s1 = StringUtil.replaceParameters(request, "The OK string is {#Str.ok#}");, the s1 is "The OK string is OK(English)"<br>
+String s2 = StringUtil.replaceParameters(request, "select * from {#table#}");<br>
+If request.getAttribute("table") or request.getParameter("table") is user, then the s2 is "select * from user".<br>
+If same name exists in attributes or parameters, attributes is priority.<br>
+<hr>
+<b>public static String toHTML(String string, boolean nbspAsEmpty, boolean brAsEnter)</b><br>
+Convert certain characters to their HTML character equivalents for literal display in web pages.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+String value to be converted.<br>
+.nbspAsEmpty:<br>
+Indicates whether to return &amp;nbsp if string is empty, otherwise return &quot;&quot;.<br>
+.brAsEnter:<br>
+Convert \n to &lt;br&gt; if brAsEnter is true, otherwise to &amp;nbsp.<br>
+<b>Returns</b>:<br>
+The converted HTML string.<br>
+<hr>
+<b>public static String toHTML(String string)</b><br>
+Convert certain characters to their HTML character equivalents for literal display in web pages.<br>
+This function equals StringUtil.toHTML(string, false, true);<br>

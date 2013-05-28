@@ -1,0 +1,7 @@
+<p class="wb_h1">Client Script</p>
+WebBuilder applications is constitute by modules. Module encapsulates application logical with JSON script, the script store in server cache and database table.<br>
+<p class="wb_h2">1. How the Module Works</p><br>
+Like a JSP, when browser request a module, server will fetch the module in prepared cache and parse it. Server will process controls of module in sequence, server side control will be executed in the server, client side control will create script and response to the browser for further processing.<br>
+<p class="wb_h2">2. Module's Properties and Events</p>
+Module has many properties/events to control the module behavior either server side or client side, such as initScript and finalScript properties to implement server side initialize and finalize, initialize and finalize events to implement client side initialize and finalize.<br>
+For more details see <a href="javascript:openTopic('@Tutorials/var.txt','Using Variable')">Module</a>

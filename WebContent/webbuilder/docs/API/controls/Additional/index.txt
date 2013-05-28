@@ -1,0 +1,9 @@
+[
+{text:'Image',file:'image.txt',icon:'image_icon'},
+{text:'Radio Group',file:'radio.txt',icon:'radioGroup_icon'},
+{text:'Check Group',file:'check.txt',icon:'checkGroup_icon'},
+{text:'Html Editor',file:'html.txt',icon:'htmlEditor_icon'},
+{text:'Slider',file:'slider.txt',icon:'slider_icon'},
+{text:'Timer',file:'timer.txt',icon:'clock_icon'},
+{text:'Key Map',file:'keymap.txt',icon:'keyboard_icon'}
+]

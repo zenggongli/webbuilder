@@ -1,0 +1,75 @@
+<p class="wb_h1">WebBuilder ServerScript API</p>
+The WebBuilder ServerScript APIs are utilities for server side JavaScript programming. The APIs are defined in webbuilder/script/server.js, you can modify this file to extend methods.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>Wb.decode(String json, [Boolean safe]): Object</b><br>
+Decodes (parses) a JSON string to an object.<br>
+<b>Parameters</b>:<br>
+.json:<br>
+The json string to decode.<br>
+.safe:<br>
+Whether to return null or throw an exception if the JSON is invalid. Default false.<br>
+<b>Returns</b>:<br>
+The resulting object.<br>
+<b>Example</b>:<br>
+var object=Wb.decode("{a:123, b:'abc'}");<br>
+<hr>
+<b>Wb.encode(Object value): String</b><br>
+Encodes an Object, Array or other value to string.<br>
+<b>Parameters</b>:<br>
+.value:<br>
+The value to encode.<br>
+<b>Returns</b>:<br>
+The JSON string.<br>
+<b>Example</b>:<br>
+var string=Wb.encode({a:123, b:'abc'});<br>
+<hr>
+<b>Wb.error(String message)</b><br>
+Throw a Java exception with the message. You can use this method instead of JavaScript throw keyword.<br>
+<b>Parameters</b>:<br>
+.message:<br>
+The exception message.<br>
+<b>Example</b>:<br>
+Wb.error('some message');
+<hr>
+<b>Wb.format(arguments args): String</b><br>
+Format the specified key with the browser specified language.<br>
+<b>Parameters</b>:<br>
+.args:<br>
+The parameter list, the first parameter is HttpServletRequest object, the second parameter is string's key name, others are parameters for formating.<br>
+<b>Returns</b>:<br>
+The formatted string.<br>
+<b>Example</b>:<br>
+var s = Wb.format(request, 'notExist', 'abc');<br>
+<b>See</b>:<br>
+<a href="javascript:openTopic('@API/str.txt','Str')">Str</a>
+<hr>
+<b>Wb.indexOf(Array array, Object item): Number</b><br>
+Get the index of the provided item in the given array.<br>
+<b>Parameters</b>:<br>
+.array:<br>
+The array to check.<br>
+.item:<br>
+The item to look for.<br>
+<b>Returns</b>:<br>
+The index of item in the array (or -1 if it is not found).<br>
+<hr>
+<b>Wb.isEmpty(Object value): Boolean</b><br>
+Returns true if the passed value is empty, false otherwise. The value is deemed to be empty if it is either null, undefined or empty("").<br>
+<b>Parameters</b>:<br>
+.value:<br>
+The value to test.<br>
+<b>Returns</b>:<br>
+The boolean result.<br>
+<hr>
+<b>Wb.print(HttpServletRequest request, Object object)</b><br>
+Print object's text to the WebBuilder console. The print method has no effect out of IDE.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+The HttpServletRequest object to identify the current user.<br>
+.object:<br>
+The object, which's text will be printed to the WebBuilder console.<br>
+<b>Example</b>:<br>
+Wb.print(request,123); Wb.print(request,'abc'); Wb.print(request,anyObject);<br>
+<b>Related functions</b>:<br>
+Wb.println(HttpServletRequest request, Object object)<br>

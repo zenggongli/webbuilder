@@ -1,0 +1,43 @@
+<p class="wb_h1">Date Time</p>
+Provides a date and time input field with automatic date time validation, the control extends from Ext.form.FieldContainer and combine Date and Time control to one.
+See Ext.form.FieldContainer, Ext.form.field.Date and Ext.form.field.Time.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>dateField</b><br>
+The datefield object represents date part.<br>
+<hr>
+<b>dateProperties</b><br>
+A config object apply to the Date field of the control.<br>
+<hr>
+<b>dateWidth</b><br>
+Date field width.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br>
+<hr>
+<b>timeField</b><br>
+The timefield object represents time part.<br>
+<hr>
+<b>timeProperties</b><br>
+A config object apply to the Time field of the control.<br>
+<hr>
+<b>timeWidth</b><br>
+Time field width.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>dateEvents</b><br>
+A events config object apply to the Date field of the control.<br>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br>
+<hr>
+<b>timeEvents</b><br>
+A events config object apply to the Time field of the control.<br><br>
+<p class="wb_h2">3. Methods</p>
+<hr>
+<b>getValue</b><br>
+Get the value of date and time.<br>
+<hr>
+<b>setValue</b><br>
+Set the value of date and time.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs</p>

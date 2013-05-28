@@ -1,0 +1,15 @@
+<p class="wb_h1">Creating Verification Image</p>
+The Verification Image <img src="main?xwl=13MC0NFI4FRE"> is used to prevent illegal access, the image contains 5 random characters code.<br><br>
+<p class="wb_h2">1. How to Create</p>
+You can create a HTML segment &lt;img src=&quot;main?xwl=13MC0NFI4FRE&quot;&gt; to create a Verification image. The code of the image is stored in &quot;sys.verifyCode&quot; attribute of the session.<br><br>
+<p class="wb_h2">2. Verify the Image</p>
+The following code demonstrate how to verify the image:<br>
+<div style="background-color:#EEE">
+HttpSession session = request.getSession(true);<br>
+String code = (String) session.getAttribute(&quot;sys.verifyCode&quot;);<br>
+if (code==null || !code.equals(request.getParameter("inputCode")))<br>
+&nbsp;&nbsp;throw new Exception("Invalid verification code.");<br>
+session.removeAttribute("sys.verifyCode");<br>
+</div>
+The request is a HttpServletRequest object, the inputCode is user inputed verification code. You should refresh the image in client side after each request. Please refer to the Login and Register module for further study.<br>
+

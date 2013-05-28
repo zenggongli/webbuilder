@@ -1,0 +1,4 @@
+<p class="wb_h1">System Log</p>
+The System Log module is used to display the log information.<br><br>
+<p class="wb_h2">How to Record Log</a></p>
+ You can use API LogUtil.log to record log information to the database table, for more details see <a href="javascript:openTopic('@API/utils/logutil.txt','LogUtil')">LogUtil</a>.<br>

@@ -1,0 +1,24 @@
+<p class="wb_h1">Window</p>
+A specialized panel intended for use as an application window. Windows are floated, resizable, and draggable by default.
+WebBuilder encapsulate Ext.window.Window to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>acceptEnter</b><br>
+Indicates whether the window accept the Enter key, press the Enter key is equivalent to click "OK", default equals to the dialog property.<br>
+<hr>
+<b>autoReset</b><br>
+Indicates whether all controls of the window will be reseted after the window is hidden, default true.<br>
+<hr>
+<b>dialog</b><br>
+Indicates whether the window is a modal and non-resizable window with "OK" and "Cancel" buttons, default true.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>clickOK</b><br>
+Fires when the "OK" button is clicked, only available in the dialog window.<br>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.window.Window</p>

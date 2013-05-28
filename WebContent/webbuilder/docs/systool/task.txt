@@ -1,0 +1,22 @@
+<p class="wb_h1">Task Scheduler</p>
+The Task Scheduler module is used to manage scheduled jobs. WebBuilder encapsulate Quartz framework to implement the jobs.<br><br>
+<p class="wb_h2">1. Creating New Job</a></p>
+Click new button to create a new job. In the dialog, please enter the name of new job, and choose interval. In Class Name, specify a qualified java class name which implements Job interface. The Begin Time indicates the begin time of the job, default immediately. The End Time indicates the end time of the job, default never. The remark is some description for the job. Finally click OK button of the dialog window.<br><br>
+<p class="wb_h2">2. Operating Buttons</a></p>
+The following are description of some operating buttons.<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="100"><b>Pause</b></td><td width="500">Pause the selected schedules.</td></tr>
+<tr><td><b>Resume</b></td><td>Resume the selected schedules.</td></tr>
+<tr><td><b>Start</b></td><td>Start the schedule engine, all schedules will be started except stopped schedules. The engine will auto startup at next web server startup.</td></tr>
+<tr><td><b>Stop</b></td><td>Stop the schedule engine, all schedules will be stopped. The engine will not auto startup at next web server startup.</td></tr>
+</table><br>
+<p class="wb_h2">3. The Job Interface</a></p>
+The job interface is defined in org.quartz.Job, any job class must implement this interface.<br>
+For example:<br>
+<div style="background-color:#EEE">
+public class MyJob implements Job {<br>
+&nbsp;&nbsp;public void execute(JobExecutionContext context)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throws JobExecutionException {<br>
+&nbsp;&nbsp;}<br>}</div>
+You can refer to the source code of com.webbuilder.task.ClearLog for writing a job class.<br>

@@ -1,0 +1,30 @@
+<p class="wb_h1">Column</p>
+Column specifies the definition for a column inside an Ext.grid.Panel.
+WebBuilder encapsulate Ext.grid.column.Column to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>autoWrap</b><br>
+Indicates whether to wrap the text.<br>
+<hr>
+<b>excelFormat</b><br>
+Column excel format for exported Excel file. Default converted from format property.<br>
+<hr>
+<b>format</b><br>
+Date or number format.<br>
+For example: $0,000, 0,000.00%, m/d/Y g:i A, Y-m-d H:i:s<br>
+<hr>
+<b>printFormat</b><br>
+Column Java format for print preview. Default converted from format property<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br>
+<hr>
+<b>type</b><br>
+The column type.<br>
+rowNumber: Row number column.<br>
+treeColumn: Tree column(Ext.tree.Column).<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.grid.column.Column</p>

@@ -1,0 +1,159 @@
+<p class="wb_h1">Database Access</p>
+WebBuilder provides powerful controls and database API to access database quickly and easily.<br><br>
+<p class="wb_h2">1. <a href="javascript:openTopic('@API/controls/Access/query.txt','Query')">Query  Control</a></p>
+Query encapsulates JDBC operations to execute SQL statement, it can get ResultSet or other values from database. Query has ability to access tables, store procedures, database functions etc. In the sql property, you can use request attributes/parameters or other server values directly.<br><br>
+<p class="wb_h2">2. <a href="javascript:openTopic('@API/controls/Access/dataprovider.txt','Data Provider')">Data Provider Control</a></p>
+Data Provider is used to generate JSON script or binary data from database, such as:<br>
+JSON array script: The script can be used in Store to create grid records, combobox picklist etc.<br>
+Tree JSON script: The script can be used in Store to create tree nodes.<br>
+JSON object script: The object script represents the first record value of the ResultSet.<br>
+Stream/Download: Create stream or force download for browser.<br>
+Image: Create image stream for image control.<br><br>
+<p class="wb_h2">3. SQL Parameters</p>
+WebBuilder provides the parameters reference mechanism in the SQL statement, the parameters are HttpServletRequest attribute/parameter values or WebBuilder Variables. This mechanism can be applied in Query, DataProvider and DbUtil API.<br>
+<p class="wb_h3">3.1 Access Server Side Values</p>
+In the section <a href="javascript:openTopic('@Tutorials/ide/peeditor.txt','Properties/Events Editor')">Properties/Events Editor</a>, we have explained this mechanism which is also available in the SQL statement. You can use syntax {#name#} to access server side values.<br>
+For example, select * from {#table#}, the {#table#} equals to request.getAttribute("table") or request.getParameter("table"). If same name exists in attributes or parameters, attributes is priority.<br><br>
+<p class="wb_h3">3.2 The JDBC Parameters</p>
+<b>3.2.1 Input Parameter</b><br>
+As we know, in SQL &quot;select * from table where field=?&quot;, ? represents a parameter. In WebBuilder, you can use parameter with syntax {?type.parameterName?} directly in SQL statement.<br>
+For example:<br>
+ select * from table where field1={?para1?} and field2={?integer.para2?} and field3={?timestamp.para3?}<br>
+<b>{?para1?}</b> represents a parameter ?, empty type represents VARCHAR type, it equals to statement.setString(1, toString(request.getAttribute("para1") or request.getParameter("para1")));<br>
+<b>{?integer.para2?}</b> represents a parameter ?, integer represents INTEGER type, it equals to statement.setInt(2, toInt(request.getAttribute("para2") or request.getParameter("para2")));<br>
+<b>{?timestamp.para3?}</b> represents a parameter ?, timestamp represents TIMESTAMP type, it equals to statement.setTimestamp(3, toTimestamp(request.getAttribute("para3") or request.getParameter("para3")));<br>
+If same parameterName exists in attributes or parameters, attributes is priority.<br>
+<b>3.2.2 Output Parameter</b><br>
+Like input parameter, the output parameter syntax is {?@type.parameterName?} or {?@type=scale.parameterName?}, the output parameter's value will be stored in HttpServletRequest attributes.<br>
+For example:<br>
+{?@varchar.param1?} means a VARCHAR output parameter, the parameter value will be stored in HttpServletRequest attributes(request.setAttribute("param1",returnParameterValue)).<br>
+{?@-10.param2?} means a oracle.jdbc.OracleTypes.CURSOR parameter, the parameter value will be stored in HttpServletRequest attributes.<br>
+{?@decimal=3.param3?} means a double parameter, "3" means the desired number of digits to the right of the decimal point, the parameter value will be stored in HttpServletRequest attributes.<br>
+The following SQL access a store procedure:<br>
+1, {call proc({?@-10.para1?},{?para2?})}<br>
+2, {{?@-10.para1?} = call proc({?@double.para2?},{?timestamp.para3?})}<br>
+<b>3.2.3 Access Store Procedures/Functions</b><br>
+The following example demonstrated how to access an Oracle store procedure, the procedure accept one parameter and output ResultSet parameter.<br>
+<b>Create Cursor Type</b><br>
+CREATE OR REPLACE PACKAGE TYPES AS<br>
+TYPE X_CURSOR IS REF CURSOR;<br>
+END;<br>
+<b>Create Procedure</b><br>
+CREATE OR REPLACE PROCEDURE USER_PROC<br>
+(<br>
+ P_USER OUT TYPES.X_CURSOR,<br>
+ P_NAME IN VARCHAR<br>
+)<br>
+AS<br>
+BEGIN<br>
+OPEN P_USER FOR SELECT * FROM WB_USER WHERE USER_NAME = P_NAME;<br>
+END USER_PROC;<br>
+<b>Access Procedure</b><br>
+{call USER_PROC({?@-10.param1?},'admin')}<br>
+The SQL syntax "{call proc}" means call a store procedure, "-10" means parameter type oracle.jdbc.OracleTypes.CURSOR, finally the ResultSet will be stored in HttpServletRequest(request.setAttribute("param1",resultSet)).<br>
+<b>3.2.4 Parameter Types List</b><br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="120"><b>(empty)/varchar</b></td><td width="500">VARCHAR type 12.</td></tr>
+<tr><td><b>integer</b></td><td>INTEGER type 4.</td></tr>
+<tr><td><b>timestamp</b></td><td>TIMESTAMP type 93.</td></tr>
+<tr><td><b>double</b></td><td>DOUBLE type 8.</td></tr>
+<tr><td><b>text/longvarchar</b></td><td>LONGVARCHAR type -1.</td></tr>
+<tr><td><b>blob</b></td><td>BLOB type 2004.</td></tr>
+<tr><td><b>numeric</b></td><td>NUMERIC type 2.</td></tr>
+<tr><td><b>decimal</b></td><td>DECIMAL type 3.</td></tr>
+<tr><td><b>smallint</b></td><td>SMALLINT type 5.</td></tr>
+<tr><td><b>bigint</b></td><td>BIGINT type -5.</td></tr>
+<tr><td><b>tinyint</b></td><td>TINYINT type -6.</td></tr>
+<tr><td><b>float</b></td><td>FLOAT type 6.</td></tr>
+<tr><td><b>real</b></td><td>REAL type 7.</td></tr>
+<tr><td><b>double</b></td><td>DOUBLE type 8.</td></tr>
+<tr><td><b>char</b></td><td>CHAR type 1.</td></tr>
+<tr><td><b>bit</b></td><td>BIT type -7.</td></tr>
+<tr><td><b>date</b></td><td>DATE type 91.</td></tr>
+<tr><td><b>time</b></td><td>TIME type 92.</td></tr>
+<tr><td><b>binary</b></td><td>BINARY type -2.</td></tr>
+<tr><td><b>varbinary</b></td><td>VARBINARY type -3.</td></tr>
+<tr><td><b>longvarbinary</b></td><td>LONGVARBINARY type -4.</td></tr>
+<tr><td><b>null</b></td><td>NULL type 0.</td></tr>
+<tr><td><b>other</b></td><td>OTHER type 1111.</td></tr>
+<tr><td><b>java_object</b></td><td>JAVA_OBJECT type 2000.</td></tr>
+<tr><td><b>distinct</b></td><td>DISTINCT type 2001.</td></tr>
+<tr><td><b>struct</b></td><td>STRUCT type 2002.</td></tr>
+<tr><td><b>array</b></td><td>ARRAY type 2003.</td></tr>
+<tr><td><b>clob</b></td><td>CLOB type 2005.</td></tr>
+<tr><td><b>ref</b></td><td>REF type 2006.</td></tr>
+<tr><td><b>datalink</b></td><td>DATALINK type 70.</td></tr>
+<tr><td><b>boolean</b></td><td>BOOLEAN type 16.</td></tr>
+<tr><td><b>rowid</b></td><td>ROWID type -8.</td></tr>
+<tr><td><b>nchar</b></td><td>NCHAR type -15.</td></tr>
+<tr><td><b>nvarchar</b></td><td>NVARCHAR type -9.</td></tr>
+<tr><td><b>longnvarchar</b></td><td>LONGNVARCHAR type -16.</td></tr>
+<tr><td><b>nclob</b></td><td>NCLOB type 2011.</td></tr>
+<tr><td><b>sqlxml</b></td><td>SQLXML type 2009.</td></tr>
+<tr><td><b>(for others)</b></td><td>use type number directly, eg: 4.param equals integer.param</td></tr>
+</table>
+For more details see <a href="javascript:openTopic('@API/controls/Access/query.txt','Query')">Query</a><br><br>
+<p class="wb_h2">4. Life Cycle</p>
+Database access controls will auto connect and close database connection in each requesting, they share database connection in the same JNDI.<br>
+For example:<br>
+The module has query1(jndi1), query2(jndi1), query3(jndi2), dataProvider1(jndi1) controls.<br>
+When execute query1 control, the system will auto fetch database connection jndi1<br>
+Query2 will share the connection jndi1<br>
+When execute query3 control, the system will auto fetch database connection jndi2<br>
+DataProvider1 will share the connection jndi1.<br>
+After requesting process ended, the system will close all resources such as Connection, Statement and ResultSet.<br><br>
+<p class="wb_h2">5. Programming with API</p>
+The <a href="javascript:openTopic('@API/utils/dbutil.txt','DbUtil')">DbUtil</a> class provide some useful methods to implement database access.<br>
+The following codes are some examples:<br>
+<div style="background-color:#EEE">
+<hr>
+<b>Common Usage</b><br>
+public static void segment1() throws Exception {<br />
+&nbsp;&nbsp;Connection connection = DbUtil.getConnection(/*jndi, empty for the default database*/);<br />
+&nbsp;&nbsp;PreparedStatement statement = null;<br />
+&nbsp;&nbsp;ResultSet resultSet = null;<br />
+&nbsp;&nbsp;try{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;connection.setAutoCommit(false);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;statement = connection.prepareStatement(sql);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;resultSet = statement.executeQuery();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+&nbsp;&nbsp;&nbsp;&nbsp;connection.commit();<br />
+&nbsp;&nbsp;} catch (Throwable e) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;...<br />
+&nbsp;&nbsp;&nbsp;&nbsp;throw new Exception(e);<br />
+&nbsp;&nbsp;} finally {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;DbUtil.closeResultSet(resultSet);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;DbUtil.closeStatement(statement);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;DbUtil.closeConnection(connection);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;//This method will roleback and close the connection<br />
+&nbsp;&nbsp;}<br />
+<hr>
+<b>Auto Close Connection with HttpServletRequest</b><br>
+public static void segment2(HttpServletRequest request,<br />
+  &nbsp;&nbsp;HttpServletResponse response) throws Exception {<br />
+  &nbsp;&nbsp;Connection connection = DbUtil.getConnection(request);<br />
+  &nbsp;&nbsp;PreparedStatement statement = null;<br />
+  &nbsp;&nbsp;//Get a connection and save to the request object, the connection will be closed after requesting ended.<br>
+  &nbsp;&nbsp;connection.setAutoCommit(false);//Optional<br />
+  &nbsp;&nbsp;try {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;statement = connection.prepareStatement(sql);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+  &nbsp;&nbsp;} finally {<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;DbUtil.closeStatement(statement);//Required<br>
+  &nbsp;&nbsp;//DbUtil.closeConnection(connection);Optional, don't need to close the connection.<br>
+  &nbsp;&nbsp;}<br>
+  }<br />
+<hr>
+<b>Execute Query and Auto Free Resources with HttpServletRequest</b><br>
+public static void segment3(HttpServletRequest request,<br />
+  &nbsp;&nbsp;HttpServletResponse response) throws Exception {<br />
+  &nbsp;&nbsp;ResultSet resultSet = DbUtil.query(request, "select * from table where field={?timestamp.para1?}");<br>
+  &nbsp;&nbsp;int updatedCount = DbUtil.update(request, "update table set field=123");<br>
+  &nbsp;&nbsp;Object object = DbUtil.execute(request, anySql);<br>
+  &nbsp;&nbsp;//The connection and other resources will be closed after requesting ended,<br>
+  &nbsp;&nbsp;//be careful to create a new connection and access same table, avoid dead connection.<br>
+  &nbsp;&nbsp;...<br>
+  }<br />
+</div>
+For more details see <a href="javascript:openTopic('@API/utils/dbutil.txt','DbUtil')">DbUtil</a>.<br>

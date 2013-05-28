@@ -1,0 +1,20 @@
+<p class="wb_h1">File Manager</p>
+The File Manager is used to manger server file system. You can access, import and export files in the File Manager.<br><br>
+<p class="wb_h2">Operating Buttons</a></p>
+The following table describes some operating buttons:<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="100"><b>New File</b></td><td width="500">Create a new file.</td></tr>
+<tr><td><b>New Folder</b></td><td>Create a new folder.</td></tr>
+<tr><td><b>Edit</b></td><td>Edit the selected file with text editor, you can double click the file to edit it.</td></tr>
+<tr><td><b>Rename</b></td><td>Rename the selected file/folder.</td></tr>
+<tr><td><b>Import</b></td><td>Import files to the selected folder.</td></tr>
+<tr><td><b>Import and Extract</b></td><td>Import zip files and extract them to the selected folder.</td></tr>
+<tr><td><b>Export</b></td><td>Export the selected files, if a folder or multiple files are selected, then they will be compressed to a zip file.</td></tr>
+<tr><td><b>Export and Compress</b></td><td>Export the selected files and compress them to a zip file.</td></tr>
+<tr><td><b>Cut</b></td><td>Cut the selected files/folders' paths to the browser's memory, not clipboard.</td></tr>
+<tr><td><b>Copy</b></td><td>Copy the selected files/folders' paths to the browser's memory, not clipboard.</td></tr>
+<tr><td><b>Paste</b></td><td>Paste the cut/copied files/folders to the selected folder.</td></tr>
+<tr><td><b>Delete</b></td><td>Delete the selected files/folders.</td></tr>
+</table><br>
+You can double click the selected file to edit text type file or export other types of the file.<br>

@@ -1,0 +1,35 @@
+<p class="wb_h1">ZipUtil - com.webbuilder.utils.ZipUtil</p>
+The ZipUtil is used to process ZIP files.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static void unzip(InputStream inputStream, File dest)</b><br>
+Unzip the input stream to the specified folder.<br>
+<b>Parameters</b>:<br>
+.inputStream:<br>
+The stream to be unzip.<br>
+.dest:<br>
+The destination folder to place unzipped files.<br>
+<hr>
+<b>public static void unzip(File zipFile, File dest)</b><br>
+Unzip a zip file to the specified folder.<br>
+<b>Parameters</b>:<br>
+.zipFile:<br>
+A zip file to be unzip.<br>
+.dest:<br>
+The destination folder to place unzipped files.<br>
+<hr>
+<b>public static void zip(File source[], OutputStream outputStream)</b><br>
+Zip some files to the specified output stream.<br>
+<b>Parameters</b>:<br>
+.source:<br>
+The files to be zipped.<br>
+.outputStream:<br>
+The zipped output stream.<br>
+<hr>
+<b>public static void zip(File source[], File zipFile)</b><br>
+Zip some files to the specified output stream.<br>
+<b>Parameters</b>:<br>
+.source:<br>
+The files to be zipped.<br>
+.zipFile:<br>
+The destination zipped file. If the file exists, it will be overwritten.<br>

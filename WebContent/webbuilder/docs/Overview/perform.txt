@@ -1,0 +1,14 @@
+<p class="wb_h1">Performance and Stability</p>
+<p>Most large web applications need to maintain high performance and stability for mass requesting and processing. WebBuilder performs excellently in this regard.</p><br>
+<p class="wb_h2">1. XWL Module Cache</p>
+<p>WebBuilder prepares and caches XWL module automatically. When browser requests the module, WebBuilder will process XWL module in cache immediately.</p><br>
+<p class="wb_h2">2. Static Resource Buffer</p>
+<p>All WebBuilder resources including js, css, image and other resource files are cached in memory. If the specified file's size exceeds minimum gzip size, it will be static gzip compressed. When a browser requests these resources, WebBuilder will fetch them in memory for responding.</p><br>
+<p class="wb_h2">3. Data Hashmap</p>
+<p>Some data like variables, user roles, keys are stored in the Hashmap for fast data access. WebBuilder encapsulates and provides API to access these data.</p><br>
+<p class="wb_h2">4. Precompiled Server Script</p>
+<p>WebBuilder supports server side JavaScript, every JavaScript segment is precompiled and cached in the Hashmap.</p><br>
+<p class="wb_h2">5. Closure Mechanism</p>
+<p>Particular server side and client side operations are encapsulated into the control. The method control can access the java code quickly and easily. The query control can access database smartly.</p><br>
+<p class="wb_h2">6. Smart Data Access</p>
+<p>Query and DataProvider control have powerful ability to access database with context sensitive. Developers can apply parameters of request context into the SQL regardless of different database types and parameter types.</p>

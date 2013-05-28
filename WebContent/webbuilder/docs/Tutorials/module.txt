@@ -1,0 +1,11 @@
+<p class="wb_h1">The Module Definition</p>
+WebBuilder applications are constituted by modules. Module encapsulates application logics with JSON scripts which are stored in server cache and database table, thus, they can be shared in clustered server mode.<br><br>
+<p class="wb_h2">1. How the Module Works</p>
+Like a JSP, when a browser requests a module, the server will fetch the module in prepared cache and parse it. The server will process controls of module in sequence, server side control will be executed in the server, client side control will create scripts and send them to the browser for further processing.<br><br>
+<p class="wb_h2">2. Module Hot Deployment and Development</p>
+As we know, hot deployment refers to the ability of making changes to a running application without causing any downtime or without restarting the server. In WebBuilder, new modules or any modifications of module can take affect immediately without restarting the server.<br><br>
+<p class="wb_h2">3. Module's Properties and Events</p>
+Module itself has many properties/events that control its behavior on either server side or client side, such as initScript and finalScript properties to implement server side initialize and finalize, initialize and finalize events to implement client side initialize and finalize.<br>
+For more details see <a href="javascript:openTopic('@API/controls/General/module.txt','Module')">Module</a>.<br><br>
+<p class="wb_h2">4. Module Composition</p>
+Module is composed of client controls and server controls, client controls works at the browser, while server controls works at the server. You can freely use and mix them to create the best application.<br>

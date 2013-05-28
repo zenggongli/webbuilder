@@ -1,0 +1,188 @@
+<p class="wb_h1">WebUtil - com.webbuilder.utils.WebUtil</p>
+The WebUtil provide some web functions.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static int checkPage(PageInfo pageInfo, boolean needPaging, boolean needCount)</b><br>
+Check the data paging status, and determine how to do paging.<br>
+<b>Parameters</b>:<br>
+.pageInfo:<br>
+PageInfo object represented paging status.<br>
+.needPaging:<br>
+Indicates whether to need to do paging.<br>
+.needCount:<br>
+Indicates whether to need to count records.<br>
+<b>Returns</b>:<br>
+The status integer value, 0 ignore, 1 break, 2 continue.<br>
+<hr>
+<b>public static int checkPage(PageInfo pageInfo)</b><br>
+Check the data paging status, and determine how to do paging.<br>
+The method equals to WebUtil.checkPage(pageInfo, true, true);<br>
+<hr>
+<b>public static boolean checkRight(HttpServletRequest request, String xwlId)</b><br>
+Return true if current user has permission to access the specified module, otherwise false.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get user information.<br>
+.xwlId:<br>
+The module id.<br>
+<b>Returns</b>:<br>
+The Boolean value.<br>
+<hr>
+<b>public static String decode(String str)</b><br>
+Decode a ISO-8859-1 encoded string.<br>
+<b>Parameters</b>:<br>
+.str:<br>
+A ISO-8859-1 encoded string.<br>
+<b>Returns</b>:<br>
+The decoded string.<br>
+<hr>
+<b>public static String encodeFilename(HttpServletRequest request, String name)</b><br>
+Encode filename to a string for browser downloading.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to determine the browser type.<br>
+.name:<br>
+The filename to be encoded.<br>
+<b>Returns</b>:<br>
+The encoded string for specified browser.<br>
+<b>Example</b>:<br>
+response.setHeader("content-disposition", "attachment;"<br>
+&nbsp;&nbsp;+ WebUtil.encodeFilename(request, fileName));<br>
+<hr>
+<b>public static String encodeString(String string)</b><br>
+Translates a string into application/x-www-form-urlencoded format using a specific encoding scheme. This method uses the supplied encoding scheme to obtain the bytes for unsafe characters.<br>
+<b>Parameters</b>:<br>
+.string:<br>
+String object to be translated.<br>
+<b>Returns</b>:<br>
+The translates string.<br>
+<b>Example</b>:<br>
+String result = WebUtil.encodeString("foo bar");, the result is "foo%20bar".
+<hr>
+<b>public static String fetch(HttpServletRequest request, String name)</b><br>
+Get a string value from request attributes or parameters. First get the value from attributes, if not found, then get the value from parameter, if still not found, then return null.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get the value.<br>
+.name:<br>
+The attribute's or parameter's name.<br>
+<b>Returns</b>:<br>
+The fetched string.<br>
+<hr>
+<b>public static String getIdWithUser(HttpServletRequest request, String id)</b><br>
+Append user id prefix to the specified string.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get the user id.<br>
+.id:<br>
+The specified id to be appended.<br>
+<b>Returns</b>:<br>
+The user id binded string.<br>
+<b>Example</b>:<br>
+String result = WebUtil.getIdWithUser(request, "dbe.tree");, if current user id is "admin", then the result is "admin@dbe.tree".<br>
+<hr>
+<b>public static String getLanguage(HttpServletRequest request)</b><br>
+Get specified language code from HttpServletRequest object which indicate the browser's language.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get the browser's language.<br>
+<b>Returns</b>:<br>
+The specified browser's language code.<br>
+<hr>
+<b>public static PageInfo getPage(HttpServletRequest request)</b><br>
+Get paging information from HttpServletRequest object.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get the paging information.<br>
+<b>Returns</b>:<br>
+The PageInfo object, including paging start, limit, end parameter.<br>
+<b>Example</b>:<br>
+<div style="background-color:#EEE">
+PageInfo pageInfo = WebUtil.getPage(request);<br>
+StringBuilder buf = new StringBuilder();<br>
+int status, count;<br>
+while (resultSet.next()) {<br>
+&nbsp;&nbsp;status = WebUtil.checkPage(pageInfo);<br>
+&nbsp;&nbsp;if (status == 1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;else if (status == 2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;continue;<br>
+&nbsp;&nbsp;buf.append(resultSet.getString(1));
+&nbsp;&nbsp;...<br>
+}<br>
+WebUtil.setTotal(buf, pageInfo);<br>
+WebUtil.response(response, buf);<br>
+</div><br>
+<hr>
+<b>public static void print(HttpServletRequest request, Object object)</b><br>
+Prints object's toString() text to current user's console buffer. The text will be displayed in the WebBuilder IDE Console.  The print method has no effect out of IDE.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object represented current user.<br>
+.object:<br>
+Object to be printed.<br>
+<b>Example</b>:<br>
+WebUtil.print(request, "abc");(For Java or Server Script)<br>
+Wb.print(request,"abc");(For Server Script, shortcuts of WebUtil.print)<br>
+Wb.print("abc");(For JavaScript)<br>
+<b>Related functions</b>:<br>
+println<br>
+<hr>
+<b>public static String request(String url, JSONObject params)</b><br>
+Request string from the specified url.<br>
+<b>Parameters</b>:<br>
+.url:<br>
+The url address.<br>
+.params:<br>
+The JSONObject parameters.<br>
+<b>Returns</b>:<br>
+The responding utf-8 encoded String.<br>
+<b>Examples</b>:<br>
+String string=WebUtil.request("http://www.site.com/path?param=value",new JSONObject("{a:123,b:'123'}")).<br>
+<hr>
+<b>public static byte[] requestData(String url, JSONObject params)</b><br>
+Request bytes data from the specified url.<br>
+<b>Parameters</b>:<br>
+.url:<br>
+The url address.<br>
+.params:<br>
+The JSONObject parameters.<br>
+<b>Returns</b>:<br>
+The responding bytes.<br>
+<b>Examples</b>:<br>
+byte[] bytes=WebUtil.request("http://www.site.com/path?param=value",new JSONObject("{a:123,b:'123'}")).<br>
+<hr>
+<b>public static void response(HttpServletResponse response, Object object)</b><br>
+Outputs object' content to the response and flush the buffer immediately. If the object's content size exceed Var.server.respGzipMinSize, GZIP compress is used.
+If object is an instance of InputStream or bytes(byte[]), then the object will be outputted directly, otherwise, object.toString() will be outputted. If object is a InputStream object, it will be auto closed after outputting.<br>
+<b>Parameters</b>:<br>
+.response:<br>
+HttpServletResponse object.<br>
+.object:<br>
+The object's content will be outputted.<br>
+<b>Example</b>:<br>
+WebUtil.response(response, "abc");//String<br>
+WebUtil.response(response, stringBuilder);//StringBuilder<br>
+WebUtil.response(response, jsonObject);//JSONObject<br>
+WebUtil.response(response, inputStream);//InputStream<br>
+WebUtil.response(response, bytes);//byte[]<br>
+<hr>
+<b>public static void response(HttpServletResponse response, String text, boolean successful)</b><br>
+Outputs text to the response and flush the buffer immediately. This method use "{success:successful,value:text}" style.<br>
+<b>Parameters</b>:<br>
+.response:<br>
+HttpServletResponse object.<br>
+.text:<br>
+The text to be outputted.<br>
+.successful:<br>
+Indicates whether response successs or failure flag to the client. This flag is used to response the form uploading.<br>
+<b>Example</b>:<br>
+WebUtil.response(response, "abc", true);//{success:true,value:"abc"}<br>
+<hr>
+<b>public static void setTotal(StringBuilder buf, PageInfo pageInfo)</b><br>
+Set PageInfo object's count property to the buf. The method equals to buf.insert(0, "{total:" + Integer.toString(pageInfo.count));<br>
+<b>Parameters</b>:<br>
+.buf:<br>
+StringBuilder object to insert the count property.<br>
+.pageInfo:<br>
+PageInfo object to get the count property.<br>

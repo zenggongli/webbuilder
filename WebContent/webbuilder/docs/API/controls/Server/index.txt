@@ -1,0 +1,9 @@
+[
+{text:'Server Script',file:'script.txt',icon:'ss_icon'},
+{text:'Method',file:'method.txt',icon:'execute_icon'},
+{text:'Attribute',file:'attr.txt',icon:'object_icon'},
+{text:'Response',file:'response.txt',icon:'start_icon'},
+{text:'Except',file:'except.txt',icon:'error_icon'},
+{text:'Dispatcher',file:'dispatcher.txt',icon:'web_icon'},
+{text:'Mailer',file:'mailer.txt',icon:'mail_icon'}
+]

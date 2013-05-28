@@ -1,0 +1,7 @@
+[
+{text:'Grid',file:'grid.txt',icon:'grid_icon'},
+{text:'Column',file:'column.txt',icon:'column_icon'},
+{text:'Action Column',file:'action.txt',icon:'actionColumn_icon'},
+{text:'Action Item',file:'item.txt',icon:'actionItem_icon'},
+{text:'Property Grid',file:'property.txt',icon:'property_icon'}
+]

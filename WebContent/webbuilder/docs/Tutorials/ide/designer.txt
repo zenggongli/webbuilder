@@ -1,0 +1,30 @@
+<p class="wb_h1">Form Designer</p>
+The Form Designer provides a convenient and reliable way to design containers' absolute layout, such as design Window, Panel, Form, Field Set etc. Each Form Designer maintains one control's layout, thus, you can open another Form Designer to design the parent or children's layout of the control(which means if you want to design the parent control's layout or child control's layout, you need to open a separate Form Designer).<br>
+Drag and drop feature is available in the designer, you can drag the controls to the designer from the Control List, and then move, resize and set the controls.<br><br> 
+<p class="wb_h2">1. Open Form Designer</p>
+First select a container control in the Object TreeView which has layout property such as Window, and click Form Designer button or press Ctrl+D to design the selected control.<br>
+<img src="webbuilder/docs/images/designer.gif"><br><br>
+<p class="wb_h2">2. Shortcuts of the Designer</p>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="200">Ctrl+(Up/Down/Left/Right)</td><td width="500">Adjust the selected controls position.</td></tr>
+<tr><td>Ctrl+Shift(Up/Down/Left/Right)</td><td>Adjust the selected controls size.</td></tr>
+<tr><td>Ctrl+C</td><td>Copy the selected controls to the memory(not clipboard, so different browser cannot be shared).</td></tr>
+<tr><td>Ctrl+X</td><td>Cut the selected controls to the memory.</td></tr>
+<tr><td>Ctrl+V</td><td>Paste the copied controls to the designer.</td></tr>
+<tr><td>Ctrl+Delete</td><td>Remove the selected controls.</td></tr>
+<tr><td>Double Click</td><td>Turn to the properties/Events editor of the selected control.</td></tr>
+<tr><td>Ctrl+(Double Click)</td><td>Edit the selected control's text(for labels) or id(for other controls) property.</td></tr>
+</table><br>
+<p class="wb_h2">3. Bottom Toolbar</p>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="100">id</td><td width="500">id property of the selected control.</td></tr>
+<tr><td>text</td><td>text property of the selected control.</td></tr>
+<tr><td>x</td><td>x property of the selected control.</td></tr>
+<tr><td>y</td><td>y property of the selected control.</td></tr>
+<tr><td>w</td><td>width property of the selected control.</td></tr>
+<tr><td>h</td><td>height property of the selected control.</td></tr>
+<tr><td>Align Labels Text</td><td>set label text alignment, click [toggle right align new label] to determine whether the appended label's text alignment is right.</td></tr>
+<tr><td>Align Controls</td><td>set controls alignment.</td></tr>
+</table><br>

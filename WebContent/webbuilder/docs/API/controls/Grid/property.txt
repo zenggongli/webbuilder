@@ -1,0 +1,12 @@
+<p class="wb_h1">Property Grid</p>
+A specialized grid implementation intended to mimic the traditional property grid as typically seen in development IDEs.
+WebBuilder encapsulate Ext.grid.property.Grid to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.grid.property.Grid</p>

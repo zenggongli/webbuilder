@@ -1,0 +1,230 @@
+<p class="wb_h1">DbUtil - com.webbuilder.utils.DbUtil</p>
+The DbUtil is used to access Database.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static void closeConnection(Connection connection)</b><br>
+Releases connection object's resources immediately. If the connection is not auto committed, it will be rollback.<br>
+<b>Parameters</b>:<br>
+.connection:<br>
+Connection to be closed.<br>
+<hr>
+<b>public static void closeConnection(Connection connection, boolean rollBack)</b><br>
+Releases connection object's resources immediately. If the connection is not auto committed, it will be rollback if the rollBack parameter is true, otherwise execute commit.<br>
+<b>Parameters</b>:<br>
+.connection:<br>
+Connection to be closed.<br>
+.rollBack:<br>
+Indicates whether to execute rollback or commit operation.<br>
+<hr>
+<b>public static void closeResultSet(ResultSet resultSet)</b><br>
+Releases the ResultSet and related Statement objects' resources immediately.<br>
+<b>Parameters</b>:<br>
+.resultSet:<br>
+ResultSet to be closed.<br>
+<hr>
+<b>public static void closeStatement(Statement statement)</b><br>
+Releases the Statement objects' resources immediately.<br>
+<b>Parameters</b>:<br>
+.statement:<br>
+Statement to be closed.<br>
+<hr>
+<b>public static Object execute(HttpServletRequest request, String sql)</b><br>
+Execute SQL statement of the default database. All resources including Connection, Statement, ResultSet will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the resources.<br>
+.sql:<br>
+SQL to be executed.<br>
+<b>Returns</b>:<br>
+The ResultSet object or updated count integer value.<br>
+<b>Example</b>:<br>
+int count = (Integer) DbUtil.execute(request, &quot;update table set field='abc'&quot;);<br>
+ResultSet rs = (ResultSet) DbUtil.execute(request, &quot;select * from table&quot);<br>
+<hr>
+<b>public static Object execute(HttpServletRequest request, String sql, String jndi)</b><br>
+Execute SQL statement of jndi specified database. All resources including Connection, Statement, ResultSet will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the resources.<br>
+.sql:<br>
+SQL to be executed.<br>
+.jndi:<br>
+jndi name to be used to connect the database.<br>
+<b>Returns</b>:<br>
+The ResultSet object or updated count integer value.<br>
+<hr>
+<b>public static Object execute(HttpServletRequest request, String sql, String jndi, boolean beginTrans)</b><br>
+Execute SQL statement of jndi specified database with transaction. All resources including Connection, Statement, ResultSet will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the resources.<br>
+.sql:<br>
+SQL to be executed.<br>
+.jndi:<br>
+jndi name to be used to connect the database.<br>
+.beginTrans:<br>
+Indicates whether to use auto-commit mode, if this value is true and exceptions occur, it will be rollback, otherwise commit.<br>
+<b>Returns</b>:<br>
+The ResultSet object or updated count integer value.<br>
+<hr>
+<b>public static void exportData(Writer writer, ResultSet rs)</b><br>
+Exports ResultSet object's data to Writer object, the exported data are formatted in JSON.<br>
+<b>Parameters</b>:<br>
+.writer:<br>
+The destination object to be used to accept data.<br>
+.rs:<br>
+The source object to be used to export data.<br>
+<hr>
+<b>public static String getArray(ResultSet rs)</b><br>
+Create array text from ResultSet object.<br>
+<b>Parameters</b>:<br>
+.rs:<br>
+The ResultSet object to be used to create array.<br>
+<hr>
+<b>public static String getCharStream(ResultSet rs, int index)</b><br>
+Use rs.getCharacterStream method to get string object.<br>
+<b>Parameters</b>:<br>
+.rs:<br>
+The ResultSet object.<br>
+.index:<br>
+Column index.<br>
+<hr>
+<b>public static Connection getConnection()</b><br>
+Get the default database connection.<br>
+<b>Returns</b>:<br>
+The connection object.<br>
+<hr>
+<b>public static Connection getConnection(HttpServletRequest request)</b><br>
+Get the default database connection, the connection will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the connection object.<br>
+<b>Returns</b>:<br>
+The connection object.<br>
+<hr>
+<b>public static Connection getConnection(HttpServletRequest request, String jndi)</b><br>
+Get the jndi specified database connection, the connection will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the connection object.<br>
+.jndi:<br>
+jndi name to be used to connect the database.<br>
+<b>Returns</b>:<br>
+The connection object.<br>
+<hr>
+<b>public static Connection getConnection(String jndi)</b><br>
+Get the jndi specified database connection.<br>
+<b>Parameters</b>:<br>
+.jndi:<br>
+jndi name to be used to connect the database.<br>
+<b>Returns</b>:<br>
+The connection object.<br>
+<hr>
+<b>public static Object getObject(CallableStatement st, int index, int type)</b><br>
+Get object value from CallableStatement object.<br>
+<b>Parameters</b>:<br>
+.st:<br>
+CallableStatement object.<br>
+.index:<br>
+Parameter index.<br>
+.type:<br>
+Parameter type.<br>
+<b>Returns</b>:<br>
+The object value.<br>
+<hr>
+<b>public static Object getObject(ResultSet rs, int index, int type, boolean ignoreBlob)</b><br>
+Get object value from ResultSet object.<br>
+<b>Parameters</b>:<br>
+.rs:<br>
+ResultSet object.<br>
+.index:<br>
+Column index.<br>
+.type:<br>
+Column type.<br>
+.ignoreBlob:<br>
+Indicates whether to fetch the blob field value.<br>
+<b>Returns</b>:<br>
+The object value.<br>
+<hr>
+<b>public static Object getObject(ResultSet rs, int index, int type)</b><br>
+Get object value from ResultSet object, if the column is blob, the return value is &quot;(blob)&quot;.<br>
+<b>See</b>:<br>
+public static Object getObject(ResultSet rs, int index, int type, boolean ignoreBlob).<br>
+<hr>
+<b>public static ResultSet getResultSet(Connection conn, String sql)</b><br>
+Get ResultSet object by specified sql from database.<br>
+<b>Parameters</b>:<br>
+.conn:<br>
+Connection object to specify database.<br>
+.sql:<br>
+SQL statement to be executed.<br>
+<b>Returns</b>:<br>
+The ResultSet object.<br>
+<hr>
+<b>public static void importData(Connection conn, String tableName, JSONArray ja)</b><br>
+Import JSON formatted data to the database table. The first row of JSONArray is fields names, the second row is record and so on.<br>
+<b>Parameters</b>:<br>
+.conn:<br>
+Connection object to specify database.<br>
+.tableName:<br>
+The destination table name for importing data.<br>
+.ja:<br>
+The JSONArray data to be imported to the table.<br>
+<hr>
+<b>public static ResultSet query(HttpServletRequest request, String sql)</b><br>
+Get ResultSet object by specified sql from the default database. All resources including Connection, Statement, ResultSet will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the ResultSet object.<br>
+.sql:<br>
+SQL statement to be executed.<br>
+<b>Returns</b>:<br>
+The ResultSet object.<br>
+<b>Example</b>:<br>
+ResultSet rs = DbUtil.query(request, &quot;select * from WB_USER where USER_ID={?idPara?}&quot;)<br>
+The idPara is a HttpServletRequest attribute value or parameter value. For more details see <a href="javascript:openTopic('@API/controls/Access/query.txt','Query')">Query</a><br>
+<hr>
+<b>public static Object query(HttpServletRequest request, String sql, boolean beginTrans, String jndi, String type, boolean loadData)</b><br>
+Get object by specified sql from the jndi specified database. All resources including Connection, Statement, ResultSet will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the ResultSet object.<br>
+.sql:<br>
+SQL statement to be executed.<br>
+.beginTrans:<br>
+Indicates whether to set the Connection autoCommit false, default false.<br>
+.jndi:<br>
+jndi name to be used to connect the database.<br>
+.type:<br>
+Indicates the type of sql execution:<br>
+query: executeQuery the sql.<br>
+update: updateUpdate the sql.<br>
+execute: execute the sql.<br>
+.loadData:<br>
+Indicates whether to load the first row of the ResultSet.<br>
+<b>Returns</b>:<br>
+The ResultSet object or Integer value.<br>
+<hr>
+<b>public static void setObject(PreparedStatement st, int index, int type, Object obj)</b><br>
+Set PreparedStatement parameters value.<br>
+<b>Parameters</b>:<br>
+.st:<br>
+PreparedStatement object.<br>
+.index:<br>
+Parameter index.<br>
+.type:<br>
+Parameter type.<br>
+.obj:<br>
+Parameter value to be set.<br>
+<hr>
+<b>public static int update(HttpServletRequest request, String sql)</b><br>
+ExecuteUpdate SQL statement of the default database. All resources including Connection, Statement, ResultSet will be closed after requesting ended.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to used to save the resources.<br>
+.sql:<br>
+SQL to be executed.<br>
+<b>Returns</b>:<br>
+The updated count integer value.<br>
+<b>Example</b>:<br>
+int count = DbUtil.update(request, &quot;update table set field={?para1?}&quot;);<br>

@@ -1,0 +1,11 @@
+[
+{text:'Hello World Application',file:'hello.txt'},
+{text:'Working with IDE',file:'ide'},
+{text:'The Module Definition',file:'module.txt'},
+{text:'Client Side Programming',file:'client.txt'},
+{text:'Server Side Programming',file:'server.txt'},
+{text:'Database Access',file:'database.txt'},
+{text:'System Variables',file:'var.txt'},
+{text:'Processing JSON',file:'json.txt'},
+{text:'Application Internationalization',file:'str.txt'}
+]

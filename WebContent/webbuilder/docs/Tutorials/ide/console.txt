@@ -1,0 +1,31 @@
+<p class="wb_h1">The Console</p>
+WebBuilder has some useful utility views for the IDE, you can click Toggle Show View button to show or hide these views. WebBuilder console can display system information such as exceptions or other any messages.<br>
+WebBuilder supports team development on one server, each developer has a none-shared console. The console will auto display exception messages for current user context, any other information such as debug message will be displayed by using JAVA, <a href="javascript:openTopic('@Tutorials/script.txt','Server Script')">Server Script</a> or JAVASCRIPT methods.<br><br>
+<p class="wb_h2">1. Printing Messages to the Console</p>
+<p class="wb_h3">1.1 Java Methods</p>
+function prototype:<br>
+public static void print(HttpServletRequest request, Object object);<br>
+public static void println(HttpServletRequest request, Object object);<br>
+print object's text to the console, the request parameter is used to identify the current user.<br>
+The above methods are defined in the WebBuilder java package com.webbuilder.utils.WebUtil.<br>
+For example:<br>
+WebUtil.print(request, "abc"); WebUtil.println(request,123);<br><br>
+<p class="wb_h3">1.2 Server Script Methods</p>
+In Server Script, you can still use WebUtil.print/WebUtil.println methods. For convenience, there are some shortcuts for relative methods.<br> 
+function prototype:<br>
+function Wb.print(HttpServletRequest request, Object object); equals to WebUtil.print method.<br>
+function Wb.println(HttpServletRequest request, Object object);equals to WebUtil.println method.<br>
+The above methods are defined in the file webbuilder/script/server.js, developers can invoke them directly.<br>
+For example:<br>
+Wb.print(request,123); Wb.println(request,'abc');<br><br>
+<p class="wb_h3">1.3 JavaScript Methods</p>
+function prototype:<br>
+function print(object);<br>
+function println(object);<br>
+The above methods are defined in wb.js, developers can invoke them directly.<br>
+For example:<br>
+Wb.print(123); Wb.println('abc');<br><br>
+<p class="wb_h2">2. Console Operating</p>
+Refresh: Refresh the console immediately.<br>
+Clear: Clear all displayed messages of the console.<br>
+Pause/Resume: Pause or resume the fetching of messages from the server. These messages will still cache in the server until the buffer is full.<br>

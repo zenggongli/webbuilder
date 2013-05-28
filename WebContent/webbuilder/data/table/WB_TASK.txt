@@ -1,0 +1,1 @@
+[[TASK_ID,TASK_NAME,INTERVAL_TYPE,INTERVAL_EXPRESS,CLASS_NAME,BEGIN_DATE,END_DATE,STATUS,REMARK],["13MTJGSADU00","Clear Log",4,"1:03:15","com.webbuilder.task.ClearLog",null,null,0,"Clear system log. The log retention days is defined by Var.webbuilder.task.logDays."]]

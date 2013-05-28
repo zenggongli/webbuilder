@@ -1,0 +1,15 @@
+<p class="wb_h1">Menu</p>
+This is the container to which you may add menu items or other controls. The Menu is usually used to be a popup menu, the Menu Item will auto create Menu object when a Menu Item has children.
+WebBuilder encapsulate Ext.menu.Menu to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>ignoreEvents</b><br>
+Indicates whether to ignore the default menu events, thus you can put input control to the menu, such as text field.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.menu.Menu</p>

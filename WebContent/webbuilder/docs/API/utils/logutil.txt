@@ -1,0 +1,105 @@
+<p class="wb_h1">LogUtil - com.webbuilder.utils.LogUtil</p>
+The LogUtil is used to record log information to the default database WB_LOG table.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static void error(HttpServletRequest request, String s)</b><br>
+Log requesting error message to the log table. The message contains current user's name and IP address.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get user's name and IP address.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void error(JobExecutionContext context, long startTime, Throwable e)</b><br>
+Log Job exception message to the log table.<br>
+<b>Parameters</b>:<br>
+.context:<br>
+JobExecutionContext object to get the Job description.<br>
+.startTime:<br>
+Indicates the start time in milliseconds of the job.<br>
+.e:<br>
+Throwable object to log exception message.<br>
+<hr>
+<b>public static void error(String s)</b><br>
+Log error message to the log table without user's name and IP address.<br>
+<b>Parameters</b>:<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void log(HttpServletRequest request, int type, String s)</b><br>
+Log requesting message to the log table. The message contains current user's name and IP address.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get user's name and IP address.<br>
+.type:<br>
+The message type, 1 message, 2 warning, 3 error.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void log(String userName, String ip, int type, String s)</b><br>
+Log message to the log table.<br>
+<b>Parameters</b>:<br>
+.userName:<br>
+The current user's name.<br>
+.ip:<br>
+The current user's IP address.<br>
+.type:<br>
+The message type, 1 message, 2 warning, 3 error.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void message(HttpServletRequest request, String s)</b><br>
+Log requesting message to the log table. The message contains current user's name and IP address.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get user's name and IP address.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void message(JobExecutionContext context, long startTime, String)</b><br>
+Log Job message to the log table.<br>
+<b>Parameters</b>:<br>
+.context:<br>
+JobExecutionContext object to get the Job description.<br>
+.startTime:<br>
+Indicates the start time in milliseconds of the job.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void message(JobExecutionContext context, long startTime)</b><br>
+Log Job name and execution duration to the log table.<br>
+<b>Parameters</b>:<br>
+.context:<br>
+JobExecutionContext object to get the Job description.<br>
+.startTime:<br>
+Indicates the start time in milliseconds of the job.<br>
+<hr>
+<b>public static void message(String s)</b><br>
+Log message to the log table without user's name and IP address.<br>
+<b>Parameters</b>:<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void warning(HttpServletRequest request, String s)</b><br>
+Log requesting warning message to the log table. The message contains current user's name and IP address.
+<b>Parameters</b>:<br>
+.request:<br>
+HttpServletRequest object to get user's name and IP address.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void warning(JobExecutionContext context, long startTime, String s)</b><br>
+Log Job warning message to the log table.<br>
+<b>Parameters</b>:<br>
+.context:<br>
+JobExecutionContext object to get the Job description.<br>
+.startTime:<br>
+Indicates the start time in milliseconds of the job.<br>
+.s:<br>
+The message to be logged.<br>
+<hr>
+<b>public static void warning(String s)</b><br>
+Log warning message to the log table without user's name and IP address.<br>
+<b>Parameters</b>:<br>
+.s:<br>
+The message to be logged.<br>

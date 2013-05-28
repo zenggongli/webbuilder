@@ -1,0 +1,40 @@
+<p class="wb_h1">Module Explorer</p>
+The Module Explorer lists all modules, with which you can easily visualize how all your application modules are related. Also, you can select any module, and perform various functions, such as opening, adding, removing ,cutting, copying or pasting modules, and also dragging and dropping the modules.<br><br>
+<p class="wb_h2">1. Module Properties Settting</p>
+Select the module, and then click the Properites button, you can see and edit some properties of the module.<br><br>
+<p class="wb_h3">1.1 Hidden in the List</p>
+You can set modules or folders to hidden, thus, these hidden modules or folders will not be listed in the portal module list. Some background modules can be hidden, because they do not need to be called directly. Hidden modules are displayed in blue font in the Module Explorer. If the folder is set to hidden, all children of it will be hidden.<br><br>
+<p class="wb_h3">1.2 Run in the New Window</p>
+By default, we browse modules in the tab panel of the portal. By setting this property, the module will be opened in a new browser window or browser tab.<br><br>
+<p class="wb_h2">2. Maintain Modules</p>
+Maintain operations include module cutting, copying, pasting, deleting, importing and exporting.<br>
+Cutting: Cut the path of the selected modules to the memory(not clipboard, so different browsers cannot share).<br>
+Copying: Copy the path of the selected modules to the memory.<br>
+Pasting: Paste the copied modules to the selected node.<br>
+Deleting: Delete the selected modules.<br>
+Importing: Import local file to the opened module.<br>
+Importing: Export the opened module to the local file.<br><br>
+<p class="wb_h2">3. Dragging and Dropping in the TreeView</p><br>
+<p class="wb_h3">3.1 Edit the module relations</p>
+You can drag and drop one node to another node in the tree view to edit the relations of the modules organization.<br><br>
+<p class="wb_h3">3.2 Dragging URL to the Property Editor</p>
+Some controls have URL type properties, like ajax url, image src. We can set a control's url property quickly by dragging the module to the property editor.<br>
+For example:<br>
+<img src="webbuilder/docs/images/drag.gif"><br>
+We need to set the url property of ajax control to &quot;main?xwl=13MAQYECL309&quot; which binds the Insert User module.<br>
+First select the ajax control in the Object TreeView, and then drag Insert User module from the Module Explorer to the property grid to perform this operation.<br><br>
+<p class="wb_h2">4. Modules Storage</p>
+All the application modules are stored in the table WB_MODULE of the default database. You can maintain it manually through [Tools]->[Database Explorer], any modification will take effect after clicking [Tools]->[Refresh System], you may need to reload the IDE page, if necessary.<br>
+Fields definition of WB_MODULE table:<br>
+<b>MODULE_ID</b>: unique id of the module.<br>
+<b>PARENT_ID</b>: parent id of the module in logic relations.<br>
+<b>MODULE_CONTENT</b>: XWL json content of the module.<br>
+<b>DISPLAY_NAME</b>: displays the name of the module.<br>
+<b>DISPLAY_ICON</b>: displays the icon of the module.<br>
+<b>IS_HIDDEN</b>: indicates whether the module is hidden.<br>
+<b>NEW_WIN</b>: indicates whether the module runs in the new window.<br>
+<b>CREATE_USER</b>: user id of the creator.<br>
+<b>CREATE_DATE</b>: create date of the module.<br>
+<b>LAST_MODIFY_USER</b>: last modified user id.<br>
+<b>LAST_MODIFY_DATE</b>: last modified date of the module.<br>
+<b>ORDER_INDEX</b>: order index in the tree list view.<br>

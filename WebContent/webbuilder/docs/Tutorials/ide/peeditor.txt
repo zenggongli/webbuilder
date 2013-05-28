@@ -1,0 +1,18 @@
+<p class="wb_h1">Properties/Events Editor</p>
+The editor displays the properties and events of the selected control in the Object TreeView. Some properties such as SQL have special property editors. Such properties appear with ellipsis marks (...) next to their values when the property is selected in the property editor. To open the property editor, double-click in the Value column or click the ellipsis mark.<br><br>
+<p class="wb_h2">1. String Properties</p>
+Some string properties of client controls, such as label text, will be auto quoted in generated JavaScript. If you don't want to quote it, please add a prefix @ to their values.<br>
+For example, you can set label text property as follows:<br>
+.abc: the generated script is {text:"abc"};<br>
+.@myJSVar: the generated script is {text:myJSVar}.<br><br>
+<p class="wb_h2">2. Access Server Side Values</p>
+WebBuilder provide a way to quickly access server side value by using syntax {#name#} in the value.<br><br>
+<p class="wb_h3">2.1 Request Parameters and Attributes</p>
+These values are stored in HttpServletRequest attributes or parameters map, if duplicated names exist in attributes or parameters, attributes is priority. If the value does not exist, empty string will be replaced.<br>
+For example, you can set property value to {#myPara#}, the result equals to request.getAttribute("myPara") or request.getParameter("myPara").<br><br>
+<p class="wb_h3">2.2 WebBuilder Variables</p>
+WebBuilder variables include system variables and application variables. The variable names starts with &quot;Var.&quot;.<br>
+For example, you can set property value to {#Var.server.jndi#}, the result equals to <a href="javascript:openTopic('@Tutorials/var.txt','Using Variable')">Var</a>.get("server.jndi").<br><br>
+<p class="wb_h3">2.3 Multi-language String</p>
+Multi-language feature supports <a href="javascript:openTopic('@Tutorials/str.txt','Application Internationalization')">Application Internationalization</a>. The string name starts with &quot;Str.&quot;<br>
+For example, you can set property value to "the OK string is {#Str.ok#}", the result equals to "the OK string is " + <a href="javascript:openTopic('@API/str.txt','Str')">Str</a>.format(request, "ok").<br>

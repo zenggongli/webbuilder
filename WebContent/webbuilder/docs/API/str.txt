@@ -1,0 +1,31 @@
+<p class="wb_h1">Str - com.webbuilder.common.Str</p>
+The Str is used to implement languages internationalizations. The languages' files are defined in the folder webbuilder/script/locale, they are saved in the JSON format. These files can be shared for both client side(JAVASCRIPT) and server side(JAVA/Server Script). In client side, you can access the string directly, in server side(For JAVA and Server Script), you can access the string by these API.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static String format(String key, String... args)</b><br>
+Format the specified key with the default language.<br>
+<b>Parameters</b>:<br>
+.key:<br>
+The string's key name.<br>
+.args:<br>
+Array parameters for formating.<br>
+<b>Returns</b>:<br>
+The formated string.<br> 
+<b>Example</b>:<br>
+String msg = Str.format("alreadyExists", "file");<br>
+The result is: &quot;file&quot; already exists.<br>
+In JAVASCRIPT, you can use:<br>
+var msg = Wb.format(Str.alreadyExists, 'file');<br>
+They are equivalent.
+<hr>
+<b>public static String format(HttpServletRequest request, String key, String... args)</b><br>
+Format the specified key with the browser specified language.<br>
+<b>Parameters</b>:<br>
+.request:<br>
+Indicates related language. The function get language from the request.<br>
+.key:<br>
+The string's key name.<br>
+.args:<br>
+Array parameters for formating.<br>
+<b>Returns</b>:<br>
+The formated string.<br> 

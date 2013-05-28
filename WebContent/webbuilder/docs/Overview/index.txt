@@ -1,0 +1,7 @@
+[
+{text:'Getting Started with WebBuilder',file:'start.txt'},
+{text:'Setup and Redistribution',file:'setup.txt'},
+{text:'The System Architecture',file:'stru.txt'},
+{text:'Performance and Stability',file:'perform.txt'},
+{text:'Application Portal',file:'portal.txt'}
+]

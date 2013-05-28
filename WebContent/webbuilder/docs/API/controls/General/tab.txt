@@ -1,0 +1,15 @@
+<p class="wb_h1">Tab Panel</p>
+A basic tab container. TabPanels can be used exactly like a standard Ext.panel.Panel for layout purposes, but also have special support for containing child Components (items) that are managed using a CardLayout layout manager, and displayed as separate tabs.
+WebBuilder encapsulate Ext.tab.Panel to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>tabMenu</b><br>
+Indicates whether to display the tab items menu, when tab items are overflow, default true.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.tab.Panel</p>

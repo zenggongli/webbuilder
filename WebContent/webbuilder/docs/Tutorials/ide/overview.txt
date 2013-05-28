@@ -1,0 +1,42 @@
+<p class="wb_h1">IDE Overview</p>
+When you start WebBuilder to develop applications, you are immediately placed within the integrated development environment, also called the IDE. This IDE provides all the tools you need to design, develop, test, debug, and deploy applications, allowing rapid prototyping and a shorter development time.<br> 
+<br><img src="webbuilder/docs/images/ide.gif"><br><br>
+The IDE includes all the tools necessary to start designing applications, such as the:<br>
+.<b>Form Designer</b>, a blank window on which to design the UI for your application.<br>
+.<b>Control List</b> for displaying visual and nonvisual controls you can use to design your user interface.<br> 
+.<b>Object Inspector</b> for examining and changing an object's properties and events.<br>
+.<b>Object TreeView</b> for displaying and changing a components logical relationships.<br>
+.<b>Code Editor</b> for writing and editing the underlying server side and client side program logic.<br>
+.<b>Module Explorer</b> for managing the modules that make up the application.<br>
+.<b>Console</b> for displaying the current developer's debug information.<br>
+.<b>Many other tools</b> such as Database Explorer and File Manager for promoting your development.<br><br>
+<p class="wb_h2">Some menu item list</p>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="200"><b>Append Module</b></td><td width="500">Append a module to the current node.</td></tr>
+<tr><td><b>Insert Module</b></td><td>Insert a module before the current node.</td></tr>
+<tr><td><b>Append Folder</b></td><td>Append a folder to the current node.</td></tr>
+<tr><td><b>Insert Folder</b></td><td>Insert a folder before the current node.</td></tr>
+<tr><td><b>Properties</b></td><td>Set properties of the current module or folder.</td></tr>
+<tr><td><b>Save</b></td><td>Save the current module if the module is modified.</td></tr>
+<tr><td><b>Save All</b></td><td>Save all modified modules.</td></tr>
+<tr><td><b>Cut</b></td><td>Cut the selected module or control. Cut operation is context-sensitive, if the focus is on the Module Explorer, it cuts the module, otherwise cuts the control.</td></tr>
+<tr><td><b>Copy</b></td><td>Copy the selected module or control. Copy operation is context-sensitive.</td></tr>
+<tr><td><b>Paste</b></td><td>Paste the cut/copied module or control to the current object. Paste operation is context-sensitive.</td></tr>
+<tr><td><b>Paste as Child</b></td><td>Paste the cut/copied module or control as a child to the current object. Paste as Child operation is context-sensitive.</td></tr>
+<tr><td><b>Delete</b></td><td>Delete the select module or control. Delete operation is sensitive base on different object.</td></tr>
+<tr><td><b>Delete Children</b></td><td>Delete all children of the select module or control. Delete Children operation is context-sensitive.</td></tr>
+<tr><td><b>Form Designer</b></td><td>Open Form designer to edit the selected control if the control has layout.</td></tr>
+<tr><td><b>Save and Run</b></td><td>Save the current module and run it.</td></tr>
+<tr><td><b>Return to Module</b></td><td>If current active tab is a running module, it will return to the source module.</td></tr>
+<tr><td><b>Toggle Show View</b></td><td>Toggle show view at the bottom of the workbench.</td></tr>
+<tr><td><b>Search Modules</b></td><td>Search current module/all modules in the view. Name only represents search property or event name only. Regular exp indicates search text using regular expression.</td></tr>
+<tr><td><b>Console</b></td><td>Show WebBuilder console in the view. This console is different from the system console. It is session independent, every developer has their own console.</td></tr>
+<tr><td><b>Show General Tab</b></td><td>Show General tab which has properties/events editor and Object TreeView of the current module.</td></tr>
+<tr><td><b>Export Selected Modules</b></td><td>Export selected modules to a .gz file.</td></tr>
+<tr><td><b>Export All Modules</b></td><td>Export all modules to a .gz file.</td></tr>
+<tr><td><b>Import and Merge Modules</b></td><td>Merge a imported .gz file to the system.</td></tr>
+<tr><td><b>Export Current Opened Module</b></td><td>Export the current opened module to a .xwl file.</td></tr>
+<tr><td><b>Import to Current Opened Module</b></td><td>Import a .xwl file to current opened module.</td></tr>
+<tr><td><b>Refresh System</td><td>Reload all modules, scripts, variables and other resources to the cache.</td><tr>
+</table>

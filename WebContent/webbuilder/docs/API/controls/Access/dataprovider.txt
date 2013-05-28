@@ -1,0 +1,113 @@
+<p class="wb_h1">Data Provider</p>
+Data Provider is used to generate JSON script or binary data from database.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>autoPage</b><br>
+Indicates whether to do paging with requesting parameter "start" and "limit" for generating script, default true. For manual paging(such as paging in SQL), please set to false.<br>
+<hr>
+<b>createColumns</b><br>
+Indicates whether to create columns defines for generating script.<br>
+<hr>
+<b>dateAsString</b><br>
+Indicates whether to take date value as string value.<br> 
+<hr>
+<b>editorType</b><br>
+Column's editor type for creating columns defines.<br>
+editable: editable editor.<br>
+readonly: read only editor.<br>
+none: no editor.<br>
+<hr>
+<b>jndi</b><br>
+A jndi name for connecting database.<br>
+<hr>
+<b>keyMap</b><br>
+An object, to be used to defined fields values converting. The converting roles is defined in <a href="javascript:openTopic('@systool/kvEditor.txt','Key Value Editor')">Key Value Editor</a>.<br>
+The keyMap syntax is {fieldName1: typeName1, fieldName2: typeName2}, fieldName is a field name, typeName is a Key Value Editor type name.<br>
+For example:<br>
+{field1: 'SEX', field2: 'DEGREE'} means field1 use type SEX, such as 1 convert to Male, 2 convert to Female, and field2 use type DEGREE.<br>
+<hr>
+<b>limitRecords</b><br>
+The maximum records to be allowed fetching, default is [Var.webbuilder.control.limitRecords], -1 means no limit.<br>
+<hr>
+<b>orderFields</b><br>
+An object, to be used to creating order SQL clause with sort parameter.<br>
+The orderFields syntax is {fieldName1: prefix1, fieldName2: prefix2, default: prefix3}, fieldName is a field name, prefix is a table prefix, prefix3 is a default table prefix.<br>
+For example:<br>
+sql: select t1.field1 from table1 t1, table2 t2 where t1.field1=t2.field1 {#sql.orderBy#}<br>
+When sort parameter is field1, the sql will throw exception(portions database types), because field1 is ambiguous.<br>
+To avoid the exception, set orderFields to {field1: 't2', default: 't1'} means when sort parameter is "field1" then add prefix "t2", add "t1" for other sort parameters.<br>
+The final sql is "select t1.field1 from table1 t1, table2 t2 where t1.field1=t2.field1 order by t2.field1".<br>
+<hr>
+<b>resultSet</b><br>
+ResultSet name, to be used to get ResultSet from HttpServletRequest attributes. When call a store-procedure or function in sql, the returned ResultSet may store in the HttpServletRequest attributes, use this property to mark the ResultSet which you want to use. You can set this property to any user defined ResultSet which store in the HttpServletRequest attributes.<br>
+<hr>
+<b>rowNumber</b><br>
+Indicates whether to create row number column for creating columns defines.<br>
+<hr>
+<b>sql</b><br>
+Any sql statement, including call store-procedures or functions.<br>
+<hr>
+<b>sqlSwitcher</b><br>
+SQL Switcher object represents sql.<br>
+<hr>
+<b>tag</b><br>
+Any text to be appended to the generated script directly.<br>
+<hr>
+<b>totalCount</b><br>
+The total records count for generating script, it is used to do paging in client side Store control. If not specified, the control will auto count the records.<br>
+<hr>
+<b>totalResultSet</b><br>
+A ResultSet name which's first field and first record value represents totalCount.<br>
+<hr>
+<b>totalSql</b><br>
+SQL statement to create ResultSet, which's first field and first record value represents totalCount.<br>
+For example:<br>
+select count(*) from table;<br>
+<hr>
+<b>totalSqlSwitcher</b><br>
+SQL Switcher object represents totalSql.<br>
+<hr>
+<b>type</b><br>
+The generating data type, default jsonArray.<br>
+<b>jsonArray</b>: The particular script represents all records of the ResultSet, it can be accessed by Store.<br>
+<b>jsonObject</b>: The JSON object script represents the first record of the ResultSet.<br>
+<b>tree</b>: The particular script represents all records the ResultSet, it can be accessed by Tree Store.<br>
+<b>stream</b>: The application/octet-stream data represents the first record of the ResultSet. The first field represents data, the second field represents content-disposition name, the third field represents content-length.<br>
+<b>download</b>: The application/force-download data represents the first record of the ResultSet. The first field represents data, the second field represents content-disposition name, the third field represents content-length.<br>
+<b>image</b>: The image data represents the first record of the ResultSet. The first field represents data, the second field represents content-disposition name, the third field represents content-length. The image does not specify the type or by content-disposition name(extension name).<br>
+<b>gif,jpg,png,bmp,*</b>: The image data represents the first record of the ResultSet. The first field represents data, the second field represents content-disposition name, the third field represents content-length. The image type is specified by this value.<br><br>
+<p class="wb_h2">2. SQL Parameters</p>
+You can use HttpServletRequest attribute/parameter value in sql/totalSql property directly, such as:<br>
+select * from {#table#} where stringField={?param1?} and intField={?integer.param2?}<br>
+For more details see <a href="javascript:openTopic('@Tutorials/database.txt','Database Access')">Database Access->3. SQL Parameters</a><br><br>
+<p class="wb_h2">3. Variables</p>
+There are some runtime variables of Data Provider, the variables are stored in HttpServletRequest attributes, you can use request.getAttribute(name) method to get the variable value.<br>
+<hr>
+<b>sql.orderBy</b><br>
+An order by clause for sql. This variable is generated from sort parameter which client controls send this parameter.<br>
+For example:<br>
+When the sort parameter is "[{property:'field1',direction:'desc'},{property:'field2',direction:'asc'}]"<br>
+The sql.orderBy variable is " order by field1 desc, field2".<br>
+You can apply this variable to the sql property.<br>
+For example:<br>
+select * from table {#sql.orderBy#}<br>
+<hr>
+<b>sql.orderFields</b><br>
+Same as sql.orderBy less the key words " order by ".<br><br>
+<p class="wb_h2">4. Manual Paging</p>
+You can use auto paging to perform paging, auto paging is web application server side paging, and limit the max records count which are fetched from database server.
+For database server side paging, please follow these steps to perform manual paging:<br>
+1, Set autoPage property to false.<br>
+2, Set sql property as "select * from (select rownum as "RN",t.* from table t) x where RN between {?integer.start?} and {?integer.start?}+{?integer.limit?}-1". (For oracle only, other database please refer to their docs)<br>
+3, Set totalSql as "select count(*) from table".<br><br>
+<p class="wb_h2">5. Examples</p>
+<b>Access User Table</b><br>
+sql: select * from WB_USER<br>
+<b>Access Store Procedure</b><br>
+sql: {call proc({?@-10.param1?},'abc')} or {{?@-10.param1?} = call proc({?timestamp.param2?})}<br>
+resultSet: param1<br>
+<b>Genarate Image Stream</b><br>
+sql: select IMAGE_FIELD[,FILE_NAME,FILE_SIZE] from TABLE<br>
+type: image[or specified image format]<br><br>
+<p class="wb_h2">See <a href="javascript:openTopic('@API/controls/Access/query.txt','Query')">Query</a></p>
+<p class="wb_h2">See source com.webbuilder.controls.DataProvider</p>

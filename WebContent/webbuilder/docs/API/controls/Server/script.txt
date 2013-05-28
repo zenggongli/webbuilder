@@ -1,0 +1,114 @@
+<p class="wb_h1">Server Script</p>
+Server Script encapsulate javax.script package, it's an open-source implementation of JavaScript written entirely in Java.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>script</b><br>
+Server side JavaScript to implement server side programming. Two parameters request(HttpServletRequest) and response(HttpServletResponse) passed to the script.<br><br>
+<p class="wb_h2">2. The Wb Variable</p>
+Each script will import a global variable <a href="javascript:openTopic('@API/ss.txt','ServerScript API')">Wb</a> which has some useful functions, it is defined in the file webbuilder/script/server.js.
+You can modify this file to extend the utility functions, any modification will take effect after restart the server or refresh the system(IDE->Tools->Refresh System).<br><br>
+<p class="wb_h2">3. Import Packages and Classes</p>
+In JAVA programming, there is a keyword import to import JAVA classes. In Server Script programming there are two keyword to perform this operation, one is importPackage, another is importClass. Use importPackage to import all the classes of the package, use importClass to import a class.<br>
+For example:<br>
+importPackage(java.lang);<br>
+Above code will import all classes of java.lang package to the script.<br>
+importClass(com.webbuilder.tool.Encrypter);<br>
+Above code will import the Encrypter class to the script.<br><br>
+<p class="wb_h2">4. Invoke JAVA Function</p>
+You can invoke JAVA function in script directly.<br>
+For example:<br>
+.Invoke general method: request.setAttribute('foo','bar');<br>
+.Invoke array parameter method: java.lang.String.format('%1$,09d',[new Integer(-1234)]);<br>
+.Invoke keyword name method: myClass['new'](), new is keyword, cannot called in myClass.new() style;<br>
+If JAVA class name equals to Server Script class name, you must qualify java class name.<br>
+For example:<br>
+var jsDate = new Date(), javaDate = new java.util.Date();<br>
+jsDate is JAVASCRIPT date object, javaDate is JAVA date object.<br><br>
+<p class="wb_h2">5. Examples</p>
+<b>Common Usage</b><br>
+var s = request.getParameter('para1');<br>
+send(s);<br>
+<b>JSON Process</b><br>
+var object = Wb.decode("{a:'foo',b:'bar'}");//Get a JavaScript object<br>
+var ab = object.a + object.b;<br>
+var str = Wb.encode(object);//Encode a object to string.<br> 
+<b>Use Java Class</b><br>
+var conn=null, statement=null, resultSet=null;<br>
+try{<br>
+  conn = DbUtil.getConnection();<br>
+  statement = conn.prepareStatement("select * from WB_USER where USER_ID='admin'");<br>
+  resultSet = statement.executeQuery();<br>
+  if(resultSet.next())<br>
+    Wb.println(request,resultSet.getString('USER_NAME'));//Output to IDE console<br>
+}finally{<br>
+  DbUtil.closeResultSet(resultSet);<br>
+  DbUtil.closeStatement(statement);<br>
+  DbUtil.closeConnection(conn);<br>
+}<br>
+<b>Class Differ</b><br>
+var jsDate = new Date();//JavaScript Date<br>
+var javaDate = new java.util.Date();//Java Date<br>
+var convertedDate = java.util.Date(jsDate);//Got a Java object<br>
+Wb.println(request,'jsDate:'+jsDate.toString()+', javaDate:'+javaDate.toString());//Ouput to IDE console<br>
+var jsString = new String('abc');//JavaScript String<br>
+var javaString = new java.lang.String('abc');//Java String<br>
+var convertedString = java.lang.String(jsString);//Got a Java object<br>
+var str=null; System.out.println(str);//Throw an exception, because null is ambiguous, you can never pass null parameter, instead of the following:<br>
+System.out.println(str||'null');//You should check the null parameter, otherwise you will risk the runtime exception with ambiguous parameter error.<br>
+var javaArray = java.lang.reflect.Array.newInstance(java.lang.String, 5);<br>//Equals to Java code javaArray = new String[5];<br>
+var jsArray = [];<br>//JavaScript array<br>
+<b>Class Cast</b><br>
+Var.set('name', String(null));//Add String() to avoid ambiguous null<br>
+<b>Invoke Array Parameter Method</b><br>
+java.lang.String.format('%1$,09d',[new Integer(-1234)]);<br>
+<b>Invoke Key Name Method</b><br>
+myClass['new']();// new is a keyword, cannot be called in myClass.new() style.<br>
+<b>Exception Process</b><br>
+try{<br>
+throw 'js error';//JavaScript throw<br>
+}catch(e){<br>
+if (e.javaException instanceof java.lang.ClassNotFoundException) {<br>
+&nbsp;&nbsp;print("Class not found");<br>
+}<br>
+Wb.error('java error');// Java throw Exception<br>
+}<br>
+try {<br>
+...<br>
+} catch (e if e.javaException instanceof java.lang.ClassNotFoundException) {<br>
+print("Class " + name + " not found");<br>
+} catch (e if e.javaException instanceof java.lang.NullPointerException) {<br>
+print("Class name is null");<br>
+}<br>
+finally{<br>
+print("finally");<br>
+}<br><br>
+<p class="wb_h2">6. Shortcuts for Java Classes and Methods</p>
+The following are some shortcuts for access Java classes and methods, these shortcuts are defined in the file webbuilder/script/server.js, you can modify this file to extend the shortcuts.<br>
+<hr>
+<table class="wb_normal" style="line-height:2" border="0">
+<tr><td width="100"><b>Path</b></td><td width="500">com.webbuilder.common.Main.path</td></tr>
+<tr><td><b>Resource</b></td><td>com.webbuilder.common.Resource</td></tr>
+<tr><td><b>Str</b></td><td>com.webbuilder.common.Str</td></tr>
+<tr><td><b>Value</b></td><td>com.webbuilder.common.Value</td></tr>
+<tr><td><b>Var</b></td><td>com.webbuilder.common.Var</td></tr>
+<tr><td><b>Encrypter</b></td><td>com.webbuilder.tool.Encrypter</td></tr>
+<tr><td><b>DateUtil</b></td><td>com.webbuilder.utils.DateUtil</td></tr>
+<tr><td><b>DbUtil</b></td><td>com.webbuilder.utils.DbUtil</td></tr>
+<tr><td><b>FileUtil</b></td><td>com.webbuilder.utils.FileUtil</td></tr>
+<tr><td><b>JsonUtil</b></td><td>com.webbuilder.utils.JsonUtil</td></tr>
+<tr><td><b>LogUtil</b></td><td>com.webbuilder.utils.LogUtil</td></tr>
+<tr><td><b>StringUtil</b></td><td>com.webbuilder.utils.StringUtil</td></tr>
+<tr><td><b>SysUtil</b></td><td>com.webbuilder.utils.SysUtil</td></tr>
+<tr><td><b>WebUtil</b></td><td>com.webbuilder.utils.WebUtil</td></tr>
+<tr><td><b>ZipUtil</b></td><td>com.webbuilder.utils.ZipUtil</td></tr>
+<tr><td><b>Integer</b></td><td>java.lang.Integer</td></tr>
+<tr><td><b>Long</b></td><td>java.lang.Long</td></tr>
+<tr><td><b>Float</b></td><td>java.lang.Float</td></tr>
+<tr><td><b>Double</b></td><td>java.lang.Double</td></tr>
+<tr><td><b>File</b></td><td>java.io.File</td></tr>
+<tr><td><b>JavaDate</b></td><td>java.util.Date</td></tr>
+<tr><td><b>Timestamp</b></td><td>java.sql.Timestamp</td></tr>
+<tr><td><b>JavaString</b></td><td>java.lang.String</td></tr>
+<tr><td><b>Now</b></td><td>java.lang.System.currentTimeMillis</td></tr>
+<tr><td><b>StringBuilder</b></td><td>java.lang.StringBuilder</td></tr>
+</table>

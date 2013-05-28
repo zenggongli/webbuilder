@@ -1,0 +1,113 @@
+<p class="wb_h1">The System Architecture</p>
+<p>The system is built on multi-tiered architecture. You can program with Java and Server Script in server side, program with JavaScript in client side.</p>
+<img src="webbuilder/docs/images/struc.gif"><br><br>
+<p class="wb_h2">1. Extensible Web Language</p>
+WebBuilder uses an Extensible Web Language which called XWL to store the programs with client components and server components. It is structuralized in the JSON format.
+XWL files are saved in the database and cached in the memory, so they can be shared in clustered server mode.<br><br>
+<p class="wb_h2">2. How the XWL works?</p>
+Like the JSP, WebBuilder parses XWL with the Servlet. First, developers develop applications via <a href="javascript:openTopic('@Tutorials/ide/overview.txt','IDE Overview')">IDE</a>, and then save XWL into the cache and a default database.
+When client request the module, WebBuilder retrieves the prepared XWL template from the cache and executes the XWL module, and finally outputs to the browser.<br><br>
+<p class="wb_h2">3. WebBuilder Files Structure</p>
+The components of WebBuilder files are as follows:<br>
+-webbuilder(webbuilder resources folder)<br>
+----controls(third party library)<br>
+----css(stores html css files)<br>
+----data(stores system data)<br>
+----docs(documents files)<br>
+----images(stores image files)<br>
+----script(stores javascript files)<br>
+-WEB-INF(webbuilder resources folder)<br><br>
+<p class="wb_h2">4. Database Tables Structure</p>
+All WebBuilder tables name starts with &quot;WB_&quot;, the followings are some tables:<br>
+.<b>WB_DUAL</b>: dummy table, which has only one field and one record.<br>
+<hr>
+DMY: dummy field.<br><br>
+.<b>WB_KEY</b>: key value mapping table.<br>
+<hr>
+KEY_ID: unique id.<br>
+KEY_TYPE: key category.<br>
+KEY_NAME: name of the key.<br>
+KEY_VALUE: value refer to the name.<br><br>
+.<b>WB_LOG</b>: system log information table.<br>
+<hr>
+LOG_DATE: timestamp of log action.<br>
+USER_ID: user id of operating user.<br>
+IP: ip address of operating user.<br>
+LOG_TYPE: type of log.<br>
+MSG: detail message of log.<br><br>
+.<b>WB_META</b>: WebBuilder controls metadata table.<br>
+<hr>
+META_NAME: control name.<br>
+META_TYPE: control type.<br>
+META_CONTENT: control meta data.<br>
+ORDER_INDEX: order index in control list.<br><br>
+.<b>WB_MODULE</b>: application modules XWL table.<br>
+<hr>
+MODULE_ID: unique id of the module.<br>
+PARENT_ID: parent id of the module in logic relations.<br>
+MODULE_CONTENT: XWL json content of the module.<br>
+DISPLAY_NAME: display name of the module.<br>
+DISPLAY_ICON: display icon of the module.<br>
+IS_HIDDEN: indicates whether the module is hidden.<br>
+NEW_WIN: indicates whether the module run in the new window.<br>
+CREATE_USER: user id of the creator.<br>
+CREATE_DATE: create date of the module.<br>
+LAST_MODIFY_USER: last modified user id.<br>
+LAST_MODIFY_DATE: last modified date of the module.<br>
+ORDER_INDEX: order index in the tree list view.<br><br>
+.<b>WB_MODULE_HIS</b>: application modules XWL backup table.<br>
+<hr>
+please refer to WB_MODULE table.<br><br>
+.<b>WB_MODULE_ROLE</b>: module-role setting table.<br>
+<hr>
+MODULE_ID: module id.<br>
+ROLE_ID: unique role id.<br><br>
+.<b>WB_RESOURCE</b>: application resources table.<br>
+<hr>
+RES_ID: unique resource id.<br>
+RES_CONTENT: resource content binary data.<br><br>
+.<b>WB_ROLE</b>: roles organization table.<br>
+<hr>
+ROLE_ID: unique role id.<br>
+PARENT_ID: unique parent id.<br>
+ROLE_NAME: role display name.<br><br>
+.<b>WB_TASK</b>: scheduled task table.<br>
+<hr>
+TASK_ID: unique task id.<br>
+TASK_NAME: task display name.<br>
+INTERVAL_TYPE: task interval type.<br>
+INTERVAL_EXPRESS: task interval express.<br>
+CLASS_NAME: java class name to execute.<br>
+BEGIN_DATE: task begin execute date.<br>
+END_DATE: task end execute date.<br>
+STATUS: indicates whether task is disabled.<br>
+REMARK: remark text for the task.<br><br>
+.<b>WB_USER</b>: user account table.<br>
+<hr>
+USER_ID: unique user id.<br>
+USER_NAME: unique user name.<br>
+DISPLAY_NAME: user display name.<br>
+PASSWORD: MD5 encrypted password.<br>
+STATUS: indicates whether the user account is disabled.<br>
+CREATE_DATE: created date of the user account.<br>
+LOGIN_TIMES: login times of the user account.<br>
+EMAIL: user email.<br>
+USE_LANG: customized language for the application.<br>
+LAST_LOGIN: last login date of the user account.<br><br>
+.<b>WB_USER_ROLE</b>: user-role setting table.<br>
+<hr>
+USER_ID: user id defined in WB_USER.<br>
+ROLE_ID: role id defined in WB_ROLE.<br><br>
+.<b>WB_VALUE</b>: application values table.<br>
+<hr>
+VAL_ID: unique value id.<br>
+VAL_CONTENT: value content string.<br><br>
+.<b>WB_VAR</b>: system variables table, cached in the hashmap.<br>
+<hr>
+VAR_ID: unique variable id.<br>
+PARENT_ID: parent id of the variable in tree view.<br>
+VAR_NAME: variable display name.<br>
+VAR_VALUE: variable value string.<br>
+IS_VAR: indicates whether the item is variable or folder.<br><br>
+Some tables' relations figure<br><br>
+<img src="webbuilder/docs/images/tables.gif">

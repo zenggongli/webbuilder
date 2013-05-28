@@ -1,0 +1,9 @@
+<p class="wb_h1">Folder</p>
+Folder is used to organize controls and make the module structure clearly, it is a logical control without taking any effect.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>description</b><br>
+Any note message.<br>
+<hr>
+<b>id</b><br>
+The unique id.<br>

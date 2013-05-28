@@ -1,0 +1,6 @@
+<p class="wb_h1">Product Register</p>
+The Product Register module is used to register the WebBuilder for commercial usage. WebBuilder is licensed under one open source and two commercial license options. For commercial use, you must register this product. For more information, please refer to the license.<br><br>
+<p class="wb_h2">1. How to Get Serial No</p>
+You can buy the WebBuilder to get the serial no, please visit <a href="http://www.putdb.com?xwl=buy" target="_blank">http://www.putdb.com?xwl=buy</a> to buy WebBuilder.<br><br>
+<p class="wb_h2">2. How to Register the WebBuilder</p>
+Please enter the serial no to the Serial No edit box, and then click Register button.<br>

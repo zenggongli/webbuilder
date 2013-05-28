@@ -1,0 +1,53 @@
+<p class="wb_h1">Mailer</p>
+Mailer control is used to send Email.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>attachFiles</b><br>
+Attached files to the Email.
+<hr>
+<b>attachObjectNames</b><br>
+Comma separated display names instead of attachObjects name.<br>
+<hr>
+<b>attachObjects</b><br>
+Comma separated objects names stored in HttpServletRequest attributes. The object can be a InputStream, byte[] or other any object. The specified objects will be attached to the Email.<br>
+<hr>
+<b>bcc</b><br>
+The Email address of recipient with type BCC.<br>
+For example: putdb.com &lt;contact@putdb.com&gt;<br>
+<hr>
+<b>cc</b><br>
+The Email address of recipient with type CC.<br>
+For example: putdb.com &lt;contact@putdb.com&gt;<br>
+<hr>
+<b>content</b><br>
+The Email content text in HTML style.<br>
+<hr>
+<b>disable</b><br>
+Indicates whether the control is available. Set to true will not send the Email.<br>
+For example: {#param#}, if the param is "true", then the Email will not be sent.<br>
+<hr>
+<b>from</b><br>
+The Email address of sender.<br>
+For example: putdb.com &lt;contact@putdb.com&gt;<br>
+<hr>
+<b>needAuth</b><br>
+Indicates whether the Email needs authentication. Default true.<br>
+<hr>
+<b>password</b><br>
+The password of sender Email account.<br>
+<hr>
+<b>smtp</b><br>
+The SMTP address to be used to send the Email.<br>
+For example: smtp.site.com<br>
+<hr>
+<b>title</b><br>
+The Email title.<br>
+<hr>
+<b>to</b><br>
+The Email address of recipient.<br>
+For example: putdb.com &lt;contact@putdb.com&gt;<br>
+<hr>
+<b>username</b><br>
+The username of sender Email account.<br>
+For example: contact@putdb.com<br><br>
+<p class="wb_h2">See source com.webbuilder.controls.Mailer</p>

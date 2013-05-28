@@ -1,0 +1,47 @@
+<p class="wb_h1">Combo Box</p>
+A combobox control with support for autocomplete, remote loading, and many other features.
+WebBuilder encapsulate Ext.form.field.ComboBox to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>autoCreate</b><br>
+Indicates whether to create the object instance or config object. The config object is useful, for example, to be used in Column editor property.<br>
+<hr>
+<b>forceList</b><br>
+Indicates whether to force limit the edit text in the list. Unlike forceSelection property, the Combo Box can be empty and show error tips instead of clearing invalid inputs.<br>
+<hr>
+<b>keyName</b><br>
+A type name defined in <a href="javascript:openTopic('@systool/kvEditor.txt','Key Value Editor')">Key Value Editor</a>. The defined items will be converted to an Ext.data.Store internally.<br>
+The key is valueField(field1), the value is valueField(field2).<br>
+<hr>
+<b>keySortType</b><br>
+Indicates how to sort the picklist defined by keyName.<br>
+keyAsNumber - sort key by number<br>
+keyAsString - sort key alphabetically<br>
+value - sort value alphabetically<br>
+<hr>
+<b>listResizable</b><br>
+Indicates whether the pick list is resizable.<br>
+<hr>
+<b>listWidth</b><br>
+The pick list width.<br>
+<hr>
+<b>pickList</b><br>
+1 or 2 dimensionals array will be converted to an Ext.data.Store internally.<br>
+For example:<br>
+['Foo','Bar']<br>
+[['f','Foo'],['b','Bar']], index 0 is valueField, index 1 is displayField, the fields names are field1, field2...<br>
+<hr>
+<b>query</b><br>
+A Query control which's ResultSet's data will be converted to an Ext.data.Store internally.<br>
+The first field is valueField, the second field is displayField, the fields names is field1, field2...<br>
+<hr>
+<b>queryLike</b><br>
+Indicates whether to popup picklist with partial matches &quot;*key*&quot;.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.form.field.ComboBox</p>

@@ -1,0 +1,63 @@
+<p class="wb_h1">Encrypter - com.webbuilder.tool.Encrypter</p>
+The Encrypter is used to encrypt and decrypt data.<br><br>
+<p class="wb_h2">Methods List</p>
+<hr>
+<b>public static byte[] decrypt(byte[] bytes, String key)</b><br>
+Decrypt the specified bytes by DES algorithm.<br>
+<b>Parameters</b>:<br>
+.bytes:<br>
+The bytes to be decrypted.<br>
+.key:<br>
+The 8 bytes key to be used to decrypt.<br>
+<b>Returns</b>:<br>
+The decrypted bytes.<br> 
+<hr>
+<b>public static String decrypt(String text, String key)</b><br>
+Decrypt the specified string by DES algorithm.<br>
+<b>Parameters</b>:<br>
+.text:<br>
+The string to be decrypted.<br>
+.key:<br>
+The 8 bytes key to be used to decrypt.<br>
+<b>Returns</b>:<br>
+The decrypted string.<br> 
+<hr>
+<b>public static byte[] encrypt(byte[] bytes, String key)</b><br>
+Encrypt the specified bytes by DES algorithm.<br>
+<b>Parameters</b>:<br>
+.bytes:<br>
+The bytes to be encrypted.<br>
+.key:<br>
+The 8 bytes key to be used to encrypt.<br>
+<b>Returns</b>:<br>
+The encrypted bytes.<br>  
+<hr>
+<b>public static String encrypt(String text, String key)</b><br>
+Encrypt the specified string by DES algorithm.<br>
+<b>Parameters</b>:<br>
+.text:<br>
+The string to be encrypted.<br>
+.key:<br>
+The 8 bytes key to be used to encrypt.<br>
+<b>Returns</b>:<br>
+The encrypted string.<br>  
+<b>Example</b>:<br>
+String s = Encrypter.encrypt("myString","8T3H#X@7");<br>
+<hr>
+<b>public static String getMD5(byte[] bytes)</b><br>
+Encrypt the specified bytes by MD5 algorithm.<br>
+<b>Parameters</b>:<br>
+.bytes:<br>
+The bytes to be encrypted.<br>
+<b>Returns</b>:<br>
+The encrypted 32 characters long string.<br>  
+<hr>
+<b>public static String getMD5(String text)</b><br>
+Encrypt the specified string by MD5 algorithm.<br>
+<b>Parameters</b>:<br>
+.text:<br>
+The string to be encrypted.<br>
+<b>Returns</b>:<br>
+The encrypted 32 characters long string.<br>  
+<b>Example</b>:<br>
+String s = Encrypter.getMD5("myString");<br>

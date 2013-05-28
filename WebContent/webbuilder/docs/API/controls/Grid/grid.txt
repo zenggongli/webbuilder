@@ -1,0 +1,42 @@
+<p class="wb_h1">Grid</p>
+Grids are an excellent way of showing large amounts of tabular data on the client side.
+WebBuilder encapsulate Ext.grid.Panel to this control.<br><br>
+<p class="wb_h2">1. Properties</p>
+<hr>
+<b>autoLoad</b><br>
+Indicates whether to load the binding store in finalize script. Default true.<br>
+<hr>
+<b>exportExcel</b><br>
+Indicates whether the grid can be exported to Excel. Default true.<br>
+<hr>
+<b>exportFilename</b><br>
+Name of the exported file. Default to exportTitle property.<br>
+<hr>
+<b>exportPrint</b><br>
+Indicates whether the grid can be exported to print preview.<br>
+<hr>
+<b>exportSheetname</b><br>
+The exported Excel sheet name.<br>
+<hr>
+<b>exportTitle</b><br>
+The title of the exported object, such as Excel, print preview.<br>
+Default to title property, "-" means no title.<br>
+<hr>
+<b>outputType</b><br>
+Indicates how to get or submit the grid data value. Default selected.<br>
+selected: the selected rows will be get.<br>
+all: all rows will be get.<br>
+<hr>
+<b>pageSizeMenu</b><br>
+Indicates whether to show the page size choosing menu. Default true.<br>
+<hr>
+<b>pagingToolbar</b><br>
+Indicates whether to show the paging tool bar. Default auto.<br>
+<hr>
+<b>tagProperties</b><br>
+Any text to be appended to the object's config options directly.<br><br>
+<p class="wb_h2">2. Events</p>
+<hr>
+<b>tagEvents</b><br>
+Any text to be appended to the object's listeners directly.<br><br>
+<p class="wb_h2">Others please refer to Ext JS docs Ext.grid.Panel</p>

@@ -1,0 +1,5 @@
+<p class="wb_h1">Roles Config</p>
+The Roles Config module is used to organize roles into a tree view. The tree view is used for management only, any role does not belong to their parents, you can organize roles for management purposes.
+Each role has a unique id, you can get the selected role id by clicking the Edit button.<br><br>
+<p class="wb_h2">Role Editing</p>
+You can click the Append button to create a new role, click the Edit button or double click on the selected role to edit the role, and click the Delete button to delete the selected role and it's children.<br>
